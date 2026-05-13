@@ -1349,7 +1349,7 @@ body {
   justify-content: center;
   pointer-events: none;
   /* Painel aparece instantâneo, depois sai pela direita */
-  animation: splash-exit 1.4s 5.2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  animation: splash-exit 1.4s 3.2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
 .splash__grid {

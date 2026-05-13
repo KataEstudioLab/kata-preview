@@ -43,10 +43,9 @@ body {
   left: 0;
   right: 0;
   height: 1200px;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-image: url('assets/grid-bg.svg');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
   pointer-events: none;
   z-index: 0;
   -webkit-mask-image: linear-gradient(to bottom, black 92%, transparent 100%);

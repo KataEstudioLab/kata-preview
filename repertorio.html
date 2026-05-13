@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Repertório — Estúdio Kata</title>
+  <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BACKDROP (blur abaixo do menu) -->
+  <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <div class="menu-overlay__header">
+      <a href="index.html" class="menu-overlay__logo" aria-label="Estúdio Kata — ir para home">
+        <img src="assets/logo.svg" alt="Estúdio Kata">
+      </a>
+      <button class="menu-overlay__close" id="menu-close" aria-label="Fechar menu">Fechar</button>
+    </div>
+    <div class="menu-overlay__body">
+      <div class="menu-overlay__nav-col">
+        <span class="menu-overlay__label" aria-hidden="true">MENU</span>
+        <nav class="menu-overlay__nav" aria-label="Navegação principal">
+          <a href="index.html" class="menu-overlay__link">Início</a>
+          <a href="cursos.html" class="menu-overlay__link">Formações</a>
+          <a href="repertorio.html" class="menu-overlay__link">Nosso repertório</a>
+          <a href="sobre.html" class="menu-overlay__link">Sobre nós</a>
+          <a href="manifesto.html" class="menu-overlay__link">Manifesto</a>
+        </nav>
+      </div>
+      <div class="menu-overlay__contact">
+        <a href="mailto:contato@estudiokata.com" class="menu-overlay__email">contato@estudiokata.com</a>
+        <div class="menu-overlay__social">
+          <a href="https://linkedin.com/company/estudiokata" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="LinkedIn">
+            <img src="assets/icon-linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/estudio.kata/" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="Instagram">
+            <img src="assets/icon-instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="WhatsApp">
+            <img src="assets/icon-whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" aria-label="Estúdio Kata — ir para home">
+      <img src="assets/logo.svg" alt="Estúdio Kata">
+    </a>
+    <button class="nav__menu" id="menu-open" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="rep-hero">
+      <p class="rep-hero__caption">Nosso repertório</p>
+      <h1 class="rep-hero__headline">
+        Explore conteúdos gratuitos para ampliar sua visão sobre design, negócios e tecnologia.
+      </h1>
+    </section>
+
+    <!-- FILTROS -->
+    <div class="rep-filtros" role="tablist" aria-label="Filtrar repertório">
+      <button class="rep-filtro is-active" data-filter="all"    role="tab" aria-selected="true">Ver tudo</button>
+      <button class="rep-filtro"           data-filter="aula"   role="tab" aria-selected="false">Aulas</button>
+      <button class="rep-filtro"           data-filter="artigo" role="tab" aria-selected="false">Artigos</button>
+    </div>
+
+    <!-- SCROLL HORIZONTAL (mesmo mecanismo da home) -->
+    <div class="rep-outer">
+      <section class="rep-section" aria-label="Nosso repertório">
+        <div class="rep-wrapper">
+          <div class="rep-track">
+
+            <article class="rep-card" data-tipo="aula">
+              <div class="rep-card__meta">
+                <span class="rep-card__tag rep-card__tag--aula">Aula livre</span>
+                <div class="rep-card__author-group">
+                  <span class="rep-card__author"><span class="rep-card__author-pre">por</span> Verônica Portugal</span>
+                  <img class="rep-card__author-photo" src="assets/foto-veronica.png" alt="Verônica Portugal">
+                </div>
+              </div>
+              <div class="rep-card__body">
+                <h2 class="rep-card__title">Design de Futuros Profissionais</h2>
+                <p class="rep-card__text">Neste bate papo, mergulhamos em Foresight e Design de Futuros para desenhar jornadas profissionais em um cenário onde a IA e transformações no trabalho já mudam o que significa construir uma carreira.</p>
+              </div>
+            </article>
+
+            <article class="rep-card" data-tipo="artigo">
+              <div class="rep-card__meta">
+                <span class="rep-card__tag rep-card__tag--artigo">Artigo</span>
+                <div class="rep-card__author-group">
+                  <span class="rep-card__author"><span class="rep-card__author-pre">por</span> Isa Soares</span>
+                  <img class="rep-card__author-photo" src="assets/foto-isa.png" alt="Isa Soares">
+                </div>
+              </div>
+              <div class="rep-card__body">
+                <h2 class="rep-card__title">Made in AI</h2>
+                <p class="rep-card__text">Este artigo investiga o lado menos brilhante do boom da inteligência artificial: mais produtos sendo lançados, mas menos espaço para formação, aprendizado e entrada na área de produto.</p>
+              </div>
+            </article>
+
+            <article class="rep-card" data-tipo="artigo">
+              <div class="rep-card__meta">
+                <span class="rep-card__tag rep-card__tag--artigo">Artigo</span>
+                <div class="rep-card__author-group">
+                  <span class="rep-card__author"><span class="rep-card__author-pre">por</span> Willian Diniz</span>
+                  <img class="rep-card__author-photo" src="assets/foto-willian.png" alt="Willian Diniz">
+                </div>
+              </div>
+              <div class="rep-card__body">
+                <h2 class="rep-card__title">O que realmente estamos construindo?</h2>
+                <p class="rep-card__text">Uma reflexão sobre o papel da decisão em tempos de automação. O texto questiona quando a busca por velocidade deixa de remover complexidade e começa a enfraquecer critério, contexto e aprendizado no design.</p>
+              </div>
+            </article>
+
+            <article class="rep-card" data-tipo="artigo">
+              <div class="rep-card__meta">
+                <span class="rep-card__tag rep-card__tag--artigo">Artigo</span>
+                <div class="rep-card__author-group">
+                  <span class="rep-card__author"><span class="rep-card__author-pre">por</span> Gustavo Aragon</span>
+                  <img class="rep-card__author-photo" src="assets/foto-gustavo.jpg" alt="Gustavo Aragon">
+                </div>
+              </div>
+              <div class="rep-card__body">
+                <h2 class="rep-card__title">Tecnologia não é feature. É ambiente.</h2>
+                <p class="rep-card__text">Uma reflexão sobre como a tecnologia deixou de ser apenas ferramenta para se tornar o próprio contexto onde decisões, relações e comportamentos acontecem. O texto discute atenção, automação e o impacto invisível das interfaces na forma como vivemos e percebemos o mundo.</p>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /.rep-wrapper -->
+      </section>
+    </div><!-- /.rep-outer -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer footer--inner">
+    <div class="footer__signature">
+      <img src="assets/graphism.svg" alt="">
+      Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
+    </div>
+    <div class="footer__display" aria-hidden="true">
+      <img src="assets/kata-wordmark.svg" alt="kata">
+    </div>
+  </footer>
+
+  <script>
+    /* ─── MENU OVERLAY ───────────────────────────────── */
+    const menuOverlay  = document.getElementById('menu-overlay');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuOpen     = document.getElementById('menu-open');
+    const menuClose    = document.getElementById('menu-close');
+
+    function openMenu() {
+      menuOverlay.classList.add('is-open');
+      menuBackdrop.classList.add('is-open');
+      menuOpen.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      menuOverlay.classList.remove('is-open');
+      menuBackdrop.classList.remove('is-open');
+      menuOpen.setAttribute('aria-expanded', 'false');
+    }
+
+    menuOpen.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('is-open')) closeMenu();
+    });
+
+    /* Copia e-mail */
+    document.querySelector('.menu-overlay__email').addEventListener('click', (e) => {
+      e.preventDefault();
+      const el = e.currentTarget;
+      const original = el.textContent;
+      navigator.clipboard.writeText('contato@estudiokata.com');
+      el.textContent = 'Copiado!';
+      setTimeout(() => { el.textContent = original; }, 1500);
+    });
+
+
+    /* ─── FILTROS ────────────────────────────────────── */
+    const repFiltros = document.querySelectorAll('.rep-filtro');
+    const repCards   = document.querySelectorAll('.rep-card');
+
+    repFiltros.forEach(btn => {
+      btn.addEventListener('click', () => {
+        repFiltros.forEach(b => { b.classList.remove('is-active'); b.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filter = btn.dataset.filter;
+        repCards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.tipo === filter) ? '' : 'none';
+        });
+
+        /* Reinicia o scroll horizontal após filtrar */
+        repTrack.style.transform = '';
+        repMaxTranslate = initRepScroll();
+      });
+    });
+
+
+    /* ─── SCROLL HORIZONTAL ──────────────────────────── */
+    const repOuter   = document.querySelector('.rep-outer');
+    const repSection = document.querySelector('.rep-section');
+    const repTrack   = document.querySelector('.rep-track');
+    const repWrapper = document.querySelector('.rep-wrapper');
+
+    function initRepScroll() {
+      const max = Math.max(0, repTrack.scrollWidth - repWrapper.offsetWidth);
+      repOuter.style.minHeight = (repSection.offsetHeight + max) + 'px';
+      return max;
+    }
+
+    let repMaxTranslate = initRepScroll();
+
+    window.addEventListener('resize', () => {
+      repTrack.style.transform = '';
+      repMaxTranslate = initRepScroll();
+    });
+
+    window.addEventListener('scroll', () => {
+      if (repMaxTranslate <= 0) return;
+      const outerRect  = repOuter.getBoundingClientRect();
+      const scrollable = repOuter.offsetHeight - repSection.offsetHeight;
+      if (scrollable <= 0) return;
+      const scrolled   = -outerRect.top;
+      const progress   = Math.max(0, Math.min(1, scrolled / scrollable));
+      repTrack.style.transform = `translateX(${-progress * repMaxTranslate}px)`;
+    }, { passive: true });
+
+
+    /* ─── KATA: efeito magnético no footer ───────────── */
+    const footer  = document.querySelector('.footer');
+    const kataImg = document.querySelector('.footer__display img');
+
+    footer.addEventListener('mousemove', (e) => {
+      const rect = footer.getBoundingClientRect();
+      const dx = (e.clientX - (rect.left + rect.width  / 2)) / rect.width;
+      const dy = (e.clientY - (rect.top  + rect.height / 2)) / rect.height;
+      kataImg.style.transform =
+        `translate(${dx * 28}px, ${dy * 14}px) rotate(${dx * 1.5}deg)`;
+    });
+
+    footer.addEventListener('mouseleave', () => {
+      kataImg.style.transform = '';
+    });
+  </script>
+</body>
+</html>

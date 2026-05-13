@@ -25,10 +25,10 @@
         <span class="menu-overlay__label" aria-hidden="true">MENU</span>
         <nav class="menu-overlay__nav" aria-label="Navegação principal">
           <a href="index.html" class="menu-overlay__link">Início</a>
-          <a href="cursos.html" class="menu-overlay__link">Cursos</a>
+          <a href="cursos.html" class="menu-overlay__link">Formações</a>
+          <a href="repertorio.html" class="menu-overlay__link">Nosso repertório</a>
+          <a href="sobre.html" class="menu-overlay__link">Sobre nós</a>
           <a href="manifesto.html" class="menu-overlay__link">Manifesto</a>
-          <a href="index.html#repertorio-titulo" class="menu-overlay__link">Nosso repertório</a>
-          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__link">Contato</a>
         </nav>
       </div>
       <div class="menu-overlay__contact">
@@ -58,76 +58,72 @@
 
   <main>
 
-    <!-- HERO DE CURSOS -->
+    <!-- HERO CURSOS -->
     <section class="cursos-hero">
-      <p class="cursos-hero__eyebrow">Cursos</p>
+      <p class="cursos-hero__caption">Formações</p>
       <h1 class="cursos-hero__headline">
-        Aprenda design com quem<br>
-        <em>vive</em> o design.
+        Conheça as nossas formações e aprenda design com quem vive o design.
       </h1>
     </section>
+
+    <!-- FILTROS -->
+    <div class="cursos-filtros" role="tablist" aria-label="Filtrar cursos">
+      <button class="cursos-filtro is-active" data-filter="all" role="tab" aria-selected="true">
+        Ver tudo
+      </button>
+      <button class="cursos-filtro" data-filter="presencial" role="tab" aria-selected="false">
+        Presenciais
+      </button>
+      <button class="cursos-filtro" data-filter="online" role="tab" aria-selected="false">
+        Online
+      </button>
+    </div>
 
     <!-- GRADE DE CURSOS -->
     <div class="cursos-grid" id="cursos">
 
-      <article class="curso-card">
-        <span class="curso-card__tag">Formação</span>
-        <h2 class="curso-card__title">Design de Produto do Zero</h2>
-        <p class="curso-card__desc">Um percurso completo para quem quer entrar na área de produto — de pesquisa a entrega, com projetos reais e mentoria ao longo do caminho.</p>
-        <a href="#" class="curso-card__cta">
-          Saiba mais
-          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-        </a>
+      <article class="curso-card" data-tipo="presencial">
+        <div class="curso-card__top">
+          <span class="curso-card__tag curso-card__tag--presencial">Presencial</span>
+          <div class="curso-card__badge curso-card__badge--novidade">
+            <span class="curso-card__dot" aria-hidden="true"></span>
+            Novidade
+          </div>
+        </div>
+        <div class="curso-card__body">
+          <h2 class="curso-card__title">Business Design &amp; AI</h2>
+          <p class="curso-card__date">00 de Agosto de 2026 — São Paulo, SP</p>
+          <p class="curso-card__desc">Lorem ipsum dolor sit amet consectetur. Sit lacinia eu tellus ut. At enim commodo adipiscing proin ut vitae volutpat. Faucibus a quam commodo id est porttitor. Ut odio consequat semper tellus id non tempor donec.</p>
+        </div>
+        <div class="curso-card__footer">
+          <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon e Will Diniz</p>
+          <div class="curso-card__fotos">
+            <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
+            <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
+          </div>
+        </div>
       </article>
 
-      <article class="curso-card">
-        <span class="curso-card__tag">Curso</span>
-        <h2 class="curso-card__title">Sistemas de Design na Prática</h2>
-        <p class="curso-card__desc">Como construir, escalar e manter um design system que times reais consigam usar — sem virar burocracia, sem perder consistência.</p>
-        <a href="#" class="curso-card__cta">
-          Saiba mais
-          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-        </a>
-      </article>
-
-      <article class="curso-card">
-        <span class="curso-card__tag">Workshop</span>
-        <h2 class="curso-card__title">Pesquisa que Vira Decisão</h2>
-        <p class="curso-card__desc">Métodos de pesquisa qualitativa para designers que precisam convencer stakeholders — não apenas documentar, mas transformar insight em ação.</p>
-        <a href="#" class="curso-card__cta">
-          Saiba mais
-          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-        </a>
-      </article>
-
-      <article class="curso-card">
-        <span class="curso-card__tag">Curso</span>
-        <h2 class="curso-card__title">Portfólio que Abre Portas</h2>
-        <p class="curso-card__desc">Como apresentar seu trabalho com clareza e intenção — para recrutadores, para clientes e para o mercado que você quer alcançar.</p>
-        <a href="#" class="curso-card__cta">
-          Saiba mais
-          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-        </a>
-      </article>
-
-      <article class="curso-card">
-        <span class="curso-card__tag">Aula livre</span>
-        <h2 class="curso-card__title">Design de Futuros Profissionais</h2>
-        <p class="curso-card__desc">Foresight e Design de Futuros aplicados à carreira em um cenário onde a IA já muda o que significa construir trajetória profissional.</p>
-        <a href="#" class="curso-card__cta">
-          Saiba mais
-          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-        </a>
-      </article>
-
-      <article class="curso-card">
-        <span class="curso-card__tag">Artigo</span>
-        <h2 class="curso-card__title">Made in AI</h2>
-        <p class="curso-card__desc">O lado menos brilhante do boom da inteligência artificial: mais produtos, menos espaço para formação, aprendizado e entrada na área.</p>
-        <a href="#" class="curso-card__cta">
-          Saiba mais
-          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-        </a>
+      <article class="curso-card" data-tipo="online">
+        <div class="curso-card__top">
+          <span class="curso-card__tag curso-card__tag--online">Online</span>
+          <div class="curso-card__badge">
+            Encerrado
+          </div>
+        </div>
+        <div class="curso-card__body">
+          <h2 class="curso-card__title">Design de Produtos e Serviços Digitais</h2>
+          <p class="curso-card__date">00 de Agosto de 2026</p>
+          <p class="curso-card__desc">Lorem ipsum dolor sit amet consectetur. Sit lacinia eu tellus ut. At enim commodo adipiscing proin ut vitae volutpat. Faucibus a quam commodo id est porttitor. Ut odio consequat semper tellus id non tempor donec.</p>
+        </div>
+        <div class="curso-card__footer">
+          <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon, Will Diniz e Isa Soares</p>
+          <div class="curso-card__fotos">
+            <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
+            <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
+            <img src="assets/foto-isa.png" alt="Isa Soares" class="curso-card__foto">
+          </div>
+        </div>
       </article>
 
     </div><!-- /.cursos-grid -->
@@ -180,6 +176,28 @@
       navigator.clipboard.writeText('contato@estudiokata.com');
       el.textContent = 'Copiado!';
       setTimeout(() => { el.textContent = original; }, 1500);
+    });
+
+
+    /* ─── FILTROS DE CURSOS ──────────────────────────── */
+    const filtros = document.querySelectorAll('.cursos-filtro');
+    const cards   = document.querySelectorAll('.curso-card');
+
+    filtros.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtros.forEach(b => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const visible = filter === 'all' || card.dataset.tipo === filter;
+          card.style.display = visible ? '' : 'none';
+        });
+      });
     });
 
 

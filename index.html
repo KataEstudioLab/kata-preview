@@ -28,10 +28,10 @@
         <span class="menu-overlay__label" aria-hidden="true">MENU</span>
         <nav class="menu-overlay__nav" aria-label="Navegação principal">
           <a href="index.html" class="menu-overlay__link">Início</a>
-          <a href="cursos.html" class="menu-overlay__link">Cursos</a>
+          <a href="cursos.html" class="menu-overlay__link">Formações</a>
+          <a href="repertorio.html" class="menu-overlay__link">Nosso repertório</a>
+          <a href="sobre.html" class="menu-overlay__link">Sobre nós</a>
           <a href="manifesto.html" class="menu-overlay__link">Manifesto</a>
-          <a href="#repertorio-titulo" class="menu-overlay__link" id="menu-link-repertorio">Nosso repertório</a>
-          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__link">Contato</a>
         </nav>
       </div>
       <div class="menu-overlay__contact">
@@ -65,10 +65,10 @@
     <section class="hero">
       <h1 class="hero__headline">
         Somos um estúdio de design<br>
-        com <em>sotaque</em> de <strong>Brasil</strong>.
+        com <em>sotaque</em> de <strong class="brasil-highlight">Brasil</strong>.
       </h1>
-      <a href="#cursos" class="btn btn--primary">
-        Explore os cursos
+      <a href="cursos.html" class="btn btn--primary">
+        Explore as formações
         <img src="assets/arrow-cta.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
       </a>
     </section>
@@ -82,91 +82,61 @@
       </div>
     </section>
 
-    <!-- NOSSO REPERTÓRIO -->
+    <!-- PRÓXIMAS FORMAÇÕES -->
     <div class="repertorio-outer">
-      <section class="repertorio" aria-labelledby="repertorio-titulo">
+      <section class="repertorio" aria-label="Próximas formações">
         <div class="repertorio__header">
-          <h2 id="repertorio-titulo">Nosso repertório</h2>
+          <h2>Próximas formações</h2>
         </div>
         <div class="repertorio__line" aria-hidden="true"></div>
 
-        <div class="cards-wrapper">
-          <div class="cards-track">
+        <div class="cursos-grid">
 
-            <article class="card">
-              <div class="card__meta">
-                <span class="card__tag">Aula livre</span>
-                <div class="card__author-group">
-                  <span class="card__author"><span class="card__author-pre">por</span> Verônica Portugal</span>
-                  <img class="card__author-photo" src="assets/foto-veronica.png" alt="Verônica Portugal">
-                </div>
+          <article class="curso-card" data-tipo="presencial">
+            <div class="curso-card__top">
+              <span class="curso-card__tag curso-card__tag--presencial">Presencial</span>
+              <div class="curso-card__badge curso-card__badge--novidade">
+                <span class="curso-card__dot" aria-hidden="true"></span>
+                Novidade
               </div>
-              <div class="card__body">
-                <h3 class="card__title">Design de Futuros Profissionais</h3>
-                <p class="card__text">Neste bate papo, mergulhamos em Foresight e Design de Futuros para desenhar jornadas profissionais em um cenário onde a IA e transformações no trabalho já mudam o que significa construir uma carreira.</p>
+            </div>
+            <div class="curso-card__body">
+              <h3 class="curso-card__title">Business Design &amp; AI</h3>
+              <p class="curso-card__date">00 de Agosto de 2026 — São Paulo, SP</p>
+              <p class="curso-card__desc">Lorem ipsum dolor sit amet consectetur. Sit lacinia eu tellus ut. At enim commodo adipiscing proin ut vitae volutpat. Faucibus a quam commodo id est porttitor. Ut odio consequat semper tellus id non tempor donec.</p>
+            </div>
+            <div class="curso-card__footer">
+              <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon e Will Diniz</p>
+              <div class="curso-card__fotos">
+                <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
+                <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
               </div>
-              <a href="https://drive.google.com/file/d/11asaXGpQFi-5Krre-JOCBXPvWttSbBR9/view" target="_blank" rel="noopener" class="card__cta">
-                Saiba mais
-                <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-              </a>
-            </article>
+            </div>
+          </article>
 
-            <article class="card">
-              <div class="card__meta">
-                <span class="card__tag">Artigo</span>
-                <div class="card__author-group">
-                  <span class="card__author"><span class="card__author-pre">por</span> Isa Soares</span>
-                  <img class="card__author-photo" src="assets/foto-isa.png" alt="Isa Soares">
-                </div>
+          <article class="curso-card" data-tipo="online">
+            <div class="curso-card__top">
+              <span class="curso-card__tag curso-card__tag--online">Online</span>
+              <div class="curso-card__badge">
+                Encerrado
               </div>
-              <div class="card__body">
-                <h3 class="card__title">Made in AI</h3>
-                <p class="card__text">Este artigo investiga o lado menos brilhante do boom da inteligência artificial: mais produtos sendo lançados, mas menos espaço para formação, aprendizado e entrada na área de produto.</p>
+            </div>
+            <div class="curso-card__body">
+              <h3 class="curso-card__title">Design de Produtos e Serviços Digitais</h3>
+              <p class="curso-card__date">00 de Agosto de 2026</p>
+              <p class="curso-card__desc">Lorem ipsum dolor sit amet consectetur. Sit lacinia eu tellus ut. At enim commodo adipiscing proin ut vitae volutpat. Faucibus a quam commodo id est porttitor. Ut odio consequat semper tellus id non tempor donec.</p>
+            </div>
+            <div class="curso-card__footer">
+              <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon, Will Diniz e Isa Soares</p>
+              <div class="curso-card__fotos">
+                <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
+                <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
+                <img src="assets/foto-isa.png" alt="Isa Soares" class="curso-card__foto">
               </div>
-              <a href="https://medium.com/@estudiokata/tecnologia-n%C3%A3o-%C3%A9-feature-%C3%A9-ambiente-94dadd855d80" target="_blank" rel="noopener" class="card__cta">
-                Saiba mais
-                <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-              </a>
-            </article>
+            </div>
+          </article>
 
-            <article class="card">
-              <div class="card__meta">
-                <span class="card__tag">Artigo</span>
-                <div class="card__author-group">
-                  <span class="card__author"><span class="card__author-pre">por</span> Willian Diniz</span>
-                  <img class="card__author-photo" src="assets/foto-willian.png" alt="Willian Diniz">
-                </div>
-              </div>
-              <div class="card__body">
-                <h3 class="card__title">O que realmente estamos construindo?</h3>
-                <p class="card__text">Uma reflexão sobre o papel da decisão em tempos de automação. O texto questiona quando a busca por velocidade deixa de remover complexidade e começa a enfraquecer critério, contexto e aprendizado no design.</p>
-              </div>
-              <a href="https://medium.com/@estudiokata/tecnologia-n%C3%A3o-%C3%A9-feature-%C3%A9-ambiente-94dadd855d80" target="_blank" rel="noopener" class="card__cta">
-                Saiba mais
-                <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-              </a>
-            </article>
-
-            <article class="card">
-              <div class="card__meta">
-                <span class="card__tag">Artigo</span>
-                <div class="card__author-group">
-                  <span class="card__author"><span class="card__author-pre">por</span> Gustavo Aragon</span>
-                  <img class="card__author-photo" src="assets/foto-gustavo.jpg" alt="Gustavo Aragon">
-                </div>
-              </div>
-              <div class="card__body">
-                <h3 class="card__title">Tecnologia não é feature. É ambiente.</h3>
-                <p class="card__text">Uma reflexão sobre como a tecnologia deixou de ser apenas ferramenta para se tornar o próprio contexto onde decisões, relações e comportamentos acontecem. O texto discute atenção, automação e o impacto invisível das interfaces na forma como vivemos e percebemos o mundo.</p>
-              </div>
-              <a href="https://medium.com/@estudiokata/tecnologia-n%C3%A3o-%C3%A9-feature-%C3%A9-ambiente-94dadd855d80" target="_blank" rel="noopener" class="card__cta">
-                Saiba mais
-                <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
-              </a>
-            </article>
-
-          </div>
-        </div><!-- /.cards-wrapper -->
+        </div><!-- /.cursos-grid -->
       </section>
     </div><!-- /.repertorio-outer -->
 
@@ -210,9 +180,6 @@
       if (e.key === 'Escape' && menuOverlay.classList.contains('is-open')) closeMenu();
     });
 
-    /* Fecha menu ao clicar em âncora interna */
-    document.getElementById('menu-link-repertorio').addEventListener('click', closeMenu);
-
     /* Copia e-mail para área de transferência */
     document.querySelector('.menu-overlay__email').addEventListener('click', (e) => {
       e.preventDefault();
@@ -224,7 +191,33 @@
     });
 
 
-    /* ─── 1. VÍDEO: expande quando o CTA passa atrás do nav */
+    /* ─── 1. BRASIL: cursor vira bolinha lime ao passar ──── */
+    /* (lógica no bloco do cursor, mais abaixo) */
+
+
+    /* ─── 2. CTA MAGNÉTICO ───────────────────────────────── */
+    const ctaBtn    = document.querySelector('.btn--primary');
+    const MAG_R     = 160;   // raio de atração em px
+    const MAG_FORCE = 0.38;  // intensidade (0–1)
+
+    window.addEventListener('mousemove', (e) => {
+      const rect = ctaBtn.getBoundingClientRect();
+      const cx   = rect.left + rect.width  / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dx   = e.clientX - cx;
+      const dy   = e.clientY - cy;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist < MAG_R) {
+        const pull = (1 - dist / MAG_R) * MAG_FORCE;
+        ctaBtn.style.transform = `translate(${dx * pull}px, ${dy * pull}px)`;
+      } else {
+        ctaBtn.style.transform = '';
+      }
+    }, { passive: true });
+
+
+    /* ─── 3. VÍDEO: expande quando o CTA passa atrás do nav */
     const videoSection  = document.querySelector('.video-section');
     const heroVideo     = document.querySelector('.video-placeholder video');
     const heroCta       = document.querySelector('.btn--primary');
@@ -244,30 +237,7 @@
     ctaObserver.observe(heroCta);
 
 
-    /* ─── 2. SCROLL HORIZONTAL DO REPERTÓRIO ─────────── */
-    const repertorioOuter   = document.querySelector('.repertorio-outer');
-    const repertorioSection = document.querySelector('.repertorio');
-    const cardsTrack        = document.querySelector('.cards-track');
-    const cardsWrapper      = document.querySelector('.cards-wrapper');
-
-    function initRepertorioScroll() {
-      const maxTranslate = cardsTrack.scrollWidth - cardsWrapper.offsetWidth;
-      repertorioOuter.style.minHeight =
-        (repertorioSection.offsetHeight + maxTranslate) + 'px';
-
-      window.addEventListener('scroll', () => {
-        const outerRect  = repertorioOuter.getBoundingClientRect();
-        const scrollable = repertorioOuter.offsetHeight - repertorioSection.offsetHeight;
-        const scrolled   = -outerRect.top;
-        const progress   = Math.max(0, Math.min(1, scrolled / scrollable));
-        cardsTrack.style.transform = `translateX(${-progress * maxTranslate}px)`;
-      }, { passive: true });
-    }
-
-    initRepertorioScroll();
-
-
-    /* ─── 3. KATA: efeito magnético no footer ─────────── */
+    /* ─── 2. KATA: efeito magnético no footer ─────────── */
     const footer  = document.querySelector('.footer');
     const kataImg = document.querySelector('.footer__display img');
 
@@ -276,12 +246,53 @@
       const dx = (e.clientX - (rect.left + rect.width  / 2)) / rect.width;
       const dy = (e.clientY - (rect.top  + rect.height / 2)) / rect.height;
       kataImg.style.transform =
-        `translate(${dx * 28}px, ${dy * 14}px) rotate(${dx * 1.5}deg)`;
+        `translate(${dx * 52}px, ${dy * 28}px) rotate(${dx * 4}deg) scale(${1 + Math.abs(dx) * 0.06})`;
     });
 
     footer.addEventListener('mouseleave', () => {
       kataImg.style.transform = '';
     });
+
+
+    /* ─── CURSOR PERSONALIZADO ──────────────────────── */
+    if (window.matchMedia('(pointer: fine)').matches) {
+      const dot = document.createElement('div');
+      dot.className = 'cursor-dot';
+      document.body.appendChild(dot);
+
+      let mx = -200, my = -200;
+      let cx = -200, cy = -200;
+
+      window.addEventListener('mousemove', (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => dot.classList.add('is-hidden'));
+      document.addEventListener('mouseenter', () => dot.classList.remove('is-hidden'));
+
+      /* Hover: elementos clicáveis → anel */
+      document.querySelectorAll('a, button, [role="tab"], .curso-card').forEach(el => {
+        el.addEventListener('mouseenter', () => dot.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => dot.classList.remove('is-hover'));
+      });
+
+      /* Hover: "Brasil" → bolinha lime com grafismo */
+      const brasilEl = document.querySelector('.brasil-highlight');
+      brasilEl.addEventListener('mouseenter', () => {
+        dot.classList.remove('is-hover');
+        dot.classList.add('is-brasil');
+      });
+      brasilEl.addEventListener('mouseleave', () => dot.classList.remove('is-brasil'));
+
+      /* Lerp suave com rAF */
+      (function animate() {
+        cx += (mx - cx) * 0.14;
+        cy += (my - cy) * 0.14;
+        dot.style.transform = `translate(${cx}px, ${cy}px)`;
+        requestAnimationFrame(animate);
+      })();
+    }
   </script>
 </body>
 </html>

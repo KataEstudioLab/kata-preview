@@ -585,7 +585,7 @@ body {
 
 .manifesto-content {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 1fr 696px;
   padding: 128px 40px 160px 40px;
   position: relative;
   z-index: 1;

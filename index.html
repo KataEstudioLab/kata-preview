@@ -9,6 +9,15 @@
 </head>
 <body>
 
+  <!-- SPLASH SCREEN -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash__grid"></div>
+    <div class="splash__content">
+      <img src="assets/graphism.svg" alt="" class="splash__graphism">
+      <span class="splash__text">Feito com carinho, no Brasil.</span>
+    </div>
+  </div>
+
   <!-- GRID GRAFISMO DE FUNDO -->
   <div class="grid-bg" aria-hidden="true"></div>
 
@@ -155,6 +164,12 @@
   </footer>
 
   <script>
+    /* ─── SPLASH ────────────────────────────────────── */
+    const splash = document.getElementById('splash');
+    splash.addEventListener('animationend', (e) => {
+      if (e.animationName === 'splash-exit') splash.remove();
+    });
+
     /* ─── MENU OVERLAY ───────────────────────────────── */
     const menuOverlay  = document.getElementById('menu-overlay');
     const menuBackdrop = document.getElementById('menu-backdrop');

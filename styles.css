@@ -148,10 +148,7 @@ body {
   line-height: 32px;
   letter-spacing: 0.4px;
   padding: 16px 24px;
-  transition:
-    background-color 0.18s,
-    transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform;
+  transition: background-color 0.18s;
 }
 
 .btn--primary:hover {

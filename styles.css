@@ -1337,6 +1337,29 @@ body {
 
 /* ─── CURSOR PERSONALIZADO ────────────────────────── */
 
+/* ─── PAGE TRANSITION ───────────────────────────── */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 999997;
+  background: var(--lime);
+  pointer-events: none;
+  will-change: transform;
+  animation: pt-reveal 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes pt-reveal {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes pt-cover {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+
 /* ─── SPLASH SCREEN ──────────────────────────────── */
 
 .splash {

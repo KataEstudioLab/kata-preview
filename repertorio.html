@@ -9,6 +9,9 @@
 </head>
 <body>
 
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+
   <!-- BACKDROP (blur abaixo do menu) -->
   <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
 
@@ -154,6 +157,23 @@
   </footer>
 
   <script>
+    /* ─── PAGE TRANSITION ───────────────────────────── */
+    const pt = document.getElementById('page-transition');
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel') && !href.startsWith('#')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          pt.style.pointerEvents = 'all';
+          pt.style.animation = 'none';
+          requestAnimationFrame(() => {
+            pt.style.animation = 'pt-cover 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards';
+            pt.addEventListener('animationend', () => { window.location.href = href; }, { once: true });
+          });
+        });
+      }
+    });
+
     /* ─── MENU OVERLAY ───────────────────────────────── */
     const menuOverlay  = document.getElementById('menu-overlay');
     const menuBackdrop = document.getElementById('menu-backdrop');

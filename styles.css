@@ -1335,11 +1335,12 @@ body {
 }
 
 
-/* ─── CURSOR PERSONALIZADO ────────────────────────── */
+/* ─── CURSOR PERSONALIZADO (easter egg "Brasil") ─── */
 
 @media (pointer: fine) {
 
-  * { cursor: none !important; }
+  /* Esconde cursor nativo apenas sobre a palavra Brasil */
+  .brasil-highlight { cursor: none; }
 
   .cursor-dot {
     position: fixed;
@@ -1350,7 +1351,7 @@ body {
     will-change: transform;
   }
 
-  /* Visual do cursor via ::before — desacopla posição (transform) de forma (transição) */
+  /* Invisível por padrão */
   .cursor-dot::before {
     content: '';
     position: absolute;
@@ -1358,40 +1359,24 @@ body {
     left: 0;
     width: 10px;
     height: 10px;
-    background: #1E1A17;
     border-radius: 50%;
-    border: 1.5px solid transparent;
     transform: translate(-50%, -50%);
+    opacity: 0;
     transition:
       width  0.4s cubic-bezier(0.23, 1, 0.32, 1),
       height 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-      background 0.3s,
-      border-color 0.3s,
       opacity 0.25s;
-  }
-
-  /* Hover em elementos interativos: cresce e vira anel */
-  .cursor-dot.is-hover::before {
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border-color: #1E1A17;
   }
 
   /* Hover em "Brasil" — bolinha lime com o grafismo */
   .cursor-dot.is-brasil::before {
     width: 52px;
     height: 52px;
+    opacity: 1;
     background-color: #D6E37A;
     background-image: url('assets/graphism.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 30px 19px; /* ratio exato do viewBox 37:24 */
-    border-color: transparent;
-  }
-
-  /* Sai da janela */
-  .cursor-dot.is-hidden::before {
-    opacity: 0;
+    background-size: 30px 19px;
   }
 }

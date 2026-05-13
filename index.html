@@ -232,7 +232,7 @@
     });
 
 
-    /* ─── CURSOR PERSONALIZADO ──────────────────────── */
+    /* ─── EASTER EGG: cursor "Brasil" ──────────────── */
     if (window.matchMedia('(pointer: fine)').matches) {
       const dot = document.createElement('div');
       dot.className = 'cursor-dot';
@@ -242,28 +242,12 @@
       let cx = -200, cy = -200;
 
       window.addEventListener('mousemove', (e) => {
-        mx = e.clientX;
-        my = e.clientY;
+        mx = e.clientX; my = e.clientY;
       }, { passive: true });
 
-      document.addEventListener('mouseleave', () => dot.classList.add('is-hidden'));
-      document.addEventListener('mouseenter', () => dot.classList.remove('is-hidden'));
+      document.querySelector('.brasil-highlight').addEventListener('mouseenter', () => dot.classList.add('is-brasil'));
+      document.querySelector('.brasil-highlight').addEventListener('mouseleave', () => dot.classList.remove('is-brasil'));
 
-      /* Hover: elementos clicáveis → anel */
-      document.querySelectorAll('a, button, [role="tab"], .curso-card').forEach(el => {
-        el.addEventListener('mouseenter', () => dot.classList.add('is-hover'));
-        el.addEventListener('mouseleave', () => dot.classList.remove('is-hover'));
-      });
-
-      /* Hover: "Brasil" → bolinha lime com grafismo */
-      const brasilEl = document.querySelector('.brasil-highlight');
-      brasilEl.addEventListener('mouseenter', () => {
-        dot.classList.remove('is-hover');
-        dot.classList.add('is-brasil');
-      });
-      brasilEl.addEventListener('mouseleave', () => dot.classList.remove('is-brasil'));
-
-      /* Lerp suave com rAF */
       (function animate() {
         cx += (mx - cx) * 0.14;
         cy += (my - cy) * 0.14;

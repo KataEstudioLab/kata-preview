@@ -177,7 +177,7 @@ body {
 .video-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   transition: border-radius 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #000;

@@ -1362,6 +1362,8 @@ body {
 
 /* ─── SPLASH SCREEN ──────────────────────────────── */
 
+.splash-done .splash { display: none !important; }
+
 .splash {
   position: fixed;
   inset: 0;

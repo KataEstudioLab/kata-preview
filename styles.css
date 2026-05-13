@@ -817,4 +817,105 @@ body {
     margin-bottom: 40px;
   }
 
+  /* MANIFESTO */
+  .manifesto-content {
+    grid-template-columns: 1fr;
+    padding: 48px 20px 80px;
+    gap: 24px;
+  }
+  .manifesto-content__label {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .manifesto-content__body p {
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 24px;
+  }
+  .footer--inner {
+    padding-top: 80px;
+  }
+
+  /* CURSOS */
+  .cursos-hero {
+    padding: 40px var(--px) 32px;
+  }
+  .cursos-hero__eyebrow {
+    margin-bottom: 16px;
+  }
+  .cursos-hero__headline {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 32px;
+  }
+  .cursos-grid {
+    padding: 0 0 80px;
+    grid-template-columns: 1fr;
+  }
+  .curso-card {
+    padding: 32px 20px;
+    gap: 16px;
+  }
+  .curso-card__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .curso-card__desc {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .curso-card__cta {
+    font-size: 16px;
+  }
+
+  /* MENU OVERLAY */
+  .menu-overlay__header {
+    padding: 16px 20px;
+  }
+  .menu-overlay__logo img {
+    width: 32px;
+    height: 30px;
+  }
+  .menu-overlay__close {
+    font-size: 15px;
+  }
+  .menu-overlay__body {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 20px 56px;
+    gap: 48px;
+  }
+  .menu-overlay__label {
+    display: none;
+  }
+  .menu-overlay__nav-col {
+    gap: 0;
+  }
+  .menu-overlay__nav {
+    gap: 28px;
+  }
+  .menu-overlay__link {
+    font-size: 22px;
+    letter-spacing: 0.44px;
+  }
+  .menu-overlay__contact {
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .menu-overlay__email {
+    font-size: 14px;
+  }
+  .menu-overlay__social {
+    gap: 16px;
+  }
+  .menu-overlay__social-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .menu-overlay__social-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
 }

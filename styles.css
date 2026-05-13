@@ -716,3 +716,105 @@ body {
   height: 24px;
   display: block;
 }
+
+
+/* ─── MOBILE ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  :root {
+    --px: 20px;
+  }
+
+  /* NAV */
+  .nav {
+    padding: 16px 20px;
+  }
+  .nav__logo img {
+    width: 32px;
+    height: 30px;
+  }
+  .nav__menu {
+    font-size: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px var(--px) 32px;
+  }
+  .hero__headline {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 24px;
+  }
+  .btn--primary {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 20px;
+  }
+
+  /* VÍDEO */
+  .video-section {
+    padding: 0 4% 40px;
+  }
+
+  /* REPERTÓRIO */
+  .repertorio {
+    padding: 40px 20px 40px;
+  }
+  .repertorio__header h2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .repertorio__line {
+    margin-bottom: 32px;
+  }
+  .card {
+    flex: 0 0 76vw;
+    height: 420px;
+    padding: 28px 24px;
+    overflow: hidden;
+  }
+  .card__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .card__author-photo {
+    width: 32px;
+    height: 32px;
+  }
+  .card__author {
+    font-size: 13px;
+  }
+  .card__tag {
+    font-size: 11px;
+    line-height: 28px;
+    padding: 2px 14px;
+  }
+  .card__title {
+    font-size: 17px;
+    line-height: 26px;
+  }
+  .card__text {
+    font-size: 14px;
+    line-height: 22px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card__cta {
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding-top: 80px;
+  }
+  .footer__signature {
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+
+}

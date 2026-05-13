@@ -98,7 +98,7 @@ body {
 /* ─── HERO ────────────────────────────────────────── */
 
 .hero {
-  padding: 80px var(--px) 64px;
+  padding: 80px var(--px) 80px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -144,10 +144,10 @@ body {
   background-color: var(--orange);
   color: #FEFEFE;
   border: 1px solid rgba(191, 191, 191, 0.32);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 32px;
   letter-spacing: 0.4px;
-  padding: 16px 24px;
+  padding: 16px 16px;
   transition: background-color 0.18s;
 }
 

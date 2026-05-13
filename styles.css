@@ -1343,7 +1343,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 999997;
-  background: var(--lime);
+  background: #1F3A3D;
   pointer-events: none;
   will-change: transform;
   animation: pt-reveal 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;

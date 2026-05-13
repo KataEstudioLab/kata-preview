@@ -1356,8 +1356,8 @@ body {
   position: absolute;
   inset: 0;
   background-image: url('assets/grid-bg.svg');
-  background-repeat: repeat;
-  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   opacity: 0.5;
 }
 

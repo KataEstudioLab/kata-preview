@@ -6,7 +6,6 @@
   <title>Estúdio Kata</title>
   <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
   <link rel="stylesheet" href="styles.css">
-  <script>if (sessionStorage.getItem('splashShown')) document.documentElement.classList.add('splash-done');</script>
 </head>
 <body>
 
@@ -14,7 +13,7 @@
   <div class="page-transition" id="page-transition" aria-hidden="true"></div>
 
   <!-- SPLASH SCREEN -->
-  <div class="splash" id="splash" aria-hidden="true">
+  <div class="splash" id="splash" aria-hidden="true" style="display:none">
     <div class="splash__content">
       <img src="assets/graphism.svg" alt="" class="splash__graphism">
       <span class="splash__text">Feito com carinho, no Brasil.</span>
@@ -186,10 +185,9 @@
 
     /* ─── SPLASH ────────────────────────────────────── */
     const splash = document.getElementById('splash');
-    if (sessionStorage.getItem('splashShown')) {
-      splash.remove();
-    } else {
+    if (!sessionStorage.getItem('splashShown')) {
       sessionStorage.setItem('splashShown', '1');
+      splash.style.display = 'flex';
       splash.addEventListener('animationend', (e) => {
         if (e.animationName === 'splash-exit') splash.remove();
       });

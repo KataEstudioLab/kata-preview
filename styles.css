@@ -1366,7 +1366,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 999999;
-  background: var(--lime);
+  background: #D95600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1390,6 +1390,7 @@ body {
   width: 37px;
   height: 24px;
   flex-shrink: 0;
+  filter: brightness(0) invert(1);
 }
 
 .splash__text {
@@ -1398,7 +1399,7 @@ body {
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.4px;
-  color: #2e7d75;
+  color: #FEFEFE;
   white-space: nowrap;
 }
 

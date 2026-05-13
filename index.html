@@ -232,7 +232,7 @@
     });
 
 
-    /* ─── EASTER EGG: cursor "Brasil" ──────────────── */
+    /* ─── CURSOR PERSONALIZADO ──────────────────────── */
     if (window.matchMedia('(pointer: fine)').matches) {
       const dot = document.createElement('div');
       dot.className = 'cursor-dot';
@@ -245,7 +245,19 @@
         mx = e.clientX; my = e.clientY;
       }, { passive: true });
 
-      document.querySelector('.brasil-highlight').addEventListener('mouseenter', () => dot.classList.add('is-brasil'));
+      document.addEventListener('mouseleave', () => dot.classList.add('is-hidden'));
+      document.addEventListener('mouseenter', () => dot.classList.remove('is-hidden'));
+
+      document.querySelectorAll('a, button, [role="tab"], .curso-card').forEach(el => {
+        el.addEventListener('mouseenter', () => dot.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => dot.classList.remove('is-hover'));
+      });
+
+      /* Easter egg: "Brasil" */
+      document.querySelector('.brasil-highlight').addEventListener('mouseenter', () => {
+        dot.classList.remove('is-hover');
+        dot.classList.add('is-brasil');
+      });
       document.querySelector('.brasil-highlight').addEventListener('mouseleave', () => dot.classList.remove('is-brasil'));
 
       (function animate() {

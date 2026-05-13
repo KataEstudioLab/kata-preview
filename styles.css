@@ -1335,12 +1335,11 @@ body {
 }
 
 
-/* ─── CURSOR PERSONALIZADO (easter egg "Brasil") ─── */
+/* ─── CURSOR PERSONALIZADO ────────────────────────── */
 
 @media (pointer: fine) {
 
-  /* Esconde cursor nativo apenas sobre a palavra Brasil */
-  .brasil-highlight { cursor: none; }
+  * { cursor: none !important; }
 
   .cursor-dot {
     position: fixed;
@@ -1351,7 +1350,6 @@ body {
     will-change: transform;
   }
 
-  /* Invisível por padrão */
   .cursor-dot::before {
     content: '';
     position: absolute;
@@ -1359,24 +1357,38 @@ body {
     left: 0;
     width: 10px;
     height: 10px;
+    background: #1E1A17;
     border-radius: 50%;
+    border: 1.5px solid transparent;
     transform: translate(-50%, -50%);
-    opacity: 0;
     transition:
       width  0.4s cubic-bezier(0.23, 1, 0.32, 1),
       height 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+      background 0.3s,
+      border-color 0.3s,
       opacity 0.25s;
   }
 
-  /* Hover em "Brasil" — bolinha lime com o grafismo */
+  .cursor-dot.is-hover::before {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-color: #1E1A17;
+  }
+
+  /* Easter egg "Brasil" */
   .cursor-dot.is-brasil::before {
     width: 52px;
     height: 52px;
-    opacity: 1;
     background-color: #D6E37A;
     background-image: url('assets/graphism.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px 19px;
+    border-color: transparent;
+  }
+
+  .cursor-dot.is-hidden::before {
+    opacity: 0;
   }
 }

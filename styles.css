@@ -770,7 +770,7 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #2e7d75;
+  background: #B0FFA4;
   flex-shrink: 0;
   animation: dot-pulse 2.4s ease-in-out infinite;
 }

@@ -1,0 +1,6 @@
+# Fonts de trial
+*.otf
+*.ttf
+
+# Sistema
+.DS_Store

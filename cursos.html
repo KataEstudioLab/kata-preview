@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos — Estúdio Kata</title>
+  <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BACKDROP (blur abaixo do menu) -->
+  <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <div class="menu-overlay__header">
+      <a href="index.html" class="menu-overlay__logo" aria-label="Estúdio Kata — ir para home">
+        <img src="assets/logo.svg" alt="Estúdio Kata">
+      </a>
+      <button class="menu-overlay__close" id="menu-close" aria-label="Fechar menu">Fechar</button>
+    </div>
+    <div class="menu-overlay__body">
+      <div class="menu-overlay__nav-col">
+        <span class="menu-overlay__label" aria-hidden="true">MENU</span>
+        <nav class="menu-overlay__nav" aria-label="Navegação principal">
+          <a href="index.html" class="menu-overlay__link">Início</a>
+          <a href="cursos.html" class="menu-overlay__link">Cursos</a>
+          <a href="manifesto.html" class="menu-overlay__link">Manifesto</a>
+          <a href="index.html#repertorio-titulo" class="menu-overlay__link">Nosso repertório</a>
+          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__link">Contato</a>
+        </nav>
+      </div>
+      <div class="menu-overlay__contact">
+        <a href="mailto:contato@estudiokata.com" class="menu-overlay__email">contato@estudiokata.com</a>
+        <div class="menu-overlay__social">
+          <a href="https://linkedin.com/company/estudiokata" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="LinkedIn">
+            <img src="assets/icon-linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/estudio.kata/" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="Instagram">
+            <img src="assets/icon-instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="WhatsApp">
+            <img src="assets/icon-whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" aria-label="Estúdio Kata — ir para home">
+      <img src="assets/logo.svg" alt="Estúdio Kata">
+    </a>
+    <button class="nav__menu" id="menu-open" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
+  </nav>
+
+  <main>
+
+    <!-- HERO DE CURSOS -->
+    <section class="cursos-hero">
+      <p class="cursos-hero__eyebrow">Cursos</p>
+      <h1 class="cursos-hero__headline">
+        Aprenda design com quem<br>
+        <em>vive</em> o design.
+      </h1>
+    </section>
+
+    <!-- GRADE DE CURSOS -->
+    <div class="cursos-grid" id="cursos">
+
+      <article class="curso-card">
+        <span class="curso-card__tag">Formação</span>
+        <h2 class="curso-card__title">Design de Produto do Zero</h2>
+        <p class="curso-card__desc">Um percurso completo para quem quer entrar na área de produto — de pesquisa a entrega, com projetos reais e mentoria ao longo do caminho.</p>
+        <a href="#" class="curso-card__cta">
+          Saiba mais
+          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
+        </a>
+      </article>
+
+      <article class="curso-card">
+        <span class="curso-card__tag">Curso</span>
+        <h2 class="curso-card__title">Sistemas de Design na Prática</h2>
+        <p class="curso-card__desc">Como construir, escalar e manter um design system que times reais consigam usar — sem virar burocracia, sem perder consistência.</p>
+        <a href="#" class="curso-card__cta">
+          Saiba mais
+          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
+        </a>
+      </article>
+
+      <article class="curso-card">
+        <span class="curso-card__tag">Workshop</span>
+        <h2 class="curso-card__title">Pesquisa que Vira Decisão</h2>
+        <p class="curso-card__desc">Métodos de pesquisa qualitativa para designers que precisam convencer stakeholders — não apenas documentar, mas transformar insight em ação.</p>
+        <a href="#" class="curso-card__cta">
+          Saiba mais
+          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
+        </a>
+      </article>
+
+      <article class="curso-card">
+        <span class="curso-card__tag">Curso</span>
+        <h2 class="curso-card__title">Portfólio que Abre Portas</h2>
+        <p class="curso-card__desc">Como apresentar seu trabalho com clareza e intenção — para recrutadores, para clientes e para o mercado que você quer alcançar.</p>
+        <a href="#" class="curso-card__cta">
+          Saiba mais
+          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
+        </a>
+      </article>
+
+      <article class="curso-card">
+        <span class="curso-card__tag">Aula livre</span>
+        <h2 class="curso-card__title">Design de Futuros Profissionais</h2>
+        <p class="curso-card__desc">Foresight e Design de Futuros aplicados à carreira em um cenário onde a IA já muda o que significa construir trajetória profissional.</p>
+        <a href="#" class="curso-card__cta">
+          Saiba mais
+          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
+        </a>
+      </article>
+
+      <article class="curso-card">
+        <span class="curso-card__tag">Artigo</span>
+        <h2 class="curso-card__title">Made in AI</h2>
+        <p class="curso-card__desc">O lado menos brilhante do boom da inteligência artificial: mais produtos, menos espaço para formação, aprendizado e entrada na área.</p>
+        <a href="#" class="curso-card__cta">
+          Saiba mais
+          <img src="assets/arrow-card.svg" alt="" aria-hidden="true">
+        </a>
+      </article>
+
+    </div><!-- /.cursos-grid -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer footer--inner">
+    <div class="footer__signature">
+      <img src="assets/graphism.svg" alt="">
+      Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
+    </div>
+    <div class="footer__display" aria-hidden="true">
+      <img src="assets/kata-wordmark.svg" alt="kata">
+    </div>
+  </footer>
+
+  <script>
+    /* ─── MENU OVERLAY ───────────────────────────────── */
+    const menuOverlay  = document.getElementById('menu-overlay');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuOpen     = document.getElementById('menu-open');
+    const menuClose    = document.getElementById('menu-close');
+
+    function openMenu() {
+      menuOverlay.classList.add('is-open');
+      menuBackdrop.classList.add('is-open');
+      menuOpen.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      menuOverlay.classList.remove('is-open');
+      menuBackdrop.classList.remove('is-open');
+      menuOpen.setAttribute('aria-expanded', 'false');
+    }
+
+    menuOpen.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('is-open')) closeMenu();
+    });
+
+    /* Copia e-mail para área de transferência */
+    document.querySelector('.menu-overlay__email').addEventListener('click', (e) => {
+      e.preventDefault();
+      const el = e.currentTarget;
+      const original = el.textContent;
+      navigator.clipboard.writeText('contato@estudiokata.com');
+      el.textContent = 'Copiado!';
+      setTimeout(() => { el.textContent = original; }, 1500);
+    });
+
+
+    /* ─── KATA: efeito magnético no footer ─────────── */
+    const footer  = document.querySelector('.footer');
+    const kataImg = document.querySelector('.footer__display img');
+
+    footer.addEventListener('mousemove', (e) => {
+      const rect = footer.getBoundingClientRect();
+      const dx = (e.clientX - (rect.left + rect.width  / 2)) / rect.width;
+      const dy = (e.clientY - (rect.top  + rect.height / 2)) / rect.height;
+      kataImg.style.transform =
+        `translate(${dx * 28}px, ${dy * 14}px) rotate(${dx * 1.5}deg)`;
+    });
+
+    footer.addEventListener('mouseleave', () => {
+      kataImg.style.transform = '';
+    });
+  </script>
+</body>
+</html>

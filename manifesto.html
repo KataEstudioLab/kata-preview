@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifesto — Estúdio Kata</title>
+  <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BACKDROP (blur abaixo do menu) -->
+  <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <div class="menu-overlay__header">
+      <a href="index.html" class="menu-overlay__logo" aria-label="Estúdio Kata — ir para home">
+        <img src="assets/logo.svg" alt="Estúdio Kata">
+      </a>
+      <button class="menu-overlay__close" id="menu-close" aria-label="Fechar menu">Fechar</button>
+    </div>
+    <div class="menu-overlay__body">
+      <div class="menu-overlay__nav-col">
+        <span class="menu-overlay__label" aria-hidden="true">MENU</span>
+        <nav class="menu-overlay__nav" aria-label="Navegação principal">
+          <a href="index.html" class="menu-overlay__link">Início</a>
+          <a href="cursos.html" class="menu-overlay__link">Cursos</a>
+          <a href="manifesto.html" class="menu-overlay__link">Manifesto</a>
+          <a href="index.html#repertorio-titulo" class="menu-overlay__link">Nosso repertório</a>
+          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__link">Contato</a>
+        </nav>
+      </div>
+      <div class="menu-overlay__contact">
+        <a href="mailto:contato@estudiokata.com" class="menu-overlay__email">contato@estudiokata.com</a>
+        <div class="menu-overlay__social">
+          <a href="https://linkedin.com/company/estudiokata" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="LinkedIn">
+            <img src="assets/icon-linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/estudio.kata/" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="Instagram">
+            <img src="assets/icon-instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="WhatsApp">
+            <img src="assets/icon-whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" aria-label="Estúdio Kata — ir para home">
+      <img src="assets/logo.svg" alt="Estúdio Kata">
+    </a>
+    <button class="nav__menu" id="menu-open" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
+  </nav>
+
+  <main>
+
+    <!-- MANIFESTO: DUAS COLUNAS -->
+    <section class="manifesto-content">
+
+      <div class="manifesto-content__label">Nosso manifesto</div>
+
+      <div class="manifesto-content__body">
+        <p>Por décadas aprendemos a projetar olhando para fora, para os manuais de quem nunca pisou aqui.</p>
+        <p>Os resultados são entregas técnicas, muitas vezes eficientes, mas sem cheiro ou calor.</p>
+        <p>Nós existimos pra reabrir essa conversa. Acreditamos no design como ato cultural: que carrega gesto, ancestralidade, ritmo, gambiarra como inteligência e o sotaque de Brasil como essência vital.</p>
+        <p>Não estamos aqui para tratar discurso bonito, nem o trabalho como milagre silencioso.</p>
+        <p>Vivemos no mundo onde o prazo aperta. O orçamento limita. O time discorda. E alguém pergunta porque estamos fazendo isso.</p>
+        <p>Criar deveria ser só sobre o essencial. Com seus limites, improvisos, tendências, urgências e contradições.</p>
+        <p>Esse laboratório é para quem quer fazer melhor, não parecer melhor.</p>
+        <p>A gente acredita em design que sai do slide. Design que vira conversa difícil. Que vira coisa feita.</p>
+        <p>Falamos português do Brasil. Trabalhamos com contexto brasileiro. Sem glamour importado, sem fórmula pronta.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer footer--inner">
+    <div class="footer__signature">
+      <img src="assets/graphism.svg" alt="">
+      Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
+    </div>
+    <div class="footer__display" aria-hidden="true">
+      <img src="assets/kata-wordmark.svg" alt="kata">
+    </div>
+  </footer>
+
+  <script>
+    /* ─── MENU OVERLAY ───────────────────────────────── */
+    const menuOverlay  = document.getElementById('menu-overlay');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuOpen     = document.getElementById('menu-open');
+    const menuClose    = document.getElementById('menu-close');
+
+    function openMenu() {
+      menuOverlay.classList.add('is-open');
+      menuBackdrop.classList.add('is-open');
+      menuOpen.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      menuOverlay.classList.remove('is-open');
+      menuBackdrop.classList.remove('is-open');
+      menuOpen.setAttribute('aria-expanded', 'false');
+    }
+
+    menuOpen.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('is-open')) closeMenu();
+    });
+
+    /* Copia e-mail para área de transferência */
+    document.querySelector('.menu-overlay__email').addEventListener('click', (e) => {
+      e.preventDefault();
+      const el = e.currentTarget;
+      const original = el.textContent;
+      navigator.clipboard.writeText('contato@estudiokata.com');
+      el.textContent = 'Copiado!';
+      setTimeout(() => { el.textContent = original; }, 1500);
+    });
+
+
+    /* ─── KATA: efeito magnético no footer ─────────── */
+    const footer  = document.querySelector('.footer');
+    const kataImg = document.querySelector('.footer__display img');
+
+    footer.addEventListener('mousemove', (e) => {
+      const rect = footer.getBoundingClientRect();
+      const dx = (e.clientX - (rect.left + rect.width  / 2)) / rect.width;
+      const dy = (e.clientY - (rect.top  + rect.height / 2)) / rect.height;
+      kataImg.style.transform =
+        `translate(${dx * 28}px, ${dy * 14}px) rotate(${dx * 1.5}deg)`;
+    });
+
+    footer.addEventListener('mouseleave', () => {
+      kataImg.style.transform = '';
+    });
+  </script>
+</body>
+</html>

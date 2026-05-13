@@ -1337,6 +1337,67 @@ body {
 
 /* ─── CURSOR PERSONALIZADO ────────────────────────── */
 
+/* ─── SPLASH SCREEN ──────────────────────────────── */
+
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: var(--lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* Painel aparece instantâneo, depois sai pela direita */
+  animation: splash-exit 1.4s 5.2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.splash__grid {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/grid-bg.svg');
+  background-repeat: repeat;
+  background-size: auto 100%;
+  opacity: 0.5;
+}
+
+.splash__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Conteúdo entra da esquerda */
+  transform: translateX(-48px);
+  opacity: 0;
+  animation: splash-content-in 1s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.splash__graphism {
+  width: 37px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.splash__text {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.4px;
+  color: #2e7d75;
+  white-space: nowrap;
+}
+
+@keyframes splash-exit {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes splash-content-in {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+
 @media (pointer: fine) {
 
   * { cursor: none !important; }

@@ -1731,7 +1731,7 @@ body {
 /* ─── PAGE: REPERTÓRIO ───────────────────────────── */
 
 .rep-hero {
-  padding: 120px var(--px) 32px;
+  padding: 80px 100px 32px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -1762,7 +1762,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   gap: 56px;
-  padding: 0 var(--px) 80px;
+  padding: 0 100px 60px;
   position: relative;
   z-index: 1;
 }
@@ -1813,23 +1813,9 @@ body {
 
 .rep-section {
   position: sticky;
-  top: 94px;           /* stick below the nav (nav height = 94px) */
+  top: 0;
   overflow: hidden;
-  padding: 32px 40px 120px;   /* top: breathing room for scaleY hover */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 40px,
-    black calc(100% - 40px),
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 40px,
-    black calc(100% - 40px),
-    transparent 100%
-  );
+  padding: 60px 100px;  /* breathing room para o hover crescer sem clipping */
 }
 
 .rep-wrapper {
@@ -1838,37 +1824,46 @@ body {
 
 .rep-track {
   display: flex;
-  gap: 32px;
+  gap: 24px;
+  align-items: center;
+  height: 594px;
   will-change: transform;
 }
 
 /* Cards */
+.rep-card-link {
+  flex: 0 0 485px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .rep-card {
-  flex: 0 0 580px;
-  height: 500px;
-  background: #fefefe;
-  border: 1px solid #cbcbcb;
-  padding: 48px 40px;
+  width: 100%;
+  background: #FAFAFA;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 40px;
   cursor: pointer;
-  transform-origin: center center;
   transition:
-    border-color 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-    transform    0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform, border-color;
+    background-color 0.35s ease,
+    border-color     0.35s ease,
+    border-width     0.35s ease,
+    gap              0.35s ease,
+    padding          0.35s ease;
 }
 
 .rep-card:hover {
-  border-color: #1E1A17;
-  transform: scaleY(1.08);
+  background: #FFFFFF;
+  border: 2px solid #F0F0F0;
+  padding: 59px 39px;
+  gap: 60px;
 }
 
-.rep-card:hover .rep-card__author-photo {
-  transform: scaleY(0.926);
-}
-
+/* ── Header ── */
 .rep-card__meta {
   display: flex;
   align-items: center;
@@ -1877,18 +1872,19 @@ body {
 }
 
 .rep-card__tag {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 40px;
-  letter-spacing: 0.28px;
-  padding: 4px 24px;
-  color: #fefefe;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  color: #FEFEFE;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-.rep-card__tag--aula    { background: #2e7d75; }
-.rep-card__tag--artigo  { background: #ff6d3a; }
+.rep-card__tag--aula    { background: #867F73; }
+.rep-card__tag--artigo  { background: #1E1A17; }
 
 .rep-card__author-group {
   display: flex;
@@ -1897,49 +1893,63 @@ body {
 }
 
 .rep-card__author {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 20px;
-  letter-spacing: 0.32px;
-  color: #1E1A17;
+  letter-spacing: -0.28px;
+  color: #737373;
   white-space: nowrap;
 }
 
 .rep-card__author-pre {
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.rep-card__author strong {
+  font-weight: 500;
 }
 
 .rep-card__author-photo {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform;
+  transition: width 0.35s ease, height 0.35s ease;
 }
 
+.rep-card:hover .rep-card__author-photo {
+  width: 48px;
+  height: 48px;
+}
+
+/* ── Body ── */
 .rep-card__body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  flex: 1;
-  overflow: hidden;
 }
 
 .rep-card__title {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   line-height: 32px;
-  letter-spacing: 0.4px;
-  color: #1E1A17;
+  letter-spacing: -0.48px;
+  min-height: 64px;
+  flex-shrink: 0;
 }
+
+.rep-card__title--aula   { color: #867F73; }
+.rep-card__title--artigo { color: #1E1A17; }
 
 .rep-card__text {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 32px;
-  letter-spacing: 0.36px;
-  color: #696969;
+  letter-spacing: -0.36px;
+  color: #1E1A17;
+  height: 160px;
+  overflow: hidden;
 }
 
 

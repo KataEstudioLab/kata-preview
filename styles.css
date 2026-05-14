@@ -885,6 +885,7 @@ body {
 
 .manifesto-content__body {
   max-width: 620px;
+  margin-left: auto;
 }
 
 .manifesto-content__body p {

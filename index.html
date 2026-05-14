@@ -163,7 +163,10 @@
 
     <!-- TESTIMONIAL -->
     <section class="home-testimonial">
-      <p class="home-testimonial__quote">"Trabalhamos com contexto brasileiro. Sem glamour importado, sem fórmula pronta".</p>
+      <p class="home-testimonial__quote">
+        <span class="anim-line"><span class="anim-line__inner">"Trabalhamos com contexto brasileiro.</span></span>
+        <span class="anim-line"><span class="anim-line__inner">Sem glamour importado, sem fórmula pronta".</span></span>
+      </p>
     </section>
 
   </main>
@@ -312,6 +315,28 @@
     footer.addEventListener('mouseleave', () => {
       kataImg.style.transform = '';
     });
+
+    /* ─── TESTIMONIAL: entrada + shimmer metalizado ─── */
+    const quoteEl = document.querySelector('.home-testimonial__quote');
+
+    const quoteObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          quoteEl.classList.add('is-visible');
+          quoteObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    quoteObserver.observe(quoteEl);
+
+    window.addEventListener('scroll', () => {
+      const rect   = quoteEl.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      /* progresso: 0 quando o centro entra pela base, 1 quando sai pelo topo */
+      const progress = Math.max(0, Math.min(1, 1 - center / window.innerHeight));
+      quoteEl.style.setProperty('--shimmer', `${-40 + progress * 180}%`);
+    }, { passive: true });
 
     /* ─── CURSOR PERSONALIZADO ──────────────────────── */
     if (window.matchMedia('(pointer: fine)').matches) {

@@ -1,0 +1,20 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="texture-bg" opacity="0.05">
+<g id="vertical">
+<path id="Line 1" d="M89.9999 2.18557e-08L89.9999 1350" stroke="var(--stroke-0, black)"/>
+<path id="Line 2" d="M390 2.18557e-08L390 1350" stroke="var(--stroke-0, black)"/>
+<path id="Line 3" d="M690 2.18557e-08L690 1350" stroke="var(--stroke-0, black)"/>
+<path id="Line 4" d="M990 2.18557e-08L990 1350" stroke="var(--stroke-0, black)"/>
+</g>
+<g id="horizontal">
+<path id="Line 1_2" d="M2.18557e-08 1250L1080 1250" stroke="var(--stroke-0, black)"/>
+<path id="Line 2_2" d="M2.18557e-08 866.667L1080 866.667" stroke="var(--stroke-0, black)"/>
+<path id="Line 3_2" d="M2.18557e-08 483.333L1080 483.333" stroke="var(--stroke-0, black)"/>
+<line id="Line 4_2" x1="4.37115e-08" y1="99.5" x2="1080" y2="99.5" stroke="var(--stroke-0, black)"/>
+</g>
+<circle id="Ellipse 20" cx="390" cy="483" r="4" fill="var(--fill-0, black)" stroke="var(--stroke-0, black)" stroke-width="4"/>
+<circle id="Ellipse 22" cx="390" cy="867" r="4" fill="var(--fill-0, black)" stroke="var(--stroke-0, black)" stroke-width="4"/>
+<circle id="Ellipse 21" cx="690" cy="483" r="4" fill="var(--fill-0, black)" stroke="var(--stroke-0, black)" stroke-width="4"/>
+<circle id="Ellipse 23" cx="690" cy="867" r="4" fill="var(--fill-0, black)" stroke="var(--stroke-0, black)" stroke-width="4"/>
+</g>
+</svg>

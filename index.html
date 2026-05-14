@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estúdio Kata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,9 +21,6 @@
       <span class="splash__text">Feito com carinho, no Brasil.</span>
     </div>
   </div>
-
-  <!-- GRID GRAFISMO DE FUNDO -->
-  <div class="grid-bg" aria-hidden="true"></div>
 
   <!-- BACKDROP (blur abaixo do menu) -->
   <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
@@ -70,17 +69,21 @@
     <button class="nav__menu" id="menu-open" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
   </nav>
 
-  <main>
+  <main class="home-main">
+
+    <!-- TEXTURA DE FUNDO -->
+    <div class="home-texture" aria-hidden="true">
+      <img src="assets/texture-bg.svg" alt="">
+    </div>
 
     <!-- HERO -->
     <section class="hero">
       <h1 class="hero__headline">
-        Somos um estúdio de design<br>
-        com <em>sotaque</em> de <strong class="brasil-highlight">Brasil</strong>.
+        Somos um estúdio<br>de <em>design</em> com<br>sotaque de <span class="brasil-highlight">Brasil</span>
       </h1>
-      <a href="cursos.html" class="btn btn--primary">
+      <a href="cursos.html" class="btn btn--home">
         Explore as formações
-        <img src="assets/arrow-cta.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
+        <img src="assets/arrow-orange.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
       </a>
     </section>
 
@@ -93,64 +96,75 @@
       </div>
     </section>
 
-    <!-- PRÓXIMAS FORMAÇÕES -->
-    <div class="repertorio-outer">
-      <section class="repertorio" aria-label="Próximas formações">
-        <div class="repertorio__header">
-          <h2>Próximas formações</h2>
-        </div>
-        <div class="repertorio__line" aria-hidden="true"></div>
+    <!-- NOSSAS FORMAÇÕES -->
+    <section class="formacoes" aria-label="Nossas formações">
+      <div class="formacoes__header">
+        <h2 class="formacoes__title">Nossas formações</h2>
+      </div>
 
-        <div class="cursos-grid">
+      <div class="formacoes__grid">
 
-          <article class="curso-card" data-tipo="presencial">
-            <div class="curso-card__top">
-              <span class="curso-card__tag curso-card__tag--presencial">Presencial</span>
-              <div class="curso-card__badge curso-card__badge--novidade">
-                <span class="curso-card__dot" aria-hidden="true"></span>
-                Novidade
-              </div>
+        <!-- Card Presencial -->
+        <article class="formacao-card" data-tipo="presencial">
+          <div class="formacao-card__header">
+            <span class="formacao-card__tag formacao-card__tag--presencial">Presencial</span>
+            <div class="formacao-card__status">
+              <span class="formacao-card__dot-wrap"><img src="assets/card-dot.svg" alt="" class="formacao-card__dot" aria-hidden="true" width="16" height="16"></span>
+              <span class="formacao-card__status-text">Novidade</span>
             </div>
-            <div class="curso-card__body">
-              <h3 class="curso-card__title">Business Design &amp; AI</h3>
-              <p class="curso-card__date">14 de Agosto de 2026 — São Paulo, SP</p>
-              <p class="curso-card__desc">Encontro presencial para explorar como design, negócio e inteligência artificial se conectam na prática. Uma imersão para discutir contexto, tomada de decisão e novas formas de gerar valor em produtos e serviços digitais.</p>
-            </div>
-            <div class="curso-card__footer">
-              <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon e Will Diniz</p>
-              <div class="curso-card__fotos">
-                <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
-                <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
-              </div>
-            </div>
-          </article>
+          </div>
 
-          <article class="curso-card" data-tipo="online">
-            <div class="curso-card__top">
-              <span class="curso-card__tag curso-card__tag--online">Online</span>
-              <div class="curso-card__badge curso-card__badge--novidade">
-                <span class="curso-card__dot" aria-hidden="true"></span>
-                Novidade
-              </div>
+          <div class="formacao-card__content">
+            <div class="formacao-card__info">
+              <h3 class="formacao-card__title formacao-card__title--presencial">Business Design &amp; AI</h3>
+              <p class="formacao-card__date">14 de Agosto de 2026 — São Paulo, SP</p>
             </div>
-            <div class="curso-card__body">
-              <h3 class="curso-card__title">Design de Produtos e Serviços Digitais</h3>
-              <p class="curso-card__date">14 de Setembro de 2026</p>
-              <p class="curso-card__desc">Curso para designers que querem ampliar repertório estratégico e entender como o design gera valor nas organizações. Em 6 aulas, conectamos contexto, negócio e impacto para uma atuação mais consciente, relevante e influente.</p>
-            </div>
-            <div class="curso-card__footer">
-              <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon, Will Diniz e Isa Soares</p>
-              <div class="curso-card__fotos">
-                <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
-                <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
-                <img src="assets/foto-isa.png" alt="Isa Soares" class="curso-card__foto">
-              </div>
-            </div>
-          </article>
+            <p class="formacao-card__desc">Encontro presencial para explorar como design, negócio e inteligência artificial se conectam na prática. Uma imersão para discutir contexto, tomada de decisão e novas formas de gerar valor em produtos e serviços digitais.</p>
+          </div>
 
-        </div><!-- /.cursos-grid -->
-      </section>
-    </div><!-- /.repertorio-outer -->
+          <div class="formacao-card__footer">
+            <p class="formacao-card__autores">com <strong>Gus Aragon</strong> e <strong>Will Diniz</strong></p>
+            <div class="formacao-card__fotos">
+              <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="formacao-card__foto">
+              <img src="assets/foto-willian.png" alt="Willian Diniz" class="formacao-card__foto">
+            </div>
+          </div>
+        </article>
+
+        <!-- Card Online -->
+        <article class="formacao-card" data-tipo="online">
+          <div class="formacao-card__header">
+            <span class="formacao-card__tag formacao-card__tag--online">Online</span>
+            <div class="formacao-card__status">
+              <span class="formacao-card__status-text">Encerrado</span>
+            </div>
+          </div>
+
+          <div class="formacao-card__content">
+            <div class="formacao-card__info">
+              <h3 class="formacao-card__title formacao-card__title--online">Design de Produtos e Serviços Digitais</h3>
+              <p class="formacao-card__date">14 de Setembro de 2026</p>
+            </div>
+            <p class="formacao-card__desc">Curso para designers que querem ampliar repertório estratégico e entender como o design gera valor nas organizações. Em 6 aulas, conectamos contexto, negócio e impacto para uma atuação mais consciente, relevante e influente.</p>
+          </div>
+
+          <div class="formacao-card__footer">
+            <p class="formacao-card__autores">com <strong>Gus Aragon</strong>, <strong>Will Diniz</strong> e <strong>Isa Soares</strong></p>
+            <div class="formacao-card__fotos">
+              <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="formacao-card__foto">
+              <img src="assets/foto-willian.png" alt="Willian Diniz" class="formacao-card__foto">
+              <img src="assets/foto-isa.png" alt="Isa Soares" class="formacao-card__foto">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="home-testimonial">
+      <p class="home-testimonial__quote">"Trabalhamos com contexto brasileiro. Sem glamour importado, sem fórmula pronta".</p>
+    </section>
 
   </main>
 
@@ -161,7 +175,7 @@
       Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
     </div>
     <div class="footer__display" aria-hidden="true">
-      <img src="assets/kata-wordmark.svg" alt="kata">
+      <img src="assets/kata-wordmark-footer.svg" alt="kata">
     </div>
   </footer>
 
@@ -229,19 +243,28 @@
       setTimeout(() => { el.textContent = original; }, 1500);
     });
 
+    /* ─── VÍDEO: expande quando o CTA sai do nav ─────── */
+    const videoSection   = document.querySelector('.video-section');
+    const videoPlaceholder = document.querySelector('.video-placeholder');
+    const heroVideo      = document.querySelector('.video-placeholder video');
+    const heroCta        = document.querySelector('.btn--home');
+    const nav            = document.querySelector('.nav');
 
-    /* ─── 1. BRASIL: cursor vira bolinha lime ao passar ──── */
-    /* (lógica no bloco do cursor, mais abaixo) */
+    function getNavHeight() { return nav.offsetHeight; }
 
+    /* Define CSS var com altura do nav para o vídeo expandido */
+    function setNavVar() {
+      document.documentElement.style.setProperty('--nav-h', getNavHeight() + 'px');
+    }
+    setNavVar();
+    window.addEventListener('resize', setNavVar);
 
+    /* ─── NAV: some ao scrollar ─────────────────────── */
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-hidden', window.scrollY > 10);
+    }, { passive: true });
 
-
-    /* ─── 2. VÍDEO: expande quando o CTA passa atrás do nav */
-    const videoSection  = document.querySelector('.video-section');
-    const heroVideo     = document.querySelector('.video-placeholder video');
-    const heroCta       = document.querySelector('.btn--primary');
-    const navHeight     = document.querySelector('.nav').offsetHeight;
-    const ctaObserver   = new IntersectionObserver((entries) => {
+    const ctaObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const expanded = !entry.isIntersecting;
         videoSection.classList.toggle('is-expanded', expanded);
@@ -252,11 +275,11 @@
           heroVideo.currentTime = 0;
         }
       });
-    }, { rootMargin: `-${navHeight}px 0px 0px 0px`, threshold: 0 });
+    }, { rootMargin: `-${getNavHeight()}px 0px 0px 0px`, threshold: 0 });
+
     ctaObserver.observe(heroCta);
 
-
-    /* ─── 2. KATA: efeito magnético no footer ─────────── */
+    /* ─── FOOTER: efeito magnético no wordmark ────────── */
     const footer  = document.querySelector('.footer');
     const kataImg = document.querySelector('.footer__display img');
 
@@ -271,7 +294,6 @@
     footer.addEventListener('mouseleave', () => {
       kataImg.style.transform = '';
     });
-
 
     /* ─── CURSOR PERSONALIZADO ──────────────────────── */
     if (window.matchMedia('(pointer: fine)').matches) {
@@ -289,7 +311,7 @@
       document.addEventListener('mouseleave', () => dot.classList.add('is-hidden'));
       document.addEventListener('mouseenter', () => dot.classList.remove('is-hidden'));
 
-      document.querySelectorAll('a, button, [role="tab"], .curso-card').forEach(el => {
+      document.querySelectorAll('a, button, [role="tab"], .formacao-card').forEach(el => {
         el.addEventListener('mouseenter', () => dot.classList.add('is-hover'));
         el.addEventListener('mouseleave', () => dot.classList.remove('is-hover'));
       });
@@ -308,6 +330,7 @@
         requestAnimationFrame(animate);
       })();
     }
+
   </script>
 </body>
 </html>

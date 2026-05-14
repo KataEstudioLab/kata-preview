@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos — Estúdio Kata</title>
+  <title>Formações — Estúdio Kata</title>
   <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -70,78 +70,83 @@
     </section>
 
     <!-- FILTROS -->
-    <div class="cursos-filtros" role="tablist" aria-label="Filtrar cursos">
-      <button class="cursos-filtro is-active" data-filter="all" role="tab" aria-selected="true">
-        Ver tudo
-      </button>
-      <button class="cursos-filtro" data-filter="presencial" role="tab" aria-selected="false">
-        Presenciais
-      </button>
-      <button class="cursos-filtro" data-filter="online" role="tab" aria-selected="false">
-        Online
-      </button>
+    <div class="cursos-filtros" role="tablist" aria-label="Filtrar formações">
+      <button class="cursos-filtro is-active" data-filter="all" role="tab" aria-selected="true">Ver tudo</button>
+      <button class="cursos-filtro" data-filter="presencial" role="tab" aria-selected="false">Presenciais</button>
+      <button class="cursos-filtro" data-filter="online" role="tab" aria-selected="false">Online</button>
     </div>
 
-    <!-- GRADE DE CURSOS -->
-    <div class="cursos-grid" id="cursos">
+    <!-- GRADE DE FORMAÇÕES -->
+    <div class="cursos-cards-wrap">
+      <div class="formacoes__grid" id="cursos">
 
-      <article class="curso-card" data-tipo="presencial">
-        <div class="curso-card__top">
-          <span class="curso-card__tag curso-card__tag--presencial">Presencial</span>
-          <div class="curso-card__badge curso-card__badge--novidade">
-            <span class="curso-card__dot" aria-hidden="true"></span>
-            Novidade
+        <!-- Card Presencial -->
+        <article class="formacao-card" data-tipo="presencial">
+          <div class="formacao-card__header">
+            <span class="formacao-card__tag formacao-card__tag--presencial">Presencial</span>
+            <div class="formacao-card__status">
+              <span class="formacao-card__dot-wrap"><img src="assets/card-dot.svg" alt="" class="formacao-card__dot" aria-hidden="true" width="16" height="16"></span>
+              <span class="formacao-card__status-text">Novidade</span>
+            </div>
           </div>
-        </div>
-        <div class="curso-card__body">
-          <h2 class="curso-card__title">Business Design &amp; AI</h2>
-          <p class="curso-card__date">14 de Agosto de 2026 — São Paulo, SP</p>
-          <p class="curso-card__desc">Encontro presencial para explorar como design, negócio e inteligência artificial se conectam na prática. Uma imersão para discutir contexto, tomada de decisão e novas formas de gerar valor em produtos e serviços digitais.</p>
-        </div>
-        <div class="curso-card__footer">
-          <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon e Will Diniz</p>
-          <div class="curso-card__fotos">
-            <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
-            <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
-          </div>
-        </div>
-      </article>
 
-      <article class="curso-card" data-tipo="online">
-        <div class="curso-card__top">
-          <span class="curso-card__tag curso-card__tag--online">Online</span>
-          <div class="curso-card__badge curso-card__badge--novidade">
-            <span class="curso-card__dot" aria-hidden="true"></span>
-            Novidade
+          <div class="formacao-card__content">
+            <div class="formacao-card__info">
+              <h2 class="formacao-card__title formacao-card__title--presencial">Business Design &amp; AI</h2>
+              <p class="formacao-card__date">14 de Agosto de 2026 — São Paulo, SP</p>
+            </div>
+            <p class="formacao-card__desc">Encontro presencial para explorar como design, negócio e inteligência artificial se conectam na prática. Uma imersão para discutir contexto, tomada de decisão e novas formas de gerar valor em produtos e serviços digitais.</p>
           </div>
-        </div>
-        <div class="curso-card__body">
-          <h2 class="curso-card__title">Design de Produtos e Serviços Digitais</h2>
-          <p class="curso-card__date">14 de Setembro de 2026</p>
-          <p class="curso-card__desc">Curso para designers que querem ampliar repertório estratégico e entender como o design gera valor nas organizações. Em 6 aulas, conectamos contexto, negócio e impacto para uma atuação mais consciente, relevante e influente.</p>
-        </div>
-        <div class="curso-card__footer">
-          <p class="curso-card__autores"><span class="curso-card__autores-pre">com</span> Gus Aragon, Will Diniz e Isa Soares</p>
-          <div class="curso-card__fotos">
-            <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-card__foto">
-            <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-card__foto">
-            <img src="assets/foto-isa.png" alt="Isa Soares" class="curso-card__foto">
-          </div>
-        </div>
-      </article>
 
-    </div><!-- /.cursos-grid -->
+          <div class="formacao-card__footer">
+            <p class="formacao-card__autores">com <strong>Gus Aragon</strong> e <strong>Will Diniz</strong></p>
+            <div class="formacao-card__fotos">
+              <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="formacao-card__foto">
+              <img src="assets/foto-willian.png" alt="Willian Diniz" class="formacao-card__foto">
+            </div>
+          </div>
+        </article>
+
+        <!-- Card Online -->
+        <article class="formacao-card" data-tipo="online">
+          <div class="formacao-card__header">
+            <span class="formacao-card__tag formacao-card__tag--online">Online</span>
+            <div class="formacao-card__status">
+              <span class="formacao-card__status-text">Encerrado</span>
+            </div>
+          </div>
+
+          <div class="formacao-card__content">
+            <div class="formacao-card__info">
+              <h2 class="formacao-card__title formacao-card__title--online">Design de Produtos e Serviços Digitais</h2>
+              <p class="formacao-card__date">14 de Setembro de 2026</p>
+            </div>
+            <p class="formacao-card__desc">Curso para designers que querem ampliar repertório estratégico e entender como o design gera valor nas organizações. Em 6 aulas, conectamos contexto, negócio e impacto para uma atuação mais consciente, relevante e influente.</p>
+          </div>
+
+          <div class="formacao-card__footer">
+            <p class="formacao-card__autores">com <strong>Gus Aragon</strong>, <strong>Will Diniz</strong> e <strong>Isa Soares</strong></p>
+            <div class="formacao-card__fotos">
+              <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="formacao-card__foto">
+              <img src="assets/foto-willian.png" alt="Willian Diniz" class="formacao-card__foto">
+              <img src="assets/foto-isa.png" alt="Isa Soares" class="formacao-card__foto">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div><!-- /.cursos-cards-wrap -->
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer footer--inner">
+  <footer class="footer">
     <div class="footer__signature">
-      <img src="assets/graphism.svg" alt="">
+      <img src="assets/graphism-light.svg" alt="">
       Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
     </div>
     <div class="footer__display" aria-hidden="true">
-      <img src="assets/kata-wordmark.svg" alt="kata">
+      <img src="assets/kata-wordmark-footer.svg" alt="kata">
     </div>
   </footer>
 
@@ -199,10 +204,22 @@
       setTimeout(() => { el.textContent = original; }, 1500);
     });
 
+    /* ─── NAV: some ao scrollar ─────────────────────── */
+    const nav = document.querySelector('.nav');
 
-    /* ─── FILTROS DE CURSOS ──────────────────────────── */
+    function setNavVar() {
+      document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
+    setNavVar();
+    window.addEventListener('resize', setNavVar);
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-hidden', window.scrollY > 10);
+    }, { passive: true });
+
+    /* ─── FILTROS DE FORMAÇÕES ──────────────────────── */
     const filtros = document.querySelectorAll('.cursos-filtro');
-    const cards   = document.querySelectorAll('.curso-card');
+    const cards   = document.querySelectorAll('.formacao-card');
 
     filtros.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -221,8 +238,7 @@
       });
     });
 
-
-    /* ─── KATA: efeito magnético no footer ─────────── */
+    /* ─── FOOTER: efeito magnético no wordmark ────────── */
     const footer  = document.querySelector('.footer');
     const kataImg = document.querySelector('.footer__display img');
 
@@ -231,13 +247,12 @@
       const dx = (e.clientX - (rect.left + rect.width  / 2)) / rect.width;
       const dy = (e.clientY - (rect.top  + rect.height / 2)) / rect.height;
       kataImg.style.transform =
-        `translate(${dx * 28}px, ${dy * 14}px) rotate(${dx * 1.5}deg)`;
+        `translate(${dx * 52}px, ${dy * 28}px) rotate(${dx * 4}deg) scale(${1 + Math.abs(dx) * 0.06})`;
     });
 
     footer.addEventListener('mouseleave', () => {
       kataImg.style.transform = '';
     });
-
 
     /* ─── CURSOR PERSONALIZADO ──────────────────────── */
     if (window.matchMedia('(pointer: fine)').matches) {
@@ -255,7 +270,7 @@
       document.addEventListener('mouseleave', () => dot.classList.add('is-hidden'));
       document.addEventListener('mouseenter', () => dot.classList.remove('is-hidden'));
 
-      document.querySelectorAll('a, button, [role="tab"], .curso-card').forEach(el => {
+      document.querySelectorAll('a, button, [role="tab"], .formacao-card').forEach(el => {
         el.addEventListener('mouseenter', () => dot.classList.add('is-hover'));
         el.addEventListener('mouseleave', () => dot.classList.remove('is-hover'));
       });

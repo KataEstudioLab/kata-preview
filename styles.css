@@ -289,7 +289,7 @@ body {
 /* ─── FORMAÇÃO CARD ───────────────────────────────── */
 
 .formacao-card {
-  flex: 1 0 0;
+  flex: 0 0 calc(50% - 12px);
   background: #FAFAFA;
   border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: 12px;
@@ -677,7 +677,6 @@ body {
   width: 37px;
   height: 24px;
   display: block;
-  --fill-0: #F5EFE1;
 }
 
 .footer__display {
@@ -863,9 +862,10 @@ body {
 /* ─── PAGE: MANIFESTO ─────────────────────────────── */
 
 .manifesto-content {
-  display: grid;
-  grid-template-columns: 1fr 696px;
-  padding: 128px 40px 160px 40px;
+  display: flex;
+  gap: 96px;
+  align-items: flex-start;
+  padding: 120px 100px 160px;
   position: relative;
   z-index: 1;
 }
@@ -873,12 +873,18 @@ body {
 .manifesto-content__label {
   font-size: 32px;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 32px;
   letter-spacing: 0.64px;
   color: #4D4D4D;
+  white-space: nowrap;
   position: sticky;
-  top: 120px;
+  top: 40px;
+  flex-shrink: 0;
   align-self: start;
+}
+
+.manifesto-content__body {
+  max-width: 620px;
 }
 
 .manifesto-content__body p {
@@ -1486,7 +1492,7 @@ body {
 /* ─── PAGE: CURSOS ────────────────────────────────── */
 
 .cursos-hero {
-  padding: 120px var(--px) 32px;
+  padding: 80px 100px 32px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -1517,7 +1523,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   gap: 56px;
-  padding: 0 var(--px) 119px;
+  padding: 0 100px 80px;
   position: relative;
   z-index: 1;
 }
@@ -1561,7 +1567,14 @@ body {
   color: #4D4D4D;
 }
 
-/* Grid */
+/* Grid wrapper */
+.cursos-cards-wrap {
+  padding: 0 100px 160px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Legacy grid (kept for reference) */
 .cursos-grid {
   padding: 0 40px 160px;
   display: grid;
@@ -2080,6 +2093,13 @@ body {
   }
   .cursos-filtro::after {
     width: 40px;
+  }
+  .cursos-cards-wrap {
+    padding: 0 var(--px) 80px;
+  }
+  .cursos-cards-wrap .formacoes__grid {
+    height: auto;
+    flex-direction: column;
   }
   .cursos-grid {
     padding: 0 0 80px;

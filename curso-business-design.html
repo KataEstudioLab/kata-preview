@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Design & AI — Estúdio Kata</title>
+  <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+
+  <!-- BACKDROP (blur abaixo do menu) -->
+  <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <div class="menu-overlay__header">
+      <a href="index.html" class="menu-overlay__logo" aria-label="Estúdio Kata — ir para home">
+        <img src="assets/logo.svg" alt="Estúdio Kata">
+      </a>
+      <button class="menu-overlay__close" id="menu-close" aria-label="Fechar menu">Fechar</button>
+    </div>
+    <div class="menu-overlay__body">
+      <div class="menu-overlay__nav-col">
+        <span class="menu-overlay__label" aria-hidden="true">MENU</span>
+        <nav class="menu-overlay__nav" aria-label="Navegação principal">
+          <a href="index.html" class="menu-overlay__link">Início</a>
+          <a href="cursos.html" class="menu-overlay__link">Formações</a>
+          <a href="repertorio.html" class="menu-overlay__link">Nosso repertório</a>
+          <a href="sobre.html" class="menu-overlay__link">Sobre nós</a>
+          <a href="manifesto.html" class="menu-overlay__link">Manifesto</a>
+        </nav>
+      </div>
+      <div class="menu-overlay__contact">
+        <a href="mailto:contato@estudiokata.com" class="menu-overlay__email">contato@estudiokata.com</a>
+        <div class="menu-overlay__social">
+          <a href="https://linkedin.com/company/estudiokata" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="LinkedIn">
+            <img src="assets/icon-linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/estudio.kata/" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="Instagram">
+            <img src="assets/icon-instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="WhatsApp">
+            <img src="assets/icon-whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" aria-label="Estúdio Kata — ir para home">
+      <img src="assets/logo.svg" alt="Estúdio Kata">
+    </a>
+    <button class="nav__menu" id="menu-open" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="curso-detalhe-hero">
+      <div class="curso-detalhe-hero__left">
+        <h1 class="curso-detalhe-hero__title">Business Design & AI</h1>
+        <p class="curso-detalhe-hero__date">14 de Agosto de 2026 – São Paulo, SP</p>
+      </div>
+      <div class="curso-detalhe-hero__right">
+        <p class="curso-detalhe-hero__desc">
+          No dia a dia, o <em>design</em> participa da construção de soluções, mas raramente define o que realmente importa.
+        </p>
+        <p class="curso-detalhe-hero__desc">
+          Ao longo de um dia, vamos trabalhar como o <em>design</em> se conecta com contexto, negócio e tomada de decisão dentro das organizações. Com menos abstração e mais situações próximas da realidade.
+        </p>
+        <a href="#" class="btn btn--primary" id="hero-inscricao">
+          Inscreva-se
+          <img src="assets/arrow-cta.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
+        </a>
+      </div>
+    </section>
+
+    <!-- GRADE DE MÓDULOS -->
+    <div class="curso-detalhe-grade-outer">
+      <div class="curso-detalhe-grade">
+        <div class="curso-detalhe-grade__track">
+
+          <div class="curso-detalhe-grade__card">
+            <p class="curso-detalhe-grade__card-num">Bloco 01</p>
+            <h3 class="curso-detalhe-grade__card-title">Design e contexto de negócio</h3>
+            <p class="curso-detalhe-grade__card-text">Como o design opera dentro das organizações e por que o contexto muda tudo sobre o que é uma boa solução.</p>
+          </div>
+
+          <div class="curso-detalhe-grade__card">
+            <p class="curso-detalhe-grade__card-num">Bloco 02</p>
+            <h3 class="curso-detalhe-grade__card-title">Valor e impacto</h3>
+            <p class="curso-detalhe-grade__card-text">Como traduzir o trabalho de design em linguagem de negócio sem perder o que importa.</p>
+          </div>
+
+          <div class="curso-detalhe-grade__card">
+            <p class="curso-detalhe-grade__card-num">Bloco 03</p>
+            <h3 class="curso-detalhe-grade__card-title">Tomada de decisão</h3>
+            <p class="curso-detalhe-grade__card-text">Frameworks para decidir melhor e comunicar decisões com clareza dentro de times.</p>
+          </div>
+
+          <div class="curso-detalhe-grade__card">
+            <p class="curso-detalhe-grade__card-num">Bloco 04</p>
+            <h3 class="curso-detalhe-grade__card-title">IA como ferramenta estratégica</h3>
+            <p class="curso-detalhe-grade__card-text">Como integrar IA nos processos de design de forma consciente, crítica e geradora de valor real.</p>
+          </div>
+
+        </div><!-- /.curso-detalhe-grade__track -->
+      </div><!-- /.curso-detalhe-grade -->
+    </div><!-- /.curso-detalhe-grade-outer -->
+
+    <!-- FAQ -->
+    <section class="curso-detalhe-faq">
+      <h2 class="curso-detalhe-faq__label">Perguntas frequentes</h2>
+      <div class="curso-detalhe-faq__items">
+
+        <div class="curso-detalhe-faq__item">
+          <h3 class="curso-detalhe-faq__question">Preciso ter experiência prévia em negócios?</h3>
+          <p class="curso-detalhe-faq__answer">Não. Vamos passar pela teoria básica de administração de empresas, mas também vamos colocar esse conhecimento na prática com atividades e trocas.</p>
+        </div>
+
+        <div class="curso-detalhe-faq__item">
+          <h3 class="curso-detalhe-faq__question">O conteúdo serve para designers de produto?</h3>
+          <p class="curso-detalhe-faq__answer">Sim. O curso foi pensado para designers que querem entender o contexto maior em que suas decisões estão inseridas, independentemente da especialidade.</p>
+        </div>
+
+        <div class="curso-detalhe-faq__item">
+          <h3 class="curso-detalhe-faq__question">Quantas vagas estão disponíveis?</h3>
+          <p class="curso-detalhe-faq__answer">O encontro é presencial e as vagas são limitadas para garantir uma troca mais rica. Fique de olho — quando esgota, não reabre.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMO VAI SER O SEU DIA -->
+    <section class="curso-detalhe-agenda">
+      <h2 class="curso-detalhe-agenda__title">Como vai ser o seu dia?</h2>
+      <div class="curso-detalhe-agenda__cards">
+
+        <div class="curso-detalhe-agenda__card">
+          <img src="assets/graphism.svg" alt="" class="curso-detalhe-agenda__graphism" aria-hidden="true">
+          <div>
+            <h3 class="curso-detalhe-agenda__card-title">Manhã — Contexto e negócio</h3>
+            <p class="curso-detalhe-agenda__card-text">Abrimos o dia entendendo como organizações funcionam, onde o design entra e o que separa execução de influência estratégica.</p>
+          </div>
+        </div>
+
+        <div class="curso-detalhe-agenda__card">
+          <img src="assets/graphism.svg" alt="" class="curso-detalhe-agenda__graphism" aria-hidden="true">
+          <div>
+            <h3 class="curso-detalhe-agenda__card-title">Tarde — Prática e IA</h3>
+            <p class="curso-detalhe-agenda__card-text">Exercícios aplicados com situações reais de produto. Discutimos o papel da IA como ferramenta de decisão e o que muda (e o que não muda) no trabalho do designer.</p>
+          </div>
+        </div>
+
+        <div class="curso-detalhe-agenda__card">
+          <img src="assets/graphism.svg" alt="" class="curso-detalhe-agenda__graphism" aria-hidden="true">
+          <div>
+            <h3 class="curso-detalhe-agenda__card-title">Encerramento — Troca aberta</h3>
+            <p class="curso-detalhe-agenda__card-text">Espaço para perguntas, conversas e conexões. Sem roteiro fixo — o que surgir do grupo, a gente responde.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FACILITADORES -->
+    <section class="curso-detalhe-facilitadores">
+      <p class="curso-detalhe-facilitadores__label">Facilitadores</p>
+      <h2 class="curso-detalhe-facilitadores__title">Contamos com os melhores profissionais para te ensinar.</h2>
+      <div class="curso-detalhe-facilitadores__grid">
+
+        <div class="curso-detalhe-facilitador">
+          <div class="curso-detalhe-facilitador__foto">
+            <img src="assets/facilitador-vector.svg" alt="" class="curso-detalhe-facilitador__vector" aria-hidden="true">
+            <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-detalhe-facilitador__img">
+          </div>
+          <h3 class="curso-detalhe-facilitador__nome">Gus Aragon</h3>
+          <p class="curso-detalhe-facilitador__role">Líder de estratégia de produto</p>
+          <a href="https://linkedin.com/in/gustavoaragon" target="_blank" rel="noopener" class="curso-detalhe-facilitador__linkedin" aria-label="LinkedIn de Gus Aragon">
+            <img src="assets/icon-linkedin.svg" alt="">
+          </a>
+        </div>
+
+        <div class="curso-detalhe-facilitador">
+          <div class="curso-detalhe-facilitador__foto">
+            <img src="assets/facilitador-vector.svg" alt="" class="curso-detalhe-facilitador__vector" aria-hidden="true">
+            <img src="assets/foto-gustavo.jpg" alt="Willian Diniz" class="curso-detalhe-facilitador__img">
+          </div>
+          <h3 class="curso-detalhe-facilitador__nome">Will Diniz</h3>
+          <p class="curso-detalhe-facilitador__role">Líder de estratégia de produto</p>
+          <a href="https://linkedin.com/in/williandiniz" target="_blank" rel="noopener" class="curso-detalhe-facilitador__linkedin" aria-label="LinkedIn de Will Diniz">
+            <img src="assets/icon-linkedin.svg" alt="">
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DEPOIMENTO -->
+    <section class="curso-detalhe-testimonial">
+      <div class="curso-detalhe-testimonial__body">
+        <p class="curso-detalhe-testimonial__quote-mark" aria-hidden="true">"</p>
+        <blockquote class="curso-detalhe-testimonial__text">
+          O conteúdo já está sendo totalmente aplicável aqui. Eu já estou conseguindo aplicar no meu trabalho, às vezes nem direto no projeto, mas ajudando outras pessoas com os métodos que vocês passaram.
+        </blockquote>
+      </div>
+      <div class="curso-detalhe-testimonial__author">
+        <strong class="curso-detalhe-testimonial__author-name">Laura de Abreu</strong>
+        <span class="curso-detalhe-testimonial__author-role">Designer de produto na Localiza&amp;Co</span>
+      </div>
+    </section>
+
+    <!-- BOLSAS -->
+    <section class="curso-detalhe-bolsas">
+      <div class="curso-detalhe-bolsas__left">
+        <p class="curso-detalhe-bolsas__rotated" aria-hidden="true">bolsas</p>
+        <h2 class="curso-detalhe-bolsas__title">Estamos comprometidos em garantir que nenhum estudante seja impedido de prosseguir seus estudos devido a dificuldades financeiras.</h2>
+        <a href="mailto:contato@estudiokata.com" class="curso-detalhe-bolsas__cta">
+          Entre em contato
+          <img src="assets/arrow-teal.svg" alt="" aria-hidden="true">
+        </a>
+      </div>
+      <div class="curso-detalhe-bolsas__right">
+
+        <div class="curso-detalhe-bolsa">
+          <h3 class="curso-detalhe-bolsa__title">Bolsa integral</h3>
+          <p class="curso-detalhe-bolsa__text">Para quem está em transição de carreira ou enfrenta dificuldade financeira comprovada. Cobre 100% do valor do curso.</p>
+        </div>
+
+        <div class="curso-detalhe-bolsa">
+          <h3 class="curso-detalhe-bolsa__title">Bolsa parcial 50%</h3>
+          <p class="curso-detalhe-bolsa__text">Para profissionais autônomos ou em início de carreira. Reduz pela metade o investimento no curso.</p>
+        </div>
+
+        <div class="curso-detalhe-bolsa">
+          <h3 class="curso-detalhe-bolsa__title">Bolsa para comunidade</h3>
+          <p class="curso-detalhe-bolsa__text">Para grupos, coletivos e organizações sem fins lucrativos que se identificam com a missão do Estúdio Kata.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INFORMAÇÕES ADICIONAIS -->
+    <section class="curso-detalhe-info">
+      <div class="curso-detalhe-info__card">
+        <h2 class="curso-detalhe-info__title">Informações adicionais</h2>
+        <div class="curso-detalhe-info__items">
+          <div class="curso-detalhe-info__item">
+            <span class="curso-detalhe-info__label">Data</span>
+            <span class="curso-detalhe-info__value">14 de Agosto de 2026</span>
+          </div>
+          <div class="curso-detalhe-info__item">
+            <span class="curso-detalhe-info__label">Local</span>
+            <span class="curso-detalhe-info__value">São Paulo, SP</span>
+          </div>
+          <div class="curso-detalhe-info__item">
+            <span class="curso-detalhe-info__label">Horário</span>
+            <span class="curso-detalhe-info__value">9h às 18h</span>
+          </div>
+          <div class="curso-detalhe-info__item">
+            <span class="curso-detalhe-info__label">Formato</span>
+            <span class="curso-detalhe-info__value">Presencial</span>
+          </div>
+          <div class="curso-detalhe-info__item">
+            <span class="curso-detalhe-info__label">Investimento</span>
+            <span class="curso-detalhe-info__value">R$ 890</span>
+          </div>
+          <div class="curso-detalhe-info__item">
+            <span class="curso-detalhe-info__label">Certificado</span>
+            <span class="curso-detalhe-info__value">Sim, digital</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer footer--inner">
+    <div class="footer__signature">
+      <img src="assets/graphism-light.svg" alt="">
+      Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
+    </div>
+    <div class="footer__display" aria-hidden="true">
+      <img src="assets/kata-wordmark.svg" alt="kata">
+    </div>
+  </footer>
+
+  <!-- FLUTUANTE -->
+  <div class="curso-flutuante" id="curso-flutuante" aria-hidden="true">
+    <div class="curso-flutuante__investimento">
+      <span class="curso-flutuante__label">Investimento de</span>
+      <span class="curso-flutuante__valor">R$ 350,00</span>
+    </div>
+    <div class="curso-flutuante__right">
+      <span class="curso-flutuante__data">14 de Agosto de 2026 — São Paulo, SP</span>
+      <a href="#" class="curso-flutuante__cta">
+        Inscreva-se
+        <img src="assets/arrow-cta.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    /* ─── PAGE TRANSITION ───────────────────────────── */
+    const pt = document.getElementById('page-transition');
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel') && !href.startsWith('#')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          pt.style.pointerEvents = 'all';
+          pt.style.animation = 'none';
+          requestAnimationFrame(() => {
+            pt.style.animation = 'pt-cover 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards';
+            pt.addEventListener('animationend', () => { window.location.href = href; }, { once: true });
+          });
+        });
+      }
+    });
+
+    /* ─── MENU OVERLAY ───────────────────────────────── */
+    const menuOverlay  = document.getElementById('menu-overlay');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuOpen     = document.getElementById('menu-open');
+    const menuClose    = document.getElementById('menu-close');
+
+    function openMenu() {
+      menuOverlay.classList.add('is-open');
+      menuBackdrop.classList.add('is-open');
+      menuOpen.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      menuOverlay.classList.remove('is-open');
+      menuBackdrop.classList.remove('is-open');
+      menuOpen.setAttribute('aria-expanded', 'false');
+    }
+
+    menuOpen.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('is-open')) closeMenu();
+    });
+
+    document.querySelector('.menu-overlay__email').addEventListener('click', (e) => {
+      e.preventDefault();
+      const el = e.currentTarget;
+      const original = el.textContent;
+      navigator.clipboard.writeText('contato@estudiokata.com');
+      el.textContent = 'Copiado!';
+      setTimeout(() => { el.textContent = original; }, 1500);
+    });
+
+    /* ─── GRADE: horizontal scroll (TODO: animar) ───── */
+    const gradeOuter   = document.querySelector('.curso-detalhe-grade-outer');
+    const gradeSection = document.querySelector('.curso-detalhe-grade');
+    const gradeTrack   = document.querySelector('.curso-detalhe-grade__track');
+    const GRADE_GAP    = 80;
+
+    function initGradeScroll() {
+      return Math.max(0, gradeTrack.scrollWidth - gradeSection.clientWidth);
+    }
+
+    let gradeMax = initGradeScroll();
+
+    window.addEventListener('resize', () => {
+      gradeTrack.style.transform = '';
+      gradeMax = initGradeScroll();
+    });
+
+    /* TODO: animar — reativar depois que o layout estático estiver OK
+    function enableGradeAnimation() {
+      gradeSection.style.position = 'sticky';
+      gradeSection.style.top = '94px';
+      gradeOuter.style.minHeight = (gradeSection.offsetHeight + gradeMax + GRADE_GAP) + 'px';
+      window.addEventListener('scroll', () => {
+        if (gradeMax <= 0) return;
+        const outerRect = gradeOuter.getBoundingClientRect();
+        const scrolled  = Math.max(0, -outerRect.top);
+        const progress  = Math.min(1, scrolled / gradeMax);
+        gradeTrack.style.transform = `translateX(${-progress * gradeMax}px)`;
+      }, { passive: true });
+    }
+    enableGradeAnimation();
+    */
+
+
+    /* ─── FLUTUANTE ─────────────────────────────────── */
+    const flutuante = document.getElementById('curso-flutuante');
+    const heroInscricao = document.getElementById('hero-inscricao');
+
+    const flutuanteObserver = new IntersectionObserver((entries) => {
+      const visible = !entries[0].isIntersecting;
+      flutuante.classList.toggle('is-visible', visible);
+      flutuante.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    }, { threshold: 0 });
+
+    flutuanteObserver.observe(heroInscricao);
+
+
+    /* ─── KATA: efeito magnético no footer ─────────── */
+    const footer  = document.querySelector('.footer');
+    const kataImg = document.querySelector('.footer__display img');
+
+    footer.addEventListener('mousemove', (e) => {
+      const rect = footer.getBoundingClientRect();
+      const dx = (e.clientX - (rect.left + rect.width  / 2)) / rect.width;
+      const dy = (e.clientY - (rect.top  + rect.height / 2)) / rect.height;
+      kataImg.style.transform =
+        `translate(${dx * 28}px, ${dy * 14}px) rotate(${dx * 1.5}deg)`;
+    });
+
+    footer.addEventListener('mouseleave', () => {
+      kataImg.style.transform = '';
+    });
+
+    /* ─── CURSOR PERSONALIZADO ──────────────────────── */
+    if (window.matchMedia('(pointer: fine)').matches) {
+      const dot = document.createElement('div');
+      dot.className = 'cursor-dot';
+      document.body.appendChild(dot);
+
+      let mx = -200, my = -200;
+      let cx = -200, cy = -200;
+
+      window.addEventListener('mousemove', (e) => {
+        mx = e.clientX; my = e.clientY;
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => dot.classList.add('is-hidden'));
+      document.addEventListener('mouseenter', () => dot.classList.remove('is-hidden'));
+
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => dot.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => dot.classList.remove('is-hover'));
+      });
+
+      (function animate() {
+        cx += (mx - cx) * 0.14;
+        cy += (my - cy) * 0.14;
+        dot.style.transform = `translate(${cx}px, ${cy}px)`;
+        requestAnimationFrame(animate);
+      })();
+    }
+  </script>
+</body>
+</html>

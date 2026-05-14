@@ -83,13 +83,13 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer footer--inner">
+  <footer class="footer">
     <div class="footer__signature">
-      <img src="assets/graphism.svg" alt="">
+      <img src="assets/graphism-light.svg" alt="">
       Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
     </div>
     <div class="footer__display" aria-hidden="true">
-      <img src="assets/kata-wordmark.svg" alt="kata">
+      <img src="assets/kata-wordmark-footer.svg" alt="kata">
     </div>
   </footer>
 
@@ -147,8 +147,20 @@
       setTimeout(() => { el.textContent = original; }, 1500);
     });
 
+    /* ─── NAV: some ao scrollar ─────────────────────── */
+    const nav = document.querySelector('.nav');
 
-    /* ─── KATA: efeito magnético no footer ─────────── */
+    function setNavVar() {
+      document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
+    setNavVar();
+    window.addEventListener('resize', setNavVar);
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-hidden', window.scrollY > 10);
+    }, { passive: true });
+
+    /* ─── FOOTER: efeito magnético no wordmark ────────── */
     const footer  = document.querySelector('.footer');
     const kataImg = document.querySelector('.footer__display img');
 
@@ -157,7 +169,7 @@
       const dx = (e.clientX - (rect.left + rect.width  / 2)) / rect.width;
       const dy = (e.clientY - (rect.top  + rect.height / 2)) / rect.height;
       kataImg.style.transform =
-        `translate(${dx * 28}px, ${dy * 14}px) rotate(${dx * 1.5}deg)`;
+        `translate(${dx * 52}px, ${dy * 28}px) rotate(${dx * 4}deg) scale(${1 + Math.abs(dx) * 0.06})`;
     });
 
     footer.addEventListener('mouseleave', () => {

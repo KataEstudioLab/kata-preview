@@ -1678,7 +1678,7 @@ body {
 
 .curso-detalhe-aprende {
   padding: 160px 100px;
-  background: #fff;
+  background: var(--bg);
 }
 
 .curso-detalhe-aprende__grid {

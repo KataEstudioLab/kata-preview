@@ -2083,6 +2083,12 @@ body {
   color: inherit;
 }
 
+.formacao-card-link {
+  display: contents;
+  text-decoration: none;
+  color: inherit;
+}
+
 .rep-card {
   width: 100%;
   background: #FAFAFA;

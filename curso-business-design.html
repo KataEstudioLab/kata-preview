@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Design & AI — Estúdio Kata</title>
+  <title>Business Design & IA — Estúdio Kata</title>
   <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
@@ -54,7 +54,7 @@
   </div>
 
   <!-- NAV -->
-  <nav class="nav">
+  <nav class="nav" id="main-nav">
     <a href="index.html" class="nav__logo" aria-label="Estúdio Kata — ir para home">
       <img src="assets/logo.svg" alt="Estúdio Kata">
     </a>
@@ -66,105 +66,137 @@
     <!-- HERO -->
     <section class="curso-detalhe-hero">
       <div class="curso-detalhe-hero__left">
-        <h1 class="curso-detalhe-hero__title">Business Design & AI</h1>
-        <p class="curso-detalhe-hero__date">14 de Agosto de 2026 – São Paulo, SP</p>
+        <h1 class="curso-detalhe-hero__title">Business Design & IA</h1>
       </div>
       <div class="curso-detalhe-hero__right">
-        <p class="curso-detalhe-hero__desc">
-          No dia a dia, o <em>design</em> participa da construção de soluções, mas raramente define o que realmente importa.
-        </p>
-        <p class="curso-detalhe-hero__desc">
-          Ao longo de um dia, vamos trabalhar como o <em>design</em> se conecta com contexto, negócio e tomada de decisão dentro das organizações. Com menos abstração e mais situações próximas da realidade.
-        </p>
-        <a href="#" class="btn btn--primary" id="hero-inscricao">
-          Inscreva-se
-          <img src="assets/arrow-cta.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
-        </a>
+        <p class="curso-detalhe-hero__desc">No dia a dia, a IA acelera a construção de soluções, mas nem sempre ajuda a definir o que realmente importa.</p>
+        <p class="curso-detalhe-hero__desc">Ao longo de um dia, vamos usar business design e IA como laboratório para investigar problemas, construir caminhos e tomar decisões mais claras dentro das organizações. Com menos resposta pronta e mais leitura crítica da realidade.</p>
+        <div class="curso-detalhe-hero__infobar">
+          <span class="curso-detalhe-hero__date">14 de Agosto de 2026 — São Paulo, SP</span>
+          <a href="#" class="btn btn--inscricao" id="hero-inscricao">
+            Inscreva-se
+            <img src="assets/arrow-diagonal.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- GRADE DE MÓDULOS -->
+    <!-- BLOCOS (horizontal scroll) -->
     <div class="curso-detalhe-grade-outer">
       <div class="curso-detalhe-grade">
         <div class="curso-detalhe-grade__track">
 
           <div class="curso-detalhe-grade__card">
-            <p class="curso-detalhe-grade__card-num">Bloco 01</p>
-            <h3 class="curso-detalhe-grade__card-title">Design e contexto de negócio</h3>
-            <p class="curso-detalhe-grade__card-text">Como o design opera dentro das organizações e por que o contexto muda tudo sobre o que é uma boa solução.</p>
+            <div class="curso-detalhe-grade__card-top">
+              <span class="curso-detalhe-grade__card-num">Bloco 01</span>
+              <span class="curso-detalhe-grade__card-tag">_contexto</span>
+            </div>
+            <h3 class="curso-detalhe-grade__card-title">Entender o que está em disputa.</h3>
+            <p class="curso-detalhe-grade__card-text">Partimos de um cenário real para investigar o problema, o contexto de negócio e os impactos que a IA pode gerar quando entra como parte da solução.</p>
           </div>
 
           <div class="curso-detalhe-grade__card">
-            <p class="curso-detalhe-grade__card-num">Bloco 02</p>
-            <h3 class="curso-detalhe-grade__card-title">Valor e impacto</h3>
-            <p class="curso-detalhe-grade__card-text">Como traduzir o trabalho de design em linguagem de negócio sem perder o que importa.</p>
+            <div class="curso-detalhe-grade__card-top">
+              <span class="curso-detalhe-grade__card-num">Bloco 02</span>
+              <span class="curso-detalhe-grade__card-tag">_construção</span>
+            </div>
+            <h3 class="curso-detalhe-grade__card-title">Abrir caminhos com critério.</h3>
+            <p class="curso-detalhe-grade__card-text">A partir do contexto, o grupo explora possibilidades, combina repertório de business design e IA e começa a dar forma a alternativas viáveis.</p>
           </div>
 
           <div class="curso-detalhe-grade__card">
-            <p class="curso-detalhe-grade__card-num">Bloco 03</p>
-            <h3 class="curso-detalhe-grade__card-title">Tomada de decisão</h3>
-            <p class="curso-detalhe-grade__card-text">Frameworks para decidir melhor e comunicar decisões com clareza dentro de times.</p>
+            <div class="curso-detalhe-grade__card-top">
+              <span class="curso-detalhe-grade__card-num">Bloco 03</span>
+              <span class="curso-detalhe-grade__card-tag">_decisão</span>
+            </div>
+            <h3 class="curso-detalhe-grade__card-title">Escolher onde a IA faz sentido.</h3>
+            <p class="curso-detalhe-grade__card-text">As ideias são tensionadas até a escolha de uma direção principal. O foco está em explicitar trade-offs, riscos e valor real para o negócio.</p>
           </div>
 
           <div class="curso-detalhe-grade__card">
-            <p class="curso-detalhe-grade__card-num">Bloco 04</p>
-            <h3 class="curso-detalhe-grade__card-title">IA como ferramenta estratégica</h3>
-            <p class="curso-detalhe-grade__card-text">Como integrar IA nos processos de design de forma consciente, crítica e geradora de valor real.</p>
+            <div class="curso-detalhe-grade__card-top">
+              <span class="curso-detalhe-grade__card-num">Bloco 04</span>
+              <span class="curso-detalhe-grade__card-tag">_tangibilização</span>
+            </div>
+            <h3 class="curso-detalhe-grade__card-title">Transformar decisão em proposta.</h3>
+            <p class="curso-detalhe-grade__card-text">A decisão ganha forma. O grupo estrutura uma solução visível, sustentável e comunicável, conectando experiência, tecnologia e impacto.</p>
+          </div>
+
+          <div class="curso-detalhe-grade__card">
+            <div class="curso-detalhe-grade__card-top">
+              <span class="curso-detalhe-grade__card-num">Bloco 05</span>
+              <span class="curso-detalhe-grade__card-tag">_conexão</span>
+            </div>
+            <h3 class="curso-detalhe-grade__card-title">Continuar a conversa fora da mesa.</h3>
+            <p class="curso-detalhe-grade__card-text">Encerramos o encontro em um ambiente mais aberto, com happy hour, troca entre participantes e fortalecimento das conexões criadas ao longo do dia.</p>
           </div>
 
         </div><!-- /.curso-detalhe-grade__track -->
       </div><!-- /.curso-detalhe-grade -->
     </div><!-- /.curso-detalhe-grade-outer -->
 
-    <!-- FAQ -->
-    <section class="curso-detalhe-faq">
-      <h2 class="curso-detalhe-faq__label">Perguntas frequentes</h2>
-      <div class="curso-detalhe-faq__items">
+    <!-- MOTIVOS PARA PARTICIPAR -->
+    <section class="curso-detalhe-motivos">
+      <h2 class="curso-detalhe-motivos__titulo">Motivos para participar</h2>
+      <div class="curso-detalhe-motivos__lista">
 
-        <div class="curso-detalhe-faq__item">
-          <h3 class="curso-detalhe-faq__question">Preciso ter experiência prévia em negócios?</h3>
-          <p class="curso-detalhe-faq__answer">Não. Vamos passar pela teoria básica de administração de empresas, mas também vamos colocar esse conhecimento na prática com atividades e trocas.</p>
+        <div class="curso-detalhe-motivos__item">
+          <h3 class="curso-detalhe-motivos__item-title">Tomar decisões com mais contexto.</h3>
+          <p class="curso-detalhe-motivos__item-text">Você passa a enxergar além da interface e entende como negócio, operação, tecnologia e comportamento influenciam o que vale construir. Isso ajuda a sair da opinião solta e tomar decisões com mais critério.</p>
         </div>
 
-        <div class="curso-detalhe-faq__item">
-          <h3 class="curso-detalhe-faq__question">O conteúdo serve para designers de produto?</h3>
-          <p class="curso-detalhe-faq__answer">Sim. O curso foi pensado para designers que querem entender o contexto maior em que suas decisões estão inseridas, independentemente da especialidade.</p>
+        <div class="curso-detalhe-motivos__item">
+          <h3 class="curso-detalhe-motivos__item-title">Usar IA sem virar operador de ferramenta.</h3>
+          <p class="curso-detalhe-motivos__item-text">Em vez de depender de prompt pronto ou solução genérica, você aprende a usar IA como apoio para investigar, organizar ideias, testar caminhos e construir propostas melhores.</p>
         </div>
 
-        <div class="curso-detalhe-faq__item">
-          <h3 class="curso-detalhe-faq__question">Quantas vagas estão disponíveis?</h3>
-          <p class="curso-detalhe-faq__answer">O encontro é presencial e as vagas são limitadas para garantir uma troca mais rica. Fique de olho — quando esgota, não reabre.</p>
+        <div class="curso-detalhe-motivos__item">
+          <h3 class="curso-detalhe-motivos__item-title">Defender propostas com mais clareza.</h3>
+          <p class="curso-detalhe-motivos__item-text">O encontro ajuda a transformar percepção em argumento. Você pratica como explicar escolhas, explicitar trade-offs e conectar suas decisões ao que importa para o negócio.</p>
+        </div>
+
+        <div class="curso-detalhe-motivos__item curso-detalhe-motivos__item--last">
+          <h3 class="curso-detalhe-motivos__item-title">Construir conexões que duram além do dia.</h3>
+          <p class="curso-detalhe-motivos__item-text">O presencial cria espaço para pensar junto, testar ideias, ouvir outras perspectivas e perceber que muita gente está tentando resolver problemas parecidos. E o happy hour existe justamente para a conversa não acabar quando a atividade termina.</p>
         </div>
 
       </div>
     </section>
 
-    <!-- COMO VAI SER O SEU DIA -->
-    <section class="curso-detalhe-agenda">
-      <h2 class="curso-detalhe-agenda__title">Como vai ser o seu dia?</h2>
-      <div class="curso-detalhe-agenda__cards">
+    <!-- O QUE VOCÊ VAI APRENDER -->
+    <section class="curso-detalhe-aprende">
+      <h2 class="curso-detalhe-aprende__titulo">O que você vai aprender?</h2>
+      <div class="curso-detalhe-aprende__track">
 
-        <div class="curso-detalhe-agenda__card">
-          <img src="assets/graphism.svg" alt="" class="curso-detalhe-agenda__graphism" aria-hidden="true">
-          <div>
-            <h3 class="curso-detalhe-agenda__card-title">Manhã — Contexto e negócio</h3>
-            <p class="curso-detalhe-agenda__card-text">Abrimos o dia entendendo como organizações funcionam, onde o design entra e o que separa execução de influência estratégica.</p>
+        <div class="curso-detalhe-aprende__card">
+          <img src="assets/graphism.svg" alt="" aria-hidden="true" class="curso-detalhe-aprende__graphism">
+          <div class="curso-detalhe-aprende__card-body">
+            <h3 class="curso-detalhe-aprende__card-title">Ler problemas de negócio</h3>
+            <p class="curso-detalhe-aprende__card-text">Aprenda a sair da demanda solta para entender contexto, restrições, interesses e critérios que realmente orientam uma decisão.</p>
           </div>
         </div>
 
-        <div class="curso-detalhe-agenda__card">
-          <img src="assets/graphism.svg" alt="" class="curso-detalhe-agenda__graphism" aria-hidden="true">
-          <div>
-            <h3 class="curso-detalhe-agenda__card-title">Tarde — Prática e IA</h3>
-            <p class="curso-detalhe-agenda__card-text">Exercícios aplicados com situações reais de produto. Discutimos o papel da IA como ferramenta de decisão e o que muda (e o que não muda) no trabalho do designer.</p>
+        <div class="curso-detalhe-aprende__card">
+          <img src="assets/graphism.svg" alt="" aria-hidden="true" class="curso-detalhe-aprende__graphism">
+          <div class="curso-detalhe-aprende__card-body">
+            <h3 class="curso-detalhe-aprende__card-title">Usar IA com intenção</h3>
+            <p class="curso-detalhe-aprende__card-text">Explore formas de aplicar IA como apoio à investigação, construção e síntese, sem transformar tecnologia em solução automática.</p>
           </div>
         </div>
 
-        <div class="curso-detalhe-agenda__card">
-          <img src="assets/graphism.svg" alt="" class="curso-detalhe-agenda__graphism" aria-hidden="true">
-          <div>
-            <h3 class="curso-detalhe-agenda__card-title">Encerramento — Troca aberta</h3>
-            <p class="curso-detalhe-agenda__card-text">Espaço para perguntas, conversas e conexões. Sem roteiro fixo — o que surgir do grupo, a gente responde.</p>
+        <div class="curso-detalhe-aprende__card">
+          <img src="assets/graphism.svg" alt="" aria-hidden="true" class="curso-detalhe-aprende__graphism">
+          <div class="curso-detalhe-aprende__card-body">
+            <h3 class="curso-detalhe-aprende__card-title">Construir propostas viáveis</h3>
+            <p class="curso-detalhe-aprende__card-text">Transforme possibilidades em caminhos mais claros, conectando experiência, operação, valor percebido e impacto para o negócio.</p>
+          </div>
+        </div>
+
+        <div class="curso-detalhe-aprende__card">
+          <img src="assets/graphism.svg" alt="" aria-hidden="true" class="curso-detalhe-aprende__graphism">
+          <div class="curso-detalhe-aprende__card-body">
+            <h3 class="curso-detalhe-aprende__card-title">Defender decisões com clareza</h3>
+            <p class="curso-detalhe-aprende__card-text">Pratique como explicitar trade-offs, sustentar escolhas e comunicar o valor de uma proposta para diferentes pessoas da organização.</p>
           </div>
         </div>
 
@@ -183,7 +215,7 @@
             <img src="assets/foto-gustavo.jpg" alt="Gustavo Aragon" class="curso-detalhe-facilitador__img">
           </div>
           <h3 class="curso-detalhe-facilitador__nome">Gus Aragon</h3>
-          <p class="curso-detalhe-facilitador__role">Líder de estratégia de produto</p>
+          <p class="curso-detalhe-facilitador__role">Idealizador do Estúdio Kata e Líder de estratégia de produto</p>
           <a href="https://linkedin.com/in/gustavoaragon" target="_blank" rel="noopener" class="curso-detalhe-facilitador__linkedin" aria-label="LinkedIn de Gus Aragon">
             <img src="assets/icon-linkedin.svg" alt="">
           </a>
@@ -192,10 +224,10 @@
         <div class="curso-detalhe-facilitador">
           <div class="curso-detalhe-facilitador__foto">
             <img src="assets/facilitador-vector.svg" alt="" class="curso-detalhe-facilitador__vector" aria-hidden="true">
-            <img src="assets/foto-gustavo.jpg" alt="Willian Diniz" class="curso-detalhe-facilitador__img">
+            <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-detalhe-facilitador__img">
           </div>
           <h3 class="curso-detalhe-facilitador__nome">Will Diniz</h3>
-          <p class="curso-detalhe-facilitador__role">Líder de estratégia de produto</p>
+          <p class="curso-detalhe-facilitador__role">Idealizador do Estúdio Kata e Designer Sênior de Produto</p>
           <a href="https://linkedin.com/in/williandiniz" target="_blank" rel="noopener" class="curso-detalhe-facilitador__linkedin" aria-label="LinkedIn de Will Diniz">
             <img src="assets/icon-linkedin.svg" alt="">
           </a>
@@ -222,27 +254,23 @@
     <section class="curso-detalhe-bolsas">
       <div class="curso-detalhe-bolsas__left">
         <p class="curso-detalhe-bolsas__rotated" aria-hidden="true">bolsas</p>
-        <h2 class="curso-detalhe-bolsas__title">Estamos comprometidos em garantir que nenhum estudante seja impedido de prosseguir seus estudos devido a dificuldades financeiras.</h2>
+        <h2 class="curso-detalhe-bolsas__title">Queremos que acesso também faça parte do projeto. Porque construir repertório, conexão e espaço de troca não deveria depender apenas de condição financeira.</h2>
+        <p class="curso-detalhe-bolsas__desc">Para solicitar a bolsa, entre em contato e conte brevemente sobre você, seu contexto atual e qual modalidade faz sentido para o seu momento.</p>
         <a href="mailto:contato@estudiokata.com" class="curso-detalhe-bolsas__cta">
-          Entre em contato
-          <img src="assets/arrow-teal.svg" alt="" aria-hidden="true">
+          Solicitar bolsa
+          <img src="assets/arrow-diagonal.svg" alt="" aria-hidden="true">
         </a>
       </div>
       <div class="curso-detalhe-bolsas__right">
 
         <div class="curso-detalhe-bolsa">
-          <h3 class="curso-detalhe-bolsa__title">Bolsa integral</h3>
-          <p class="curso-detalhe-bolsa__text">Para quem está em transição de carreira ou enfrenta dificuldade financeira comprovada. Cobre 100% do valor do curso.</p>
+          <h3 class="curso-detalhe-bolsa__title">Alunos fundadores</h3>
+          <p class="curso-detalhe-bolsa__text">Oferecemos bolsas para pessoas que participaram da nossa primeira turma e ajudaram a construir os primeiros passos da Kata.<br><br>É uma forma de reconhecer quem esteve com a gente desde o início e manter essa comunidade próxima das próximas iniciativas.</p>
         </div>
 
         <div class="curso-detalhe-bolsa">
-          <h3 class="curso-detalhe-bolsa__title">Bolsa parcial 50%</h3>
-          <p class="curso-detalhe-bolsa__text">Para profissionais autônomos ou em início de carreira. Reduz pela metade o investimento no curso.</p>
-        </div>
-
-        <div class="curso-detalhe-bolsa">
-          <h3 class="curso-detalhe-bolsa__title">Bolsa para comunidade</h3>
-          <p class="curso-detalhe-bolsa__text">Para grupos, coletivos e organizações sem fins lucrativos que se identificam com a missão do Estúdio Kata.</p>
+          <h3 class="curso-detalhe-bolsa__title">Fundo de bolsas</h3>
+          <p class="curso-detalhe-bolsa__text">Oferecemos bolsas de 30% para ampliar o acesso.<br><br>Se você faz parte de grupos historicamente sub-representados no mercado ou está em um momento de transição profissional, queremos que você esteja com a gente. Também consideramos candidaturas de pessoas com renda familiar mensal de até R$ 4.000 por pessoa.<br><br>Acreditamos que diversidade não é discurso, é construção ativa. Por isso, abrimos esse caminho de acesso ao curso.</p>
         </div>
 
       </div>
@@ -251,7 +279,10 @@
     <!-- INFORMAÇÕES ADICIONAIS -->
     <section class="curso-detalhe-info">
       <div class="curso-detalhe-info__card">
-        <h2 class="curso-detalhe-info__title">Informações adicionais</h2>
+        <div class="curso-detalhe-info__left">
+          <h2 class="curso-detalhe-info__title">Informações adicionais</h2>
+          <p class="curso-detalhe-info__subtitle">A realização do mini-intensivo está condicionada à formação de uma turma mínima de participantes.<br><br>Caso esse número não seja atingido, a Kata se reserva no direito de reagendar ou cancelar o evento. Os participantes serão comunicados previamente e poderão optar pela devolução integral do valor pago ou pela transferência da inscrição para uma nova data.</p>
+        </div>
         <div class="curso-detalhe-info__items">
           <div class="curso-detalhe-info__item">
             <span class="curso-detalhe-info__label">Data</span>
@@ -263,7 +294,7 @@
           </div>
           <div class="curso-detalhe-info__item">
             <span class="curso-detalhe-info__label">Horário</span>
-            <span class="curso-detalhe-info__value">9h às 18h</span>
+            <span class="curso-detalhe-info__value">09 às 18h</span>
           </div>
           <div class="curso-detalhe-info__item">
             <span class="curso-detalhe-info__label">Formato</span>
@@ -271,7 +302,7 @@
           </div>
           <div class="curso-detalhe-info__item">
             <span class="curso-detalhe-info__label">Investimento</span>
-            <span class="curso-detalhe-info__value">R$ 890</span>
+            <span class="curso-detalhe-info__value">R$ 360,00</span>
           </div>
           <div class="curso-detalhe-info__item">
             <span class="curso-detalhe-info__label">Certificado</span>
@@ -284,13 +315,13 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer footer--inner">
+  <footer class="footer footer--curso">
     <div class="footer__signature">
       <img src="assets/graphism-light.svg" alt="">
       Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
     </div>
     <div class="footer__display" aria-hidden="true">
-      <img src="assets/kata-wordmark.svg" alt="kata">
+      <img src="assets/kata-wordmark-footer.svg" alt="kata">
     </div>
   </footer>
 
@@ -298,13 +329,13 @@
   <div class="curso-flutuante" id="curso-flutuante" aria-hidden="true">
     <div class="curso-flutuante__investimento">
       <span class="curso-flutuante__label">Investimento de</span>
-      <span class="curso-flutuante__valor">R$ 350,00</span>
+      <span class="curso-flutuante__valor">R$ 360,00</span>
     </div>
     <div class="curso-flutuante__right">
       <span class="curso-flutuante__data">14 de Agosto de 2026 — São Paulo, SP</span>
       <a href="#" class="curso-flutuante__cta">
         Inscreva-se
-        <img src="assets/arrow-cta.svg" alt="" aria-hidden="true">
+        <img src="assets/arrow-diagonal.svg" alt="" aria-hidden="true">
       </a>
     </div>
   </div>
@@ -327,6 +358,12 @@
       }
     });
 
+    /* ─── NAV HIDE ON SCROLL ────────────────────────── */
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-hidden', window.scrollY > 10);
+    }, { passive: true });
+
     /* ─── MENU OVERLAY ───────────────────────────────── */
     const menuOverlay  = document.getElementById('menu-overlay');
     const menuBackdrop = document.getElementById('menu-backdrop');
@@ -337,6 +374,7 @@
       menuOverlay.classList.add('is-open');
       menuBackdrop.classList.add('is-open');
       menuOpen.setAttribute('aria-expanded', 'true');
+      nav.classList.remove('is-hidden');
     }
 
     function closeMenu() {
@@ -362,39 +400,17 @@
       setTimeout(() => { el.textContent = original; }, 1500);
     });
 
-    /* ─── GRADE: horizontal scroll (TODO: animar) ───── */
+    /* ─── GRADE: horizontal scroll ──────────────────── */
     const gradeOuter   = document.querySelector('.curso-detalhe-grade-outer');
     const gradeSection = document.querySelector('.curso-detalhe-grade');
     const gradeTrack   = document.querySelector('.curso-detalhe-grade__track');
-    const GRADE_GAP    = 80;
 
-    function initGradeScroll() {
-      return Math.max(0, gradeTrack.scrollWidth - gradeSection.clientWidth);
-    }
-
-    let gradeMax = initGradeScroll();
+    let gradeMax = Math.max(0, gradeTrack.scrollWidth - gradeSection.clientWidth);
 
     window.addEventListener('resize', () => {
       gradeTrack.style.transform = '';
-      gradeMax = initGradeScroll();
+      gradeMax = Math.max(0, gradeTrack.scrollWidth - gradeSection.clientWidth);
     });
-
-    /* TODO: animar — reativar depois que o layout estático estiver OK
-    function enableGradeAnimation() {
-      gradeSection.style.position = 'sticky';
-      gradeSection.style.top = '94px';
-      gradeOuter.style.minHeight = (gradeSection.offsetHeight + gradeMax + GRADE_GAP) + 'px';
-      window.addEventListener('scroll', () => {
-        if (gradeMax <= 0) return;
-        const outerRect = gradeOuter.getBoundingClientRect();
-        const scrolled  = Math.max(0, -outerRect.top);
-        const progress  = Math.min(1, scrolled / gradeMax);
-        gradeTrack.style.transform = `translateX(${-progress * gradeMax}px)`;
-      }, { passive: true });
-    }
-    enableGradeAnimation();
-    */
-
 
     /* ─── FLUTUANTE ─────────────────────────────────── */
     const flutuante = document.getElementById('curso-flutuante');
@@ -407,7 +423,6 @@
     }, { threshold: 0 });
 
     flutuanteObserver.observe(heroInscricao);
-
 
     /* ─── KATA: efeito magnético no footer ─────────── */
     const footer  = document.querySelector('.footer');

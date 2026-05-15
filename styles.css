@@ -947,26 +947,17 @@ body {
 .curso-detalhe-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  padding: 128px 40px 88px;
+  gap: 80px;
+  padding: 120px 100px 80px;
   align-items: start;
-}
-
-.curso-detalhe-hero__date {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.32px;
-  color: #696969;
-  margin-top: 16px;
 }
 
 .curso-detalhe-hero__title {
   font-size: 48px;
   font-weight: 400;
-  line-height: 56px;
+  line-height: 1.2;
   letter-spacing: 0.96px;
-  color: #1E1A17;
+  color: #4d4d4d;
 }
 
 .curso-detalhe-hero__desc {
@@ -982,10 +973,6 @@ body {
   font-style: italic;
 }
 
-.curso-detalhe-hero__right .btn--primary {
-  margin-top: 16px;
-}
-
 /* Grade */
 .curso-detalhe-grade-outer {
   position: relative;
@@ -999,7 +986,7 @@ body {
 
 .curso-detalhe-grade__track {
   display: flex;
-  padding-left: 40px;
+  padding-left: 100px;
   will-change: transform;
 }
 
@@ -1185,7 +1172,7 @@ body {
 
 /* Facilitadores */
 .curso-detalhe-facilitadores {
-  padding: 80px 40px 80px;
+  padding: 80px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1296,8 +1283,8 @@ body {
 
 /* Testimonial */
 .curso-detalhe-testimonial {
-  background: #ff6733;
-  padding: 120px;
+  background: #fb4202;
+  padding: 140px 100px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1362,9 +1349,9 @@ body {
 
 /* Bolsas */
 .curso-detalhe-bolsas {
-  padding: 80px 40px;
+  padding: 120px 100px;
   display: grid;
-  grid-template-columns: 562px 1fr;
+  grid-template-columns: 496px 1fr;
   gap: 72px;
   align-items: start;
 }
@@ -1395,7 +1382,7 @@ body {
   line-height: 48px;
   letter-spacing: 0.64px;
   color: #1E1A17;
-  margin-bottom: 72px;
+  margin-bottom: 24px;
 }
 
 .curso-detalhe-bolsas__right {
@@ -1468,10 +1455,10 @@ body {
 
 .curso-detalhe-info__card {
   background: #292623;
-  padding: 64px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  border-radius: 12px;
+  padding: 60px 40px;
+  display: flex;
+  gap: 72px;
   align-items: start;
 }
 
@@ -1481,8 +1468,6 @@ body {
   line-height: 40px;
   letter-spacing: 0.64px;
   color: #FEFEFE;
-  position: sticky;
-  top: 120px;
 }
 
 .curso-detalhe-info__items {
@@ -1527,6 +1512,226 @@ body {
   position: static;
   transform: none;
   margin-bottom: 80px;
+}
+
+/* Footer — curso (dark green) */
+.footer--curso {
+  background: #2f4f3e;
+  color: #f5efe1;
+}
+
+
+/* ─── PAGE: CURSO DETALHE — NEW CLASSES ──────────── */
+
+/* Hero: right column padding + infobar */
+.curso-detalhe-hero__right {
+  padding-top: 80px;
+}
+
+.curso-detalhe-hero__infobar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.curso-detalhe-hero__date {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.32px;
+  color: #1e1a17;
+}
+
+/* Inscricao button */
+.btn--inscricao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 24px;
+  border: 1px solid #fb4202;
+  border-radius: 12px;
+  color: #fb4202;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.72px;
+  text-decoration: none;
+  background: white;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn--inscricao:hover {
+  background: #fb4202;
+  color: #fff;
+}
+
+/* Blocos: card top row */
+.curso-detalhe-grade__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.curso-detalhe-grade__card-tag {
+  font-size: 14px;
+  font-weight: 300;
+  color: #1e1a17;
+  line-height: 1.3;
+}
+
+/* Motivos para participar */
+.curso-detalhe-motivos {
+  background: #2f4f3e;
+  display: flex;
+  gap: 96px;
+  padding: 140px 100px;
+  align-items: flex-start;
+}
+
+.curso-detalhe-motivos__titulo {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.72px;
+  color: #fefefe;
+  white-space: nowrap;
+  flex-shrink: 0;
+  position: sticky;
+  top: 120px;
+}
+
+.curso-detalhe-motivos__lista {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.curso-detalhe-motivos__item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid #cbcbcb;
+}
+
+.curso-detalhe-motivos__item + .curso-detalhe-motivos__item {
+  padding-top: 72px;
+}
+
+.curso-detalhe-motivos__item--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.curso-detalhe-motivos__item-title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #fefefe;
+}
+
+.curso-detalhe-motivos__item-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #e9e9e9;
+}
+
+/* O que você vai aprender */
+.curso-detalhe-aprende {
+  padding: 120px 0 80px;
+}
+
+.curso-detalhe-aprende__titulo {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.64px;
+  color: #4d4d4d;
+  padding: 0 100px;
+  margin-bottom: 60px;
+}
+
+.curso-detalhe-aprende__track {
+  display: flex;
+  gap: 32px;
+  padding: 0 100px 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.curso-detalhe-aprende__track::-webkit-scrollbar {
+  display: none;
+}
+
+.curso-detalhe-aprende__card {
+  flex: 0 0 580px;
+  height: 336px;
+  border: 1px solid #cbcbcb;
+  border-radius: 12px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.curso-detalhe-aprende__graphism {
+  width: 37px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.curso-detalhe-aprende__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.curso-detalhe-aprende__card-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0.4px;
+  color: #1e1a17;
+}
+
+.curso-detalhe-aprende__card-text {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0.36px;
+  color: #696969;
+}
+
+/* Bolsas: desc paragraph */
+.curso-detalhe-bolsas__desc {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #696969;
+  letter-spacing: 0.4px;
+  margin-bottom: 32px;
+}
+
+/* Informações adicionais: left column + subtitle */
+.curso-detalhe-info__left {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.curso-detalhe-info__subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: 0.32px;
+  color: #e9e9e9;
+}
+
+.curso-detalhe-info__items {
+  flex: 1;
 }
 
 

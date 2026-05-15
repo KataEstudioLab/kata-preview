@@ -6,7 +6,7 @@
   <title>Business Design & IA — Estúdio Kata</title>
   <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -75,7 +75,7 @@
           <span class="curso-detalhe-hero__date">14 de Agosto de 2026 — São Paulo, SP</span>
           <a href="#" class="btn btn--home" id="hero-inscricao">
             Inscreva-se
-            <img src="assets/arrow-diagonal.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
+            <img src="assets/arrow-orange.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
           </a>
         </div>
       </div>
@@ -164,8 +164,10 @@
     </section>
 
     <!-- O QUE VOCÊ VAI APRENDER -->
+    <div class="aprende-outer">
     <section class="curso-detalhe-aprende">
       <h2 class="curso-detalhe-aprende__titulo">O que você vai aprender?</h2>
+      <div class="curso-detalhe-aprende__viewport">
       <div class="curso-detalhe-aprende__track">
 
         <div class="curso-detalhe-aprende__card">
@@ -201,12 +203,14 @@
         </div>
 
       </div>
+      </div><!-- /.aprende-viewport -->
     </section>
+    </div><!-- /.aprende-outer -->
 
     <!-- FACILITADORES -->
     <section class="curso-detalhe-facilitadores">
       <p class="curso-detalhe-facilitadores__label">Facilitadores</p>
-      <h2 class="curso-detalhe-facilitadores__title">Contamos com os melhores profissionais para te ensinar.</h2>
+      <h2 class="curso-detalhe-facilitadores__title">Aprende com quem faz na prática.</h2>
       <div class="curso-detalhe-facilitadores__grid">
 
         <div class="curso-detalhe-facilitador">
@@ -216,20 +220,20 @@
           </div>
           <h3 class="curso-detalhe-facilitador__nome">Gus Aragon</h3>
           <p class="curso-detalhe-facilitador__role">Idealizador do Estúdio Kata e Líder de estratégia de produto</p>
-          <a href="https://linkedin.com/in/gustavoaragon" target="_blank" rel="noopener" class="curso-detalhe-facilitador__linkedin" aria-label="LinkedIn de Gus Aragon">
-            <img src="assets/icon-linkedin.svg" alt="">
+          <a href="https://www.linkedin.com/in/gusaragon/" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="LinkedIn de Gus Aragon">
+            <img src="assets/icon-linkedin.svg" alt="LinkedIn">
           </a>
         </div>
 
         <div class="curso-detalhe-facilitador">
           <div class="curso-detalhe-facilitador__foto">
             <img src="assets/facilitador-vector.svg" alt="" class="curso-detalhe-facilitador__vector" aria-hidden="true">
-            <img src="assets/foto-willian.png" alt="Willian Diniz" class="curso-detalhe-facilitador__img">
+            <img src="assets/foto-willian-new.png" alt="Willian Diniz" class="curso-detalhe-facilitador__img">
           </div>
           <h3 class="curso-detalhe-facilitador__nome">Will Diniz</h3>
           <p class="curso-detalhe-facilitador__role">Idealizador do Estúdio Kata e Designer Sênior de Produto</p>
-          <a href="https://linkedin.com/in/williandiniz" target="_blank" rel="noopener" class="curso-detalhe-facilitador__linkedin" aria-label="LinkedIn de Will Diniz">
-            <img src="assets/icon-linkedin.svg" alt="">
+          <a href="https://www.linkedin.com/in/wlndiniz/" target="_blank" rel="noopener" class="menu-overlay__social-btn" aria-label="LinkedIn de Will Diniz">
+            <img src="assets/icon-linkedin.svg" alt="LinkedIn">
           </a>
         </div>
 
@@ -333,9 +337,9 @@
     </div>
     <div class="curso-flutuante__right">
       <span class="curso-flutuante__data">14 de Agosto de 2026 — São Paulo, SP</span>
-      <a href="#" class="curso-flutuante__cta">
+      <a href="#" class="btn btn--home">
         Inscreva-se
-        <img src="assets/arrow-diagonal.svg" alt="" aria-hidden="true">
+        <img src="assets/arrow-orange.svg" alt="" aria-hidden="true" width="24" height="24" style="display:block;flex-shrink:0;">
       </a>
     </div>
   </div>
@@ -400,29 +404,66 @@
       setTimeout(() => { el.textContent = original; }, 1500);
     });
 
-    /* ─── GRADE: horizontal scroll ──────────────────── */
-    const gradeOuter   = document.querySelector('.curso-detalhe-grade-outer');
-    const gradeSection = document.querySelector('.curso-detalhe-grade');
-    const gradeTrack   = document.querySelector('.curso-detalhe-grade__track');
-
-    let gradeMax = Math.max(0, gradeTrack.scrollWidth - gradeSection.clientWidth);
-
-    window.addEventListener('resize', () => {
-      gradeTrack.style.transform = '';
-      gradeMax = Math.max(0, gradeTrack.scrollWidth - gradeSection.clientWidth);
-    });
 
     /* ─── FLUTUANTE ─────────────────────────────────── */
-    const flutuante = document.getElementById('curso-flutuante');
+    const flutuante    = document.getElementById('curso-flutuante');
     const heroInscricao = document.getElementById('hero-inscricao');
+    const footerEl     = document.querySelector('.footer--curso');
 
-    const flutuanteObserver = new IntersectionObserver((entries) => {
-      const visible = !entries[0].isIntersecting;
-      flutuante.classList.toggle('is-visible', visible);
-      flutuante.setAttribute('aria-hidden', visible ? 'false' : 'true');
-    }, { threshold: 0 });
+    let heroPassed  = false;
+    let footerVisible = false;
 
-    flutuanteObserver.observe(heroInscricao);
+    function updateFlutuante() {
+      const show = heroPassed && !footerVisible;
+      flutuante.classList.toggle('is-visible', show);
+      flutuante.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+
+    // Aparece quando o botão hero sai de vista
+    new IntersectionObserver((entries) => {
+      heroPassed = !entries[0].isIntersecting;
+      updateFlutuante();
+    }, { threshold: 0 }).observe(heroInscricao);
+
+    // Some quando o footer verde entra em vista
+    new IntersectionObserver((entries) => {
+      footerVisible = entries[0].isIntersecting;
+      updateFlutuante();
+    }, { threshold: 0 }).observe(footerEl);
+
+
+    /* ─── APRENDE: scroll vertical → horizontal ────── */
+    (function () {
+      const aOuter   = document.querySelector('.aprende-outer');
+      const aSection = document.querySelector('.curso-detalhe-aprende');
+      const aTrack   = document.querySelector('.curso-detalhe-aprende__track');
+      let scrollDist = 0;
+
+      function setup() {
+        aTrack.style.transform  = '';
+        aSection.style.position = '';
+        aSection.style.top      = '';
+        aOuter.style.height     = '';
+        void aOuter.offsetHeight; // força reflow para medir natural
+
+        scrollDist = Math.max(0, aTrack.scrollWidth - window.innerWidth + 100);
+
+        aSection.style.position = 'sticky';
+        aSection.style.top      = '0px';
+        // altura extra = scroll horizontal + respiro da próxima seção
+        aOuter.style.height     = (aSection.offsetHeight + scrollDist) + 'px';
+      }
+
+      setup();
+      window.addEventListener('resize', setup);
+
+      window.addEventListener('scroll', () => {
+        const rect     = aOuter.getBoundingClientRect();
+        // progresso: 0 quando outer.top = 0 (acaba de grudar), 1 ao terminar
+        const progress = Math.max(0, Math.min(1, -rect.top / scrollDist));
+        aTrack.style.transform  = `translateX(${-progress * scrollDist}px)`;
+      }, { passive: true });
+    })();
 
     /* ─── KATA: efeito magnético no footer ─────────── */
     const footer  = document.querySelector('.footer');

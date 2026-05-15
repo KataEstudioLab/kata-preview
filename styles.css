@@ -962,11 +962,15 @@ body {
 
 .curso-detalhe-hero__desc {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 32px;
   letter-spacing: 0.4px;
   color: #696969;
   margin-bottom: 24px;
+}
+
+.curso-detalhe-hero__desc:last-of-type {
+  margin-bottom: 0;
 }
 
 .curso-detalhe-hero__desc em {
@@ -981,7 +985,7 @@ body {
 
 .curso-detalhe-grade {
   overflow: hidden;
-  background: #FEFEFE;
+  background: transparent;
 }
 
 .curso-detalhe-grade__track {
@@ -1234,6 +1238,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 12px;
 }
 
 .curso-detalhe-facilitador__nome {
@@ -1298,7 +1303,8 @@ body {
 }
 
 .curso-detalhe-testimonial__quote-mark {
-  font-family: 'Playfair Display SC', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
   font-size: 128px;
   line-height: 64px;
   color: #FEFEFE;
@@ -1352,8 +1358,8 @@ body {
 .curso-detalhe-bolsas {
   padding: 120px 100px;
   display: grid;
-  grid-template-columns: 496px 1fr;
-  gap: 72px;
+  grid-template-columns: 1fr 480px;
+  gap: 104px;
   align-items: start;
 }
 
@@ -1361,8 +1367,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: sticky;
-  top: 120px;
 }
 
 .curso-detalhe-bolsas__rotated {
@@ -1417,7 +1421,7 @@ body {
 
 .curso-detalhe-bolsa__text {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 24px;
   letter-spacing: 0.32px;
   color: #696969;
@@ -1459,7 +1463,7 @@ body {
   border-radius: 12px;
   padding: 60px 40px;
   display: flex;
-  gap: 72px;
+  gap: 96px;
   align-items: start;
 }
 
@@ -1531,8 +1535,8 @@ body {
 
 .curso-detalhe-hero__infobar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 40px;
   margin-top: 40px;
 }
 
@@ -1613,6 +1617,9 @@ body {
   gap: 16px;
   padding-bottom: 72px;
   border-bottom: 1px solid #cbcbcb;
+  max-width: 569px;
+  margin-left: auto;
+  width: 100%;
 }
 
 .curso-detalhe-motivos__item + .curso-detalhe-motivos__item {
@@ -1639,8 +1646,15 @@ body {
 }
 
 /* O que você vai aprender */
+.aprende-outer {
+  position: relative;
+  /* height definido por JS */
+}
+
 .curso-detalhe-aprende {
   padding: 120px 0 80px;
+  position: sticky;
+  top: 0;
 }
 
 .curso-detalhe-aprende__titulo {
@@ -1653,16 +1667,15 @@ body {
   margin-bottom: 60px;
 }
 
+.curso-detalhe-aprende__viewport {
+  overflow: hidden;
+}
+
 .curso-detalhe-aprende__track {
   display: flex;
   gap: 32px;
   padding: 0 100px 32px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.curso-detalhe-aprende__track::-webkit-scrollbar {
-  display: none;
+  will-change: transform;
 }
 
 .curso-detalhe-aprende__card {
@@ -1716,8 +1729,7 @@ body {
 
 /* Informações adicionais: left column + subtitle */
 .curso-detalhe-info__left {
-  width: 380px;
-  flex-shrink: 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1732,7 +1744,7 @@ body {
 }
 
 .curso-detalhe-info__items {
-  flex: 1;
+  flex: 0 0 524px;
 }
 
 
@@ -2634,20 +2646,20 @@ body {
 /* ─── FLUTUANTE ───────────────────────────────────────── */
 .curso-flutuante {
   position: fixed;
-  bottom: 72px;
-  left: 0;
-  right: 0;
-  max-width: 1280px;
-  margin: 0 auto;
-  background: #2E7D75;
+  bottom: 40px;
+  left: 100px;
+  right: 100px;
+  background: #FFFFFA;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px 24px;
+  padding: 32px 40px;
   z-index: 200;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(calc(100% + 100px));
+  transform: translateY(calc(100% + 60px));
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
@@ -2667,7 +2679,7 @@ body {
   font-size: 20px;
   font-weight: 300;
   line-height: normal;
-  color: #E9E9E9;
+  color: #696969;
   white-space: nowrap;
 }
 
@@ -2675,7 +2687,7 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: normal;
-  color: #FEFEFE;
+  color: #1E1A17;
   white-space: nowrap;
 }
 
@@ -2689,36 +2701,6 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: normal;
-  color: #FEFEFE;
-  white-space: nowrap;
-}
-
-.curso-flutuante__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: #FEFEFE;
-  border: 1px solid rgba(191, 191, 191, 0.32);
-  padding: 12px 16px;
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.32px;
   color: #1E1A17;
-  text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.18s;
-}
-
-.curso-flutuante__cta:hover {
-  background-color: #F0F0F0;
-}
-
-.curso-flutuante__cta img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  flex-shrink: 0;
-  filter: brightness(0);
 }

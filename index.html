@@ -289,20 +289,23 @@
       nav.classList.toggle('is-hidden', window.scrollY > 10);
     }, { passive: true });
 
-    const ctaObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const expanded = !entry.isIntersecting;
-        videoSection.classList.toggle('is-expanded', expanded);
-        if (expanded) {
-          heroVideo.play();
-        } else {
-          heroVideo.pause();
-          heroVideo.currentTime = 0;
-        }
-      });
-    }, { rootMargin: `-${getNavHeight()}px 0px 0px 0px`, threshold: 0 });
+    /* Expansão + autoplay do vídeo apenas no desktop */
+    if (window.matchMedia('(min-width: 769px)').matches) {
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const expanded = !entry.isIntersecting;
+          videoSection.classList.toggle('is-expanded', expanded);
+          if (expanded) {
+            heroVideo.play();
+          } else {
+            heroVideo.pause();
+            heroVideo.currentTime = 0;
+          }
+        });
+      }, { rootMargin: `-${getNavHeight()}px 0px 0px 0px`, threshold: 0 });
 
-    ctaObserver.observe(heroCta);
+      ctaObserver.observe(heroCta);
+    }
 
     /* ─── FOOTER: efeito magnético no wordmark ────────── */
     const footer  = document.querySelector('.footer');

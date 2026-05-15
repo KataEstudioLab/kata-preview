@@ -2230,6 +2230,11 @@ body {
     overflow-x: hidden;
   }
 
+  /* Grid texture projetada pra 1080px — esconde no mobile */
+  .home-texture {
+    display: none;
+  }
+
   /* NAV */
   .nav {
     padding: 16px 20px;

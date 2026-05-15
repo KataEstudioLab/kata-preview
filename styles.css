@@ -948,7 +948,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  padding: 120px 100px 80px;
+  padding: 144px 100px 104px;
   align-items: start;
 }
 
@@ -980,7 +980,7 @@ body {
 /* Grade */
 .curso-detalhe-grade-outer {
   position: relative;
-  padding-bottom: 88px;
+  padding-bottom: 112px;
 }
 
 .curso-detalhe-grade {
@@ -1177,7 +1177,7 @@ body {
 
 /* Facilitadores */
 .curso-detalhe-facilitadores {
-  padding: 80px 100px;
+  padding: 104px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1290,7 +1290,7 @@ body {
 /* Testimonial */
 .curso-detalhe-testimonial {
   background: #fb4202;
-  padding: 140px 100px;
+  padding: 164px 100px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1356,7 +1356,7 @@ body {
 
 /* Bolsas */
 .curso-detalhe-bolsas {
-  padding: 120px 100px;
+  padding: 144px 100px;
   display: grid;
   grid-template-columns: 1fr 480px;
   gap: 104px;
@@ -1455,7 +1455,7 @@ body {
 /* Informações adicionais */
 .curso-detalhe-info {
   background: #1E1A17;
-  padding: 80px 40px;
+  padding: 104px 40px;
 }
 
 .curso-detalhe-info__card {
@@ -1589,7 +1589,7 @@ body {
   background: #2f4f3e;
   display: flex;
   gap: 96px;
-  padding: 140px 100px;
+  padding: 164px 100px;
   align-items: flex-start;
 }
 
@@ -1652,7 +1652,7 @@ body {
 }
 
 .curso-detalhe-aprende {
-  padding: 120px 0 80px;
+  padding: 144px 0 104px;
   position: sticky;
   top: 0;
 }

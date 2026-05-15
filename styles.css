@@ -945,6 +945,7 @@ body {
 
 /* Hero */
 .curso-detalhe-hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -977,7 +978,18 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 40px;
+}
+
+.curso-detalhe-hero__scroll-arrow {
+  position: absolute;
+  right: 97px;
+  bottom: 40px;
+  width: 24px;
+  height: 41px;
+  display: block;
+  opacity: 0.5;
 }
 
 .curso-detalhe-hero__text-block {

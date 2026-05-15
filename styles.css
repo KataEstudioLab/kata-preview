@@ -998,6 +998,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 16px;
+  background: transparent;
 }
 
 .curso-detalhe-grade__card:first-child {
@@ -1532,7 +1533,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 48px;
+  margin-top: 40px;
 }
 
 .curso-detalhe-hero__date {

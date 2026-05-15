@@ -499,11 +499,11 @@ body {
   background: linear-gradient(
     105deg,
     #2F4F3E 0%,
-    #2F4F3E calc(var(--shimmer, -40%) - 10%),
-    #3A5F4A calc(var(--shimmer, -40%) - 3%),
-    #4A6E58 var(--shimmer, -40%),
-    #3A5F4A calc(var(--shimmer, -40%) + 3%),
-    #2F4F3E calc(var(--shimmer, -40%) + 10%),
+    #2F4F3E calc(var(--shimmer, -40%) - 12%),
+    #2A4538 calc(var(--shimmer, -40%) - 4%),
+    #243A2E var(--shimmer, -40%),
+    #2A4538 calc(var(--shimmer, -40%) + 4%),
+    #2F4F3E calc(var(--shimmer, -40%) + 12%),
     #2F4F3E 100%
   );
   -webkit-background-clip: text;

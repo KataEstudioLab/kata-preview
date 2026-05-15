@@ -2225,6 +2225,11 @@ body {
     --px: 20px;
   }
 
+  /* Prevent horizontal overflow from blocking vertical scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+
   /* NAV */
   .nav {
     padding: 16px 20px;
@@ -2260,6 +2265,15 @@ body {
     height: 260px;
   }
 
+  /* VÍDEO: disable full-screen expand on mobile */
+  .video-section.is-expanded {
+    padding: 0 24px;
+  }
+  .video-section.is-expanded .video-placeholder {
+    height: 220px;
+    border-radius: 12px;
+  }
+
   /* FORMAÇÕES */
   .formacoes {
     padding: 60px 24px;
@@ -2271,6 +2285,28 @@ body {
   }
   .formacoes__grid {
     flex-direction: column;
+    height: auto;
+    align-items: stretch;
+  }
+  .formacao-card {
+    flex: none;
+    width: 100%;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+  .formacao-card-link {
+    display: block;
+    width: 100%;
+  }
+
+  /* TESTIMONIAL */
+  .home-testimonial {
+    padding: 80px 24px;
+  }
+  .home-testimonial__quote {
+    font-size: 28px;
+    letter-spacing: -0.8px;
+    line-height: 1.35;
   }
 
   /* REPERTÓRIO (legacy, não usado na home nova) */
@@ -2325,11 +2361,34 @@ body {
 
   /* FOOTER */
   .footer {
-    padding-top: 80px;
+    height: auto;
+    min-height: 360px;
+    padding: 80px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
   }
   .footer__signature {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
     font-size: 13px;
     margin-bottom: 40px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .footer__display {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: 140px;
+    flex-shrink: 0;
   }
 
   /* MANIFESTO */

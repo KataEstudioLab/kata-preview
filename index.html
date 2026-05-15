@@ -185,23 +185,25 @@
   </footer>
 
   <script>
-    /* ─── SMOOTH SCROLL (lerp 10%) ──────────────────── */
-    (function () {
-      let target = window.scrollY;
+    /* ─── SMOOTH SCROLL (lerp 10%) — desktop only ──── */
+    if (window.matchMedia('(pointer: fine)').matches) {
+      (function () {
+        let target = window.scrollY;
 
-      window.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        target = Math.max(0, Math.min(max, target + e.deltaY));
-      }, { passive: false });
+        window.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          target = Math.max(0, Math.min(max, target + e.deltaY));
+        }, { passive: false });
 
-      (function tick() {
-        const curr = window.scrollY;
-        const diff = target - curr;
-        if (Math.abs(diff) > 0.5) window.scrollTo(0, curr + diff * 0.1);
-        requestAnimationFrame(tick);
+        (function tick() {
+          const curr = window.scrollY;
+          const diff = target - curr;
+          if (Math.abs(diff) > 0.5) window.scrollTo(0, curr + diff * 0.1);
+          requestAnimationFrame(tick);
+        })();
       })();
-    })();
+    }
 
     /* ─── PAGE TRANSITION ───────────────────────────── */
     const pt = document.getElementById('page-transition');

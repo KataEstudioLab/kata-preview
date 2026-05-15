@@ -2230,10 +2230,17 @@ body {
     overflow-x: hidden;
   }
 
-  /* Grid texture: ocupa largura toda no mobile (sem as margens de 100px) */
+  /* Grid texture: img tag em vez de background-image (Safari mobile) */
   .home-texture {
     left: 0;
     right: 0;
+    background-image: none;
+  }
+  .home-texture img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 
   /* NAV */

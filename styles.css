@@ -497,7 +497,7 @@ body {
 /* shimmer aplicado diretamente nos spans para não conflitar com background-clip */
 .home-testimonial__quote .anim-line__inner {
   background: linear-gradient(
-    105deg,
+    to bottom,
     #2F4F3E 0%,
     #2F4F3E calc(var(--shimmer, -40%) - 14%),
     #1A3326 calc(var(--shimmer, -40%) - 5%),

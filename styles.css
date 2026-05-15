@@ -993,7 +993,9 @@ body {
 
 .curso-detalhe-hero__scroll-arrow-icon {
   position: absolute;
-  left: 5.43px;   /* 22.61% of 24px */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 9px;
   width: 13.15px;
   height: 19.575px;
   display: block;
@@ -1001,11 +1003,9 @@ body {
 }
 
 @keyframes scroll-bounce {
-  0%   { top: 9px;  opacity: 1; }
-  55%  { top: 19px; opacity: 1; }
-  75%  { top: 19px; opacity: 0; }
-  76%  { top: 9px;  opacity: 0; }
-  100% { top: 9px;  opacity: 1; }
+  0%        { top: 9px;  }
+  35%, 50%  { top: 19px; }
+  85%, 100% { top: 9px;  }
 }
 
 .curso-detalhe-hero__text-block {

@@ -2239,30 +2239,31 @@ body {
     height: 30px;
   }
   .nav__menu {
-    font-size: 15px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
 
   /* HERO */
   .hero {
-    padding: 40px 24px 32px;
+    padding: 40px 24px 28px;
   }
   .hero__headline {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.2px;
-    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
   }
   .btn--home {
-    font-size: 15px;
-    padding: 14px 18px;
+    font-size: 14px;
+    padding: 13px 18px;
   }
 
   /* VÍDEO */
   .video-section {
-    padding: 48px 24px;
+    padding: 32px 24px;
   }
   .video-placeholder {
-    height: 260px;
+    height: 220px;
   }
 
   /* VÍDEO: disable full-screen expand on mobile */
@@ -2276,37 +2277,62 @@ body {
 
   /* FORMAÇÕES */
   .formacoes {
-    padding: 60px 24px;
-    gap: 32px;
+    padding: 48px 24px 56px;
+    gap: 24px;
   }
   .formacoes__title {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -0.5px;
   }
   .formacoes__grid {
     flex-direction: column;
     height: auto;
     align-items: stretch;
+    gap: 16px;
   }
   .formacao-card {
     flex: none;
     width: 100%;
-    padding: 28px 24px;
-    gap: 24px;
+    padding: 24px 20px;
+    gap: 20px;
   }
   .formacao-card-link {
     display: block;
     width: 100%;
   }
+  .formacao-card__title--presencial,
+  .formacao-card__title--online {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .formacao-card__desc {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .formacao-card__date {
+    font-size: 13px;
+  }
+  .formacao-card__autores {
+    font-size: 13px;
+  }
+  .formacao-card__tag {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+  .formacao-card__foto {
+    width: 36px;
+    height: 36px;
+  }
 
   /* TESTIMONIAL */
   .home-testimonial {
-    padding: 80px 24px;
+    padding: 64px 24px;
   }
   .home-testimonial__quote {
-    font-size: 28px;
-    letter-spacing: -0.8px;
-    line-height: 1.35;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
   }
 
   /* REPERTÓRIO (legacy, não usado na home nova) */
@@ -2362,12 +2388,10 @@ body {
   /* FOOTER */
   .footer {
     height: auto;
-    min-height: 360px;
-    padding: 80px 24px 0;
+    padding: 60px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
     overflow: hidden;
   }
   .footer__signature {
@@ -2377,7 +2401,7 @@ body {
     right: auto;
     transform: none;
     font-size: 13px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     text-align: center;
     flex-shrink: 0;
   }
@@ -2387,7 +2411,7 @@ body {
     left: auto;
     right: auto;
     width: 100%;
-    height: 140px;
+    height: 120px;
     flex-shrink: 0;
   }
 

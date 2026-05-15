@@ -289,8 +289,8 @@
       nav.classList.toggle('is-hidden', window.scrollY > 10);
     }, { passive: true });
 
-    /* Expansão + autoplay do vídeo apenas no desktop */
     if (window.matchMedia('(min-width: 769px)').matches) {
+      /* Desktop: expande e inicia quando o CTA sai do nav */
       const ctaObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           const expanded = !entry.isIntersecting;
@@ -305,6 +305,19 @@
       }, { rootMargin: `-${getNavHeight()}px 0px 0px 0px`, threshold: 0 });
 
       ctaObserver.observe(heroCta);
+    } else {
+      /* Mobile: inicia quando o vídeo entra na viewport, pausa quando sai */
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            heroVideo.play();
+          } else {
+            heroVideo.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      videoObserver.observe(videoPlaceholder);
     }
 
     /* ─── FOOTER: efeito magnético no wordmark ────────── */

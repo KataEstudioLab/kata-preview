@@ -1102,47 +1102,36 @@ body {
 
 /* Motivos para participar — sticky layout */
 .curso-detalhe-motivos {
-  position: relative;
   background: #1F3A3D;
-  height: 1641px;
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  padding: 108px 100px 160px;
+  gap: 32px;
 }
 
 .curso-detalhe-motivos__sticky-wrap {
-  position: absolute;
-  left: 0;
-  top: 108px;
-  width: 624px;
-  height: 1373px;
-  pointer-events: none;
+  flex: 1;
+  min-width: 0;
+  position: relative;
 }
 
 .curso-detalhe-motivos__sticky {
   position: sticky;
-  top: 0;
-  height: 140px;
-  width: 624px;
-  pointer-events: auto;
+  top: 40px;
 }
 
 .curso-detalhe-motivos__titulo {
-  position: absolute;
-  left: 100px;
-  top: 32px;
   font-size: 20px;
   line-height: 32px;
   letter-spacing: 0.4px;
   color: rgba(254, 254, 254, 1);
   font-weight: 400;
+  width: 524px;
 }
 
 .curso-detalhe-motivos__lista {
-  position: absolute;
-  left: 656px;
-  top: 140px;
-  width: 524px;
-  padding-bottom: 160px;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -1212,8 +1201,9 @@ body {
 
 .curso-detalhe-facilitadores__grid {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 112px;
   width: 100%;
 }
 
@@ -1223,6 +1213,7 @@ body {
   gap: 32px;
   align-items: center;
   width: 484px;
+  flex-shrink: 0;
 }
 
 .curso-detalhe-facilitador__foto {

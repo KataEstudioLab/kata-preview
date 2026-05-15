@@ -945,19 +945,34 @@ body {
 
 /* Hero */
 .curso-detalhe-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  padding: 144px 100px 104px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 100px;
+}
+
+.curso-detalhe-hero__top {
+  /* holds the title */
+}
+
+.curso-detalhe-hero__bottom {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.curso-detalhe-hero__spacer {
+  flex: 1;
+  min-width: 0;
 }
 
 .curso-detalhe-hero__title {
   font-size: 48px;
+  line-height: 72px;
+  letter-spacing: -1.92px;
+  color: #1F3A3D;
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0.96px;
-  color: #4d4d4d;
+  width: 528px;
 }
 
 .curso-detalhe-hero__desc {
@@ -1528,16 +1543,19 @@ body {
 
 /* ─── PAGE: CURSO DETALHE — NEW CLASSES ──────────── */
 
-/* Hero: right column padding + infobar */
+/* Hero: right column */
 .curso-detalhe-hero__right {
-  padding-top: 80px;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .curso-detalhe-hero__infobar {
   display: flex;
   align-items: center;
-  gap: 40px;
-  margin-top: 40px;
+  justify-content: space-between;
 }
 
 .curso-detalhe-hero__date {
@@ -1546,6 +1564,12 @@ body {
   line-height: 20px;
   letter-spacing: 0.32px;
   color: #1e1a17;
+}
+
+.curso-detalhe-hero__location {
+  text-decoration: underline;
+  color: inherit;
+  text-underline-offset: 2px;
 }
 
 /* Inscricao button */
@@ -1588,133 +1612,118 @@ body {
 .curso-detalhe-motivos {
   background: #2f4f3e;
   display: flex;
-  gap: 96px;
-  padding: 164px 100px;
+  gap: 32px;
+  padding: 140px 100px;
   align-items: flex-start;
 }
 
 .curso-detalhe-motivos__titulo {
-  font-size: 36px;
-  font-weight: 400;
+  font-size: 20px;
   line-height: 32px;
-  letter-spacing: 0.72px;
+  letter-spacing: 0.4px;
   color: #fefefe;
-  white-space: nowrap;
-  flex-shrink: 0;
-  position: sticky;
-  top: 120px;
+  font-weight: 400;
+  flex: 1;
+  min-width: 0;
+  white-space: normal;
+  position: static;
+  top: auto;
 }
 
 .curso-detalhe-motivos__lista {
-  flex: 1;
+  width: 524px;
+  flex-shrink: 0;
+  flex: none;
   display: flex;
   flex-direction: column;
+  gap: 64px;
 }
 
 .curso-detalhe-motivos__item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding-bottom: 72px;
-  border-bottom: 1px solid #cbcbcb;
-  max-width: 569px;
-  margin-left: auto;
+  gap: 24px;
+  padding: 0;
+  border-bottom: none;
+  max-width: none;
+  margin-left: 0;
   width: 100%;
 }
 
-.curso-detalhe-motivos__item + .curso-detalhe-motivos__item {
-  padding-top: 72px;
-}
-
-.curso-detalhe-motivos__item--last {
-  border-bottom: none;
-  padding-bottom: 0;
+.curso-detalhe-motivos__sep {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0;
+  width: 100%;
 }
 
 .curso-detalhe-motivos__item-title {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 1.3;
   color: #fefefe;
 }
 
 .curso-detalhe-motivos__item-text {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 1.5;
-  color: #e9e9e9;
+  line-height: 28px;
+  color: rgba(254, 254, 254, 0.8);
 }
 
 /* O que você vai aprender */
 .aprende-outer {
   position: relative;
-  /* height definido por JS */
 }
 
 .curso-detalhe-aprende {
-  padding: 144px 0 104px;
-  position: sticky;
-  top: 0;
+  padding: 160px 100px;
+  background: #fff;
 }
 
-.curso-detalhe-aprende__titulo {
-  font-size: 32px;
+.curso-detalhe-aprende__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
+
+.curso-detalhe-aprende__item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.curso-detalhe-aprende__num {
+  font-family: var(--font-sans);
+  font-size: 14px;
   font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.64px;
-  color: #4d4d4d;
-  padding: 0 100px;
-  margin-bottom: 60px;
+  color: #B9B2A6;
+  line-height: 1.3;
+  letter-spacing: 0;
 }
 
-.curso-detalhe-aprende__viewport {
-  overflow: hidden;
+.curso-detalhe-aprende__line {
+  border: none;
+  border-top: 1px solid #E0DAD4;
+  margin: 0;
 }
 
-.curso-detalhe-aprende__track {
-  display: flex;
-  gap: 32px;
-  padding: 0 100px 32px;
-  will-change: transform;
-}
-
-.curso-detalhe-aprende__card {
-  flex: 0 0 580px;
-  height: 336px;
-  border: 1px solid #cbcbcb;
-  border-radius: 12px;
-  padding: 48px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.curso-detalhe-aprende__graphism {
-  width: 37px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-.curso-detalhe-aprende__card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.curso-detalhe-aprende__card-title {
+.curso-detalhe-aprende__item-title {
+  font-family: var(--font-sans);
   font-size: 20px;
-  font-weight: 500;
-  line-height: 40px;
-  letter-spacing: 0.4px;
-  color: #1e1a17;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #1E1A17;
+  letter-spacing: 0;
 }
 
-.curso-detalhe-aprende__card-text {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 32px;
-  letter-spacing: 0.36px;
+.curso-detalhe-aprende__item-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
   color: #696969;
+  letter-spacing: 0;
 }
 
 /* Bolsas: desc paragraph */

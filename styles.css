@@ -2230,9 +2230,10 @@ body {
     overflow-x: hidden;
   }
 
-  /* Grid texture projetada pra 1080px — esconde no mobile */
+  /* Grid texture: ocupa largura toda no mobile (sem as margens de 100px) */
   .home-texture {
-    display: none;
+    left: 0;
+    right: 0;
   }
 
   /* NAV */

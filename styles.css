@@ -2294,7 +2294,14 @@ body {
   .formacao-card {
     flex: none;
     width: 100%;
-    padding: 24px 20px;
+    padding: 32px 24px;
+    gap: 20px;
+  }
+  /* Remove hover flash on tap (touch devices) */
+  .formacao-card:hover {
+    background: #FAFAFA;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 32px 24px;
     gap: 20px;
   }
   .formacao-card-link {
@@ -2303,26 +2310,26 @@ body {
   }
   .formacao-card__title--presencial,
   .formacao-card__title--online {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 24px;
   }
   .formacao-card__desc {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 13px;
+    line-height: 20px;
   }
   .formacao-card__date {
-    font-size: 13px;
+    font-size: 12px;
   }
   .formacao-card__autores {
-    font-size: 13px;
+    font-size: 12px;
   }
   .formacao-card__tag {
     font-size: 10px;
     padding: 4px 10px;
   }
   .formacao-card__foto {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
   }
 
   /* TESTIMONIAL */
@@ -2330,9 +2337,9 @@ body {
     padding: 64px 24px;
   }
   .home-testimonial__quote {
-    font-size: 17px;
-    letter-spacing: -0.2px;
-    line-height: 1.5;
+    font-size: 15px;
+    letter-spacing: -0.1px;
+    line-height: 1.55;
   }
 
   /* REPERTÓRIO (legacy, não usado na home nova) */

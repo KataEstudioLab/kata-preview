@@ -1313,11 +1313,11 @@ body {
 .curso-detalhe-testimonial__quote-mark {
   font-family: 'Playfair Display', serif;
   font-size: 128px;
-  line-height: 64px;
+  line-height: 1;
   color: #FEFEFE;
   font-weight: 400;
   font-style: normal;
-  margin: 0;
+  margin: 0 0 -32px 0;
 }
 
 .curso-detalhe-testimonial__text {
@@ -1356,49 +1356,40 @@ body {
 
 /* FAQ / Informações adicionais — sticky layout */
 .curso-detalhe-faq {
-  position: relative;
   background: #F2F3F1;
-  height: 1188px;
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  padding: 108px 100px 160px;
+  gap: 32px;
 }
 
 .curso-detalhe-faq__sticky-wrap {
-  position: absolute;
-  left: 0;
-  top: 108px;
-  width: 624px;
-  height: 920px;
-  pointer-events: none;
+  flex: 1;
+  min-width: 0;
+  position: relative;
 }
 
 .curso-detalhe-faq__sticky {
   position: sticky;
-  top: 0;
-  height: 140px;
-  width: 624px;
-  pointer-events: auto;
+  top: 40px;
 }
 
 .curso-detalhe-faq__titulo {
-  position: absolute;
-  left: 100px;
-  top: 32px;
   font-size: 20px;
   line-height: 32px;
   letter-spacing: 0.4px;
   color: #1E1A17;
   font-weight: 400;
+  width: 524px;
 }
 
 .curso-detalhe-faq__lista {
-  position: absolute;
-  left: 656px;
-  top: 140px;
-  width: 524px;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-bottom: 52px;
 }
 
 /* Accordion item */
@@ -1408,12 +1399,24 @@ body {
   border-radius: 12px;
   padding: 24px 32px;
   display: flex;
-  gap: 32px;
+  flex-direction: column;
   align-items: flex-start;
   cursor: pointer;
   width: 100%;
   text-align: left;
   font-family: var(--font-sans);
+  transition: border-color 0.18s;
+}
+
+.faq-item.is-open {
+  border-color: #CBCBCB;
+}
+
+.faq-item__header {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
 }
 
 .faq-item__num {
@@ -1423,12 +1426,17 @@ body {
   color: #696969;
   font-weight: 400;
   width: 24px;
+  height: 24px;
   flex-shrink: 0;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .faq-item__question {
   flex: 1;
+  min-width: 0;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: -0.72px;
@@ -1436,10 +1444,69 @@ body {
   font-weight: 400;
 }
 
-.faq-item__icon {
+.faq-item__icon-wrap {
+  position: relative;
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+}
+
+.faq-item__icon-wrap::before,
+.faq-item__icon-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #1E1A17;
+  border-radius: 1px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+
+/* barra horizontal */
+.faq-item__icon-wrap::before {
+  width: 9.6px;
+  height: 1.5px;
+  transform: translate(-50%, -50%);
+}
+
+/* barra vertical */
+.faq-item__icon-wrap::after {
+  width: 1.5px;
+  height: 9.6px;
+  transform: translate(-50%, -50%);
+}
+
+/* aberto: barra vertical desaparece → vira − */
+.faq-item.is-open .faq-item__icon-wrap::after {
+  transform: translate(-50%, -50%) scaleY(0);
+  opacity: 0;
+}
+
+.faq-item__body {
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 58px;
+  width: 100%;
+  margin-top: 0;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.is-open .faq-item__body {
+  margin-top: 24px;
+}
+
+.faq-item__answer {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.64px;
+  color: #696969;
+  font-weight: 300;
+  margin: 0;
 }
 
 /* Certificate card */

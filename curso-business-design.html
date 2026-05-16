@@ -6,7 +6,8 @@
   <title>Business Design & IA — Estúdio Kata</title>
   <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -212,7 +213,7 @@
     <!-- DEPOIMENTO -->
     <section class="curso-detalhe-testimonial">
       <div class="curso-detalhe-testimonial__body">
-        <p class="curso-detalhe-testimonial__quote-mark" aria-hidden="true">"</p>
+        <p class="curso-detalhe-testimonial__quote-mark" aria-hidden="true">&#8220;</p>
         <blockquote class="curso-detalhe-testimonial__text">
           O conteúdo já está sendo totalmente aplicável aqui. Eu já estou conseguindo aplicar no meu trabalho, às vezes nem direto no projeto, mas ajudando outras pessoas com os métodos que vocês passaram.
         </blockquote>
@@ -231,45 +232,82 @@
         </div>
       </div>
       <div class="curso-detalhe-faq__lista">
-        <button class="faq-item">
-          <span class="faq-item__num">01.</span>
-          <span class="faq-item__question">Data, local e formato</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
+
+        <button class="faq-item" aria-expanded="false">
+          <div class="faq-item__header">
+            <span class="faq-item__num">01.</span>
+            <span class="faq-item__question">Data, local e formato</span>
+            <div class="faq-item__icon-wrap" aria-hidden="true"></div>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">O mini-intensivo acontece no dia 14 de agosto de 2026, das 09h às 18h, na Tato Office Boutique, em São Paulo. Um dia inteiro presencial, com construção prática, discussão e troca entre profissionais. Por motivos operacionais, o endereço poderá ser alterado dentro da cidade de São Paulo. Nesse caso, os participantes serão avisados com antecedência.</p>
+          </div>
         </button>
-        <button class="faq-item">
-          <span class="faq-item__num">02.</span>
-          <span class="faq-item__question">Para quem é o encontro?</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
+
+        <button class="faq-item" aria-expanded="false">
+          <div class="faq-item__header">
+            <span class="faq-item__num">02.</span>
+            <span class="faq-item__question">O que está incluído?</span>
+            <div class="faq-item__icon-wrap" aria-hidden="true"></div>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">Acesso ao encontro presencial, materiais de apoio, atividades práticas ao longo do dia, certificado digital, um brinde da Kata e o happy hour de encerramento.</p>
+          </div>
         </button>
-        <button class="faq-item">
-          <span class="faq-item__num">03.</span>
-          <span class="faq-item__question">O que está incluído?</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
+
+        <button class="faq-item" aria-expanded="false">
+          <div class="faq-item__header">
+            <span class="faq-item__num">03.</span>
+            <span class="faq-item__question">Inscrições e pagamentos</span>
+            <div class="faq-item__icon-wrap" aria-hidden="true"></div>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">As inscrições são feitas pela Sympla, que cuida do processamento dos pagamentos e do envio das confirmações.</p>
+          </div>
         </button>
-        <button class="faq-item">
-          <span class="faq-item__num">04.</span>
-          <span class="faq-item__question">Inscrições e pagamentos</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
+
+        <button class="faq-item" aria-expanded="false">
+          <div class="faq-item__header">
+            <span class="faq-item__num">04.</span>
+            <span class="faq-item__question">Política de bolsas</span>
+            <div class="faq-item__icon-wrap" aria-hidden="true"></div>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">Mantemos bolsas para ampliar o acesso ao encontro e trazer contextos diferentes para a mesma sala. Hoje temos modalidades para alunos fundadores e para pessoas em transição profissional ou historicamente sub-representadas. Para solicitar, entre em contato com a Kata contando brevemente sobre você e o seu momento atual.</p>
+          </div>
         </button>
-        <button class="faq-item">
-          <span class="faq-item__num">05.</span>
-          <span class="faq-item__question">Política de cancelamento e reembolso</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
+
+        <button class="faq-item" aria-expanded="false">
+          <div class="faq-item__header">
+            <span class="faq-item__num">05.</span>
+            <span class="faq-item__question">Confirmação da turma</span>
+            <div class="faq-item__icon-wrap" aria-hidden="true"></div>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">A turma é pequena por escolha. Se por algum motivo não conseguirmos formar o grupo mínimo para o encontro acontecer, os participantes serão avisados com antecedência e poderão optar pelo reembolso integral ou pela transferência para uma próxima data.</p>
+          </div>
         </button>
-        <button class="faq-item">
-          <span class="faq-item__num">06.</span>
-          <span class="faq-item__question">Confirmação da turma</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
+
+        <button class="faq-item" aria-expanded="false">
+          <div class="faq-item__header">
+            <span class="faq-item__num">06.</span>
+            <span class="faq-item__question">Política de cancelamento e reembolso</span>
+            <div class="faq-item__icon-wrap" aria-hidden="true"></div>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">Pedidos de cancelamento seguem as diretrizes da Sympla dentro do prazo estabelecido pela plataforma. Casos fora do prazo são avaliados individualmente pela Kata.</p>
+          </div>
         </button>
-        <button class="faq-item">
-          <span class="faq-item__num">07.</span>
-          <span class="faq-item__question">Política de bolsas</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
-        </button>
-        <button class="faq-item">
-          <span class="faq-item__num">08.</span>
-          <span class="faq-item__question">Registro de imagem</span>
-          <img src="assets/icon-plus.svg" alt="" aria-hidden="true" class="faq-item__icon">
+
+        <button class="faq-item" aria-expanded="false">
+          <div class="faq-item__header">
+            <span class="faq-item__num">07.</span>
+            <span class="faq-item__question">Registro de imagem</span>
+            <div class="faq-item__icon-wrap" aria-hidden="true"></div>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">Durante o encontro, poderemos fazer registros em foto e vídeo para uso institucional da Kata. Se tiver qualquer restrição, é só avisar com antecedência.</p>
+          </div>
         </button>
         <div class="faq-cert">
           <div class="faq-cert__icon-wrap">
@@ -415,6 +453,22 @@
 
     footer.addEventListener('mouseleave', () => {
       kataImg.style.transform = '';
+    });
+
+    /* ─── FAQ ACCORDION ────────────────────────────── */
+    document.querySelectorAll('.faq-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body = btn.querySelector('.faq-item__body');
+        const isOpen = btn.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+          body.style.height = body.scrollHeight + 'px';
+          body.style.marginTop = '24px';
+        } else {
+          body.style.height = '0';
+          body.style.marginTop = '0';
+        }
+      });
     });
 
     /* ─── CURSOR PERSONALIZADO ──────────────────────── */

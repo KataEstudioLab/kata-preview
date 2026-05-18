@@ -1509,6 +1509,16 @@ body {
   margin: 0;
 }
 
+.faq-item__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.faq-item__link:hover {
+  color: #1E1A17;
+}
+
 /* Certificate card */
 .faq-cert {
   background: #1E1A17;

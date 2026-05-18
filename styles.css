@@ -1367,6 +1367,7 @@ body {
   flex: 1;
   min-width: 0;
   position: relative;
+  padding-bottom: 52px;
 }
 
 .curso-detalhe-faq__sticky {

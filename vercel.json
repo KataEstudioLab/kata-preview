@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/formacoes",             "destination": "/cursos.html",                  "permanent": true },
+    { "source": "/oficina-de-estrategia", "destination": "/curso-business-design.html",   "permanent": true },
+    { "source": "/repertorio",            "destination": "/repertorio.html",              "permanent": true },
+    { "source": "/manifesto",             "destination": "/manifesto.html",               "permanent": true }
+  ]
+}

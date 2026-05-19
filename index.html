@@ -88,10 +88,32 @@
 
     <!-- VÍDEO INSTITUCIONAL -->
     <section class="video-section" aria-label="Vídeo institucional">
-      <div class="video-placeholder">
-        <video controls playsinline>
+      <div class="video-placeholder" id="video-placeholder">
+        <video playsinline id="hero-video">
           <source src="video.mp4" type="video/mp4">
         </video>
+        <div class="video-controls" id="video-controls">
+          <button class="video-controls__btn" id="video-play-btn" aria-label="Pause">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="white" stroke-width="1.5"/>
+              <rect x="8.5" y="7.5" width="2.5" height="9" rx="1" fill="white"/>
+              <rect x="13" y="7.5" width="2.5" height="9" rx="1" fill="white"/>
+            </svg>
+          </button>
+          <div class="video-controls__sep"></div>
+          <button class="video-controls__btn" id="video-mute-btn" aria-label="Mute">
+            <svg id="icon-volume" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <svg id="icon-muted" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+              <path d="M11 5L6 9H2v6h4l5 4V5z" fill="white"/>
+              <line x1="23" y1="9" x2="17" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="17" y1="9" x2="23" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -268,11 +290,44 @@
     });
 
     /* ─── VÍDEO: expande quando o CTA sai do nav ─────── */
-    const videoSection   = document.querySelector('.video-section');
+    const videoSection    = document.querySelector('.video-section');
     const videoPlaceholder = document.querySelector('.video-placeholder');
-    const heroVideo      = document.querySelector('.video-placeholder video');
-    const heroCta        = document.querySelector('.btn--home');
-    const nav            = document.querySelector('.nav');
+    const heroVideo       = document.getElementById('hero-video');
+    const heroCta         = document.querySelector('.btn--home');
+    const nav             = document.querySelector('.nav');
+    const playBtn         = document.getElementById('video-play-btn');
+    const muteBtn         = document.getElementById('video-mute-btn');
+    const iconVolume      = document.getElementById('icon-volume');
+    const iconMuted       = document.getElementById('icon-muted');
+
+    const pauseIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="white" stroke-width="1.5"/><rect x="8.5" y="7.5" width="2.5" height="9" rx="1" fill="white"/><rect x="13" y="7.5" width="2.5" height="9" rx="1" fill="white"/></svg>`;
+    const playIcon  = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="white" stroke-width="1.5"/><polygon points="10,8 18,12 10,16" fill="white"/></svg>`;
+
+    function updateVideoControls() {
+      playBtn.innerHTML = heroVideo.paused ? playIcon : pauseIcon;
+      playBtn.setAttribute('aria-label', heroVideo.paused ? 'Play' : 'Pause');
+      iconVolume.style.display = heroVideo.muted ? 'none' : 'block';
+      iconMuted.style.display  = heroVideo.muted ? 'block' : 'none';
+      muteBtn.setAttribute('aria-label', heroVideo.muted ? 'Ativar som' : 'Silenciar');
+    }
+
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      heroVideo.paused ? heroVideo.play() : heroVideo.pause();
+    });
+
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      heroVideo.muted = !heroVideo.muted;
+      updateVideoControls();
+    });
+
+    heroVideo.addEventListener('play',  updateVideoControls);
+    heroVideo.addEventListener('pause', updateVideoControls);
+
+    /* Áudio ligado por default */
+    heroVideo.muted = false;
+    updateVideoControls();
 
     function getNavHeight() { return nav.offsetHeight; }
 

@@ -325,8 +325,8 @@
     heroVideo.addEventListener('play',  updateVideoControls);
     heroVideo.addEventListener('pause', updateVideoControls);
 
-    /* Áudio ligado por default */
-    heroVideo.muted = false;
+    /* Começa mutado para permitir autoplay; usuário pode ativar som */
+    heroVideo.muted = true;
     updateVideoControls();
 
     function getNavHeight() { return nav.offsetHeight; }
@@ -344,15 +344,30 @@
     }, { passive: true });
 
     if (window.matchMedia('(min-width: 769px)').matches) {
-      /* Desktop: expande quando o CTA sai do nav */
+      /* Desktop: expande e autoplay (muted) quando o CTA sai do nav */
       const ctaObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           const expanded = !entry.isIntersecting;
           videoSection.classList.toggle('is-expanded', expanded);
+          if (expanded) {
+            heroVideo.play();
+          } else {
+            heroVideo.pause();
+            heroVideo.currentTime = 0;
+          }
         });
       }, { rootMargin: `-${getNavHeight()}px 0px 0px 0px`, threshold: 0 });
 
       ctaObserver.observe(heroCta);
+    } else {
+      /* Mobile: autoplay quando entra na viewport */
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.isIntersecting ? heroVideo.play() : heroVideo.pause();
+        });
+      }, { threshold: 0.5 });
+
+      videoObserver.observe(videoPlaceholder);
     }
 
     /* ─── FOOTER: efeito magnético no wordmark ────────── */

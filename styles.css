@@ -2615,6 +2615,38 @@ body {
     padding: 20px 24px;
   }
 
+  /* FLUTUANTE */
+  .curso-flutuante {
+    left: 16px;
+    right: 16px;
+    bottom: 20px;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .curso-flutuante__info {
+    white-space: normal;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .curso-flutuante__sep,
+  .curso-flutuante__meta {
+    display: none;
+  }
+  .curso-flutuante__preco {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .curso-flutuante__parcelas {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .curso-flutuante__cta {
+    font-size: 15px;
+    padding: 12px 16px;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
   /* REPERTÓRIO */
   .rep-hero {
     padding: 40px var(--px) 24px;

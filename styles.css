@@ -2957,14 +2957,12 @@ body {
     gap: 0;
     overflow: hidden;
   }
-  /* Oculta tudo por padrão, mostra só o que interessa */
   .curso-flutuante__sep { display: none; }
   .curso-flutuante__parcelas { display: none; }
   .curso-flutuante__meta--short { display: none; }
   .curso-flutuante__meta--full { display: none; }
-  /* Mostra sep entre parcelas/data (child 4) e a data (child 5) */
-  .curso-flutuante__info > span:nth-child(4) { display: inline; }
-  .curso-flutuante__info > span:nth-child(5) {
+  /* Mostra só a data */
+  .curso-flutuante__meta--full:first-of-type {
     display: inline;
     font-size: 14px;
     line-height: 1.4;
@@ -2975,6 +2973,12 @@ body {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.4;
+  }
+  /* Separador via pseudo-elemento */
+  .curso-flutuante__preco::after {
+    content: ' · ';
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 400;
   }
   .curso-flutuante__cta {
     flex-shrink: 0;

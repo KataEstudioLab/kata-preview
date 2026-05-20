@@ -100,7 +100,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__signature">
-      <img src="assets/graphism-light.svg" alt="">
+      <img src="assets/graphism-light.svg" alt="" aria-hidden="true">
       Feito com carinho, no Brasil.<span class="footer__heart"> &lt;3</span>
     </div>
     <div class="footer__display" aria-hidden="true">
@@ -220,6 +220,18 @@
         requestAnimationFrame(animate);
       })();
     }
+  </script>
+
+  <!-- SCHEMA.ORG: BREADCRUMB -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://estudiokata.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Manifesto", "item": "https://estudiokata.com/manifesto" }
+    ]
+  }
   </script>
 </body>
 </html>

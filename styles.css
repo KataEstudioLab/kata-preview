@@ -2350,13 +2350,19 @@ body {
 
   /* MANIFESTO */
   .manifesto-content {
-    grid-template-columns: 1fr;
-    padding: 48px 20px 80px;
-    gap: 24px;
+    flex-direction: column;
+    padding: 48px 24px 80px;
+    gap: 32px;
   }
   .manifesto-content__label {
     font-size: 22px;
     line-height: 30px;
+    position: static;
+    white-space: normal;
+  }
+  .manifesto-content__body {
+    max-width: 100%;
+    margin-left: 0;
   }
   .manifesto-content__body p {
     font-size: 17px;

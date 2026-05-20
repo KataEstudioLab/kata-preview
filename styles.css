@@ -228,19 +228,14 @@ body {
 }
 
 .video-section.is-expanded {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
 }
 
 .video-section.is-expanded .video-placeholder {
   border-radius: 0;
-  height: calc(100vh - var(--nav-h, 100px));
-}
-
-.video-section.is-expanded .video-placeholder video {
-  object-fit: contain;
+  height: 100vh;
 }
 
 .video-placeholder {

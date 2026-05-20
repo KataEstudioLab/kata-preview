@@ -9,12 +9,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: #fff;
-      padding: 48px 24px 80px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
     }
     #checkout-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
+      width: 50%;
+    }
+    @media (max-width: 768px) {
+      body { justify-content: center; }
+      #checkout-container { width: 100%; }
     }
     .co-error {
       display: none;

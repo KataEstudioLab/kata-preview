@@ -250,7 +250,7 @@ body {
   top: 0;
   height: 100vh;
   overflow: hidden;
-  padding: 108px 100px;
+  padding: max(48px, calc((100vh - (100vw - 200px) * 9 / 16) / 2)) 100px;
   z-index: 1;
   transition: padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -277,7 +277,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 70%;
   display: block;
 }
 

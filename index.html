@@ -20,6 +20,8 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="preconnect" href="https://p.typekit.net">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
   <link rel="stylesheet" href="styles.css">
@@ -105,7 +107,7 @@
     <div class="video-scroll-wrap">
     <section class="video-section" aria-label="Vídeo institucional">
       <div class="video-placeholder" id="video-placeholder">
-        <video playsinline id="hero-video">
+        <video playsinline preload="metadata" id="hero-video">
           <source src="video.mp4" type="video/mp4">
         </video>
         <div class="video-controls" id="video-controls">
@@ -461,6 +463,29 @@
       })();
     }
 
+  </script>
+
+  <!-- SCHEMA.ORG: ORGANIZATION -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Estúdio Kata",
+    "url": "https://estudiokata.com",
+    "logo": "https://estudiokata.com/assets/logo.svg",
+    "description": "Estúdio de design que forma profissionais de design, produto e estratégia por meio de encontros presenciais intensivos com problemas reais e turmas pequenas.",
+    "email": "contato@estudiokata.com",
+    "foundingLocation": {
+      "@type": "Place",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/estudiokata",
+      "https://www.instagram.com/estudio.kata/"
+    ]
+  }
   </script>
 </body>
 </html>

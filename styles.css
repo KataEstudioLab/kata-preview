@@ -124,9 +124,8 @@ body {
   pointer-events: none;
   z-index: 0;
   background-image: url('assets/texture-bg.svg');
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center top;
 }
 
 .home-texture img {

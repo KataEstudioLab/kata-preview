@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscrição confirmada — Estúdio Kata</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="preconnect" href="https://p.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .obrigado-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 100px 80px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .obrigado-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+    }
+    .obrigado-icon svg {
+      display: block;
+    }
+    .obrigado-label {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .obrigado-title {
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: -1px;
+      color: var(--text);
+      margin: 0 0 24px;
+      line-height: 1.15;
+    }
+    .obrigado-text {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #696969;
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+    .obrigado-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .obrigado-back:hover {
+      color: var(--orange);
+    }
+    @media (max-width: 768px) {
+      .obrigado-wrap {
+        padding: 100px 24px 60px;
+      }
+      .obrigado-title {
+        font-size: 28px;
+      }
+      .obrigado-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+  <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+
+  <div class="menu-overlay" id="menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <div class="menu-overlay__header">
+      <a href="/" class="menu-overlay__logo" aria-label="Estúdio Kata — ir para home">
+        <img src="assets/logo.svg" alt="Estúdio Kata">
+      </a>
+      <button class="menu-overlay__close" id="menu-close" aria-label="Fechar menu">FECHAR</button>
+    </div>
+    <div class="menu-overlay__body">
+      <div class="menu-overlay__nav-col">
+        <span class="menu-overlay__label" aria-hidden="true">MENU</span>
+        <nav class="menu-overlay__nav" aria-label="Navegação principal">
+          <a href="/" class="menu-overlay__link">Início</a>
+          <a href="/formacoes" class="menu-overlay__link">Formações</a>
+          <a href="/repertorio" class="menu-overlay__link">Nosso repertório</a>
+          <a href="/manifesto" class="menu-overlay__link">Manifesto</a>
+        </nav>
+      </div>
+      <div class="menu-overlay__contact">
+        <a href="mailto:contato@estudiokata.com" class="menu-overlay__email">contato@estudiokata.com</a>
+        <div class="menu-overlay__social">
+          <a href="https://linkedin.com/company/estudiokata" target="_blank" rel="noopener noreferrer" class="menu-overlay__social-btn" aria-label="LinkedIn">
+            <img src="assets/icon-linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/estudio.kata/" target="_blank" rel="noopener noreferrer" class="menu-overlay__social-btn" aria-label="Instagram">
+            <img src="assets/icon-instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://wa.me/5511976139278" target="_blank" rel="noopener noreferrer" class="menu-overlay__social-btn" aria-label="WhatsApp">
+            <img src="assets/icon-whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="/" class="nav__logo" aria-label="Estúdio Kata — ir para home">
+      <img src="assets/logo.svg" alt="Estúdio Kata">
+    </a>
+    <button class="nav__menu" id="menu-open" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-overlay">MENU</button>
+  </nav>
+
+  <main class="obrigado-wrap">
+    <div class="obrigado-icon" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 11.5L8.5 16L18 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="obrigado-label">Inscrição confirmada</p>
+    <h1 class="obrigado-title">A gente se vê<br>em agosto.</h1>
+    <p class="obrigado-text">
+      Você vai receber um e-mail de confirmação com todos os detalhes.
+      Qualquer dúvida, é só escrever pra gente em contato@estudiokata.com.
+    </p>
+    <a href="/oficina-de-estrategia" class="obrigado-back">
+      Ver detalhes da Oficina
+    </a>
+  </main>
+
+  <script>
+    /* ─── PAGE TRANSITION ───────────────────────────── */
+    const pt = document.getElementById('page-transition');
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel') && !href.startsWith('#')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          pt.style.pointerEvents = 'all';
+          pt.style.animation = 'none';
+          requestAnimationFrame(() => {
+            pt.style.animation = 'pt-cover 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards';
+            pt.addEventListener('animationend', () => { window.location.href = href; }, { once: true });
+          });
+        });
+      }
+    });
+
+    /* ─── MENU OVERLAY ───────────────────────────────── */
+    const menuOverlay  = document.getElementById('menu-overlay');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuOpen     = document.getElementById('menu-open');
+    const menuClose    = document.getElementById('menu-close');
+
+    function openMenu() {
+      menuOverlay.classList.add('is-open');
+      menuBackdrop.classList.add('is-open');
+      menuOpen.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      menuOverlay.classList.remove('is-open');
+      menuBackdrop.classList.remove('is-open');
+      menuOpen.setAttribute('aria-expanded', 'false');
+    }
+
+    menuOpen.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuBackdrop.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('is-open')) closeMenu();
+    });
+
+    document.querySelector('.menu-overlay__email').addEventListener('click', (e) => {
+      e.preventDefault();
+      const el = e.currentTarget;
+      const original = el.textContent;
+      navigator.clipboard.writeText('contato@estudiokata.com');
+      el.textContent = 'Copiado!';
+      setTimeout(() => { el.textContent = original; }, 1500);
+    });
+
+    /* ─── NAV ────────────────────────────────────────── */
+    const nav = document.querySelector('.nav');
+    function setNavVar() {
+      document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
+    setNavVar();
+    window.addEventListener('resize', setNavVar);
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-hidden', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

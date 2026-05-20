@@ -3,6 +3,8 @@
     { "source": "/formacoes",             "destination": "/cursos.html"               },
     { "source": "/oficina-de-estrategia", "destination": "/curso-business-design.html"},
     { "source": "/repertorio",            "destination": "/repertorio.html"           },
-    { "source": "/manifesto",             "destination": "/manifesto.html"            }
+    { "source": "/manifesto",             "destination": "/manifesto.html"            },
+    { "source": "/checkout",              "destination": "/checkout.html"             },
+    { "source": "/obrigado",             "destination": "/obrigado.html"              }
   ]
 }

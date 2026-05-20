@@ -730,7 +730,7 @@ body {
 
 .footer {
   background-color: var(--footer-bg);
-  height: 800px;
+  height: max(800px, calc(480px + 23.6vw));
   overflow: hidden;
   position: relative;
 }

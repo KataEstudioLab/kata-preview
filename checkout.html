@@ -15,31 +15,67 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      background: #f6f9fc;
     }
     .checkout-main {
       flex: 1;
-      padding: 48px 100px 80px;
-      max-width: 680px;
+      display: flex;
+      align-items: flex-start;
+      max-width: 1080px;
       margin: 0 auto;
       width: 100%;
+      padding: 64px 48px 80px;
       box-sizing: border-box;
+      gap: 80px;
     }
-    .checkout-header {
-      margin-bottom: 40px;
+
+    /* ── Painel esquerdo ── */
+    .checkout-info {
+      flex: 0 0 300px;
+      padding-top: 8px;
     }
-    .checkout-label {
-      font-size: 13px;
+    .checkout-info__logo {
+      display: block;
+      margin-bottom: 48px;
+      line-height: 0;
+    }
+    .checkout-info__logo img {
+      height: 24px;
+      width: auto;
+    }
+    .checkout-info__label {
+      font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--orange);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
-    .checkout-title {
-      font-size: 28px;
+    .checkout-info__product {
+      font-size: 22px;
       font-weight: 400;
       letter-spacing: -0.5px;
       color: var(--text);
-      margin: 0;
+      margin: 0 0 16px;
+      line-height: 1.25;
+    }
+    .checkout-info__price {
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -1px;
+      margin: 0 0 24px;
+    }
+    .checkout-info__desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #696969;
+    }
+
+    /* ── Painel direito ── */
+    .checkout-form {
+      flex: 1;
+      min-width: 0;
     }
     #checkout-container {
       min-height: 400px;
@@ -54,12 +90,20 @@
       line-height: 1.5;
       margin-top: 24px;
     }
-    @media (max-width: 768px) {
+
+    @media (max-width: 860px) {
       .checkout-main {
-        padding: 32px 24px 60px;
+        flex-direction: column;
+        padding: 40px 24px 60px;
+        gap: 40px;
       }
-      .checkout-title {
-        font-size: 22px;
+      .checkout-info {
+        flex: none;
+        width: 100%;
+        padding-top: 0;
+      }
+      .checkout-info__logo {
+        margin-bottom: 32px;
       }
     }
   </style>
@@ -112,12 +156,22 @@
 
   <div class="checkout-wrap">
     <main class="checkout-main">
-      <div class="checkout-header">
-        <p class="checkout-label">Oficina de Estratégia</p>
-        <h1 class="checkout-title">Finalize sua inscrição</h1>
+
+      <div class="checkout-info">
+        <a href="/" class="checkout-info__logo" aria-label="Estúdio Kata — ir para home">
+          <img src="assets/logo.svg" alt="Estúdio Kata">
+        </a>
+        <p class="checkout-info__label">Oficina de Estratégia</p>
+        <h1 class="checkout-info__product">Design e Estratégia<br>de Negócios</h1>
+        <p class="checkout-info__price">R$ 150,00</p>
+        <p class="checkout-info__desc">Agosto · São Paulo<br>Vagas limitadas</p>
       </div>
-      <div id="checkout-container"></div>
-      <div class="checkout-error" id="checkout-error" role="alert"></div>
+
+      <div class="checkout-form">
+        <div id="checkout-container"></div>
+        <div class="checkout-error" id="checkout-error" role="alert"></div>
+      </div>
+
     </main>
   </div>
 

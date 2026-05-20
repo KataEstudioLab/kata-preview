@@ -1,29 +1,19 @@
-const { MercadoPagoConfig, Preference } = require('mercadopago');
+const Stripe = require('stripe');
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).end('Method Not Allowed');
 
-  const client = new MercadoPagoConfig({ accessToken: process.env.MP_ACCESS_TOKEN });
+  const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
   try {
-    const preference = new Preference(client);
-    const result = await preference.create({
-      body: {
-        items: [{
-          title: 'Oficina de Estratégia — Estúdio Kata',
-          quantity: 1,
-          currency_id: 'BRL',
-          unit_price: 150,
-        }],
-        back_urls: {
-          success: `${req.headers.origin}/obrigado`,
-          failure: `${req.headers.origin}/checkout`,
-          pending: `${req.headers.origin}/obrigado`,
-        },
-      },
+    const session = await stripe.checkout.sessions.create({
+      ui_mode: 'embedded',
+      line_items: [{ price: 'price_1TZGKRA192J4BKrXlP9EMmAi', quantity: 1 }],
+      mode: 'payment',
+      return_url: `${req.headers.origin}/obrigado?session_id={CHECKOUT_SESSION_ID}`,
     });
 
-    res.json({ preferenceId: result.id, amount: 150 });
+    res.json({ clientSecret: session.client_secret });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

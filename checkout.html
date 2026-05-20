@@ -121,7 +121,7 @@
     </main>
   </div>
 
-  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
   <script>
     /* ─── PAGE TRANSITION ───────────────────────────── */
     const pt = document.getElementById('page-transition');
@@ -173,7 +173,7 @@
       setTimeout(() => { el.textContent = original; }, 1500);
     });
 
-    /* ─── NAV: some ao scrollar ─────────────────────── */
+    /* ─── NAV ────────────────────────────────────────── */
     const nav = document.querySelector('.nav');
     function setNavVar() {
       document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
@@ -184,22 +184,56 @@
       nav.classList.toggle('is-hidden', window.scrollY > 10);
     }, { passive: true });
 
-    /* ─── STRIPE EMBEDDED CHECKOUT ───────────────────── */
+    /* ─── MERCADO PAGO BRICKS ────────────────────────── */
     (async () => {
-      const stripe = Stripe('pk_test_51TZGChA192J4BKrXXrWAkByWiomJtjU1AHgVSNOv9QNXL53k2ayWD70EVgMgUdLTCIzKxQJLT3Kbqh7vSx1fhvWX0022NYqPoF');
       const errorEl = document.getElementById('checkout-error');
 
       try {
-        const checkout = await stripe.initEmbeddedCheckout({
-          fetchClientSecret: async () => {
-            const res = await fetch('/api/checkout', { method: 'POST' });
-            if (!res.ok) throw new Error('Erro ao iniciar checkout.');
-            const { clientSecret, error } = await res.json();
-            if (error) throw new Error(error);
-            return clientSecret;
-          }
+        const res = await fetch('/api/checkout', { method: 'POST' });
+        if (!res.ok) throw new Error('Erro ao iniciar checkout.');
+        const { preferenceId, amount, error } = await res.json();
+        if (error) throw new Error(error);
+
+        const mp = new MercadoPago('TEST-1ccf4952-1d12-4c32-9968-e3ce1d92c11d', { locale: 'pt-BR' });
+        const bricks = mp.bricks();
+
+        await bricks.create('payment', 'checkout-container', {
+          initialization: { amount, preferenceId },
+          customization: {
+            paymentMethods: {
+              creditCard: 'all',
+              debitCard: 'all',
+              ticket: 'all',
+              bankTransfer: 'all',
+            },
+          },
+          callbacks: {
+            onReady: () => {},
+            onSubmit: ({ formData }) => {
+              return new Promise((resolve, reject) => {
+                fetch('/api/process-payment', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(formData),
+                })
+                  .then(r => r.json())
+                  .then(data => {
+                    if (data.status === 'approved' || data.status === 'pending') {
+                      window.location.href = '/obrigado';
+                    } else {
+                      errorEl.textContent = 'Pagamento não aprovado. Verifique os dados e tente novamente.';
+                      errorEl.style.display = 'block';
+                    }
+                    resolve();
+                  })
+                  .catch(reject);
+              });
+            },
+            onError: (err) => {
+              console.error(err);
+            },
+          },
         });
-        checkout.mount('#checkout-container');
       } catch (err) {
         errorEl.textContent = 'Não foi possível carregar o checkout. Tente novamente ou entre em contato: contato@estudiokata.com';
         errorEl.style.display = 'block';

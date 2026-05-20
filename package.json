@@ -2,6 +2,6 @@
   "name": "kata-preview",
   "version": "1.0.0",
   "dependencies": {
-    "stripe": "^16.0.0"
+    "mercadopago": "^2.0.0"
   }
 }

@@ -2940,9 +2940,9 @@ body {
 
 @media (max-width: 768px) {
   .curso-flutuante {
-    left: 16px;
-    right: 16px;
-    bottom: 24px;
+    left: 8px;
+    right: 8px;
+    bottom: 16px;
     border-radius: 14px;
     padding: 12px 12px 12px 20px;
     flex-direction: row;

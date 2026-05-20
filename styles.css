@@ -900,9 +900,9 @@ body {
 }
 
 .menu-overlay__email {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.36px;
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -915,18 +915,19 @@ body {
 
 .menu-overlay__social {
   display: flex;
-  gap: 32px;
+  gap: 24px;
 }
 
 .menu-overlay__social-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
   background-color: #2E7D75;
   border: 1px solid rgba(191, 191, 191, 0.32);
-  border-radius: 12px;
+  border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
@@ -936,8 +937,8 @@ body {
 }
 
 .menu-overlay__social-btn img {
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   display: block;
 }
 

@@ -222,22 +222,42 @@ body {
 
 .video-scroll-wrap {
   position: relative;
-  height: 200vh; /* 100vh de "travada" após o vídeo entrar na tela */
+  height: 200vh;
 }
 
 .video-section {
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow: hidden;
+  padding: 108px 100px;
   z-index: 1;
+  transition: padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-section.is-expanded {
+  padding: 0;
 }
 
 .video-placeholder {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  border-radius: 12px;
   overflow: hidden;
   background-color: #000;
   position: relative;
+  transition: border-radius 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-section.is-expanded .video-placeholder {
+  border-radius: 0;
+}
+
+.video-placeholder video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .video-placeholder video {
@@ -2167,9 +2187,17 @@ body {
     position: relative;
     height: auto;
     padding: 32px 24px;
+    transition: none;
+  }
+  .video-section.is-expanded {
+    padding: 32px 24px;
   }
   .video-placeholder {
     height: 220px;
+    border-radius: 12px;
+    transition: none;
+  }
+  .video-section.is-expanded .video-placeholder {
     border-radius: 12px;
   }
 

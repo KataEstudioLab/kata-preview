@@ -360,20 +360,32 @@
       nav.classList.toggle('is-hidden', window.scrollY > 10);
     }, { passive: true });
 
-    /* Desktop + Mobile: autoplay enquanto o wrapper está na viewport */
-    const videoWrap = document.querySelector('.video-scroll-wrap') || videoPlaceholder;
-    const wrapObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          heroVideo.play();
-        } else {
-          heroVideo.pause();
-          heroVideo.currentTime = 0;
-        }
-      });
-    }, { threshold: 0.1 });
+    if (window.matchMedia('(min-width: 769px)').matches) {
+      /* Desktop: expand + autoplay quando o CTA sai do nav */
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const expanded = !entry.isIntersecting;
+          videoSection.classList.toggle('is-expanded', expanded);
+          if (expanded) {
+            heroVideo.play();
+          } else {
+            heroVideo.pause();
+            heroVideo.currentTime = 0;
+          }
+        });
+      }, { rootMargin: `-${getNavHeight()}px 0px 0px 0px`, threshold: 0 });
 
-    wrapObserver.observe(videoWrap);
+      ctaObserver.observe(heroCta);
+    } else {
+      /* Mobile: autoplay quando entra na viewport */
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.isIntersecting ? heroVideo.play() : heroVideo.pause();
+        });
+      }, { threshold: 0.5 });
+
+      videoObserver.observe(videoPlaceholder);
+    }
 
     /* ─── FOOTER: efeito magnético no wordmark ────────── */
     const footer  = document.querySelector('.footer');

@@ -2959,10 +2959,11 @@ body {
   }
   .curso-flutuante__sep { display: none; }
   .curso-flutuante__parcelas { display: none; }
+  .curso-flutuante__meta--short { display: none; }
   .curso-flutuante__meta--full { display: none; }
-  .curso-flutuante__meta--short {
+  .curso-flutuante__meta--date {
     display: inline;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.4;
     font-weight: 400;
     color: #FFFFFF;

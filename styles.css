@@ -772,7 +772,8 @@ body {
   bottom: -20px;
   left: 0;
   right: 0;
-  height: 302px;
+  height: auto;
+  aspect-ratio: 1280 / 302;
   user-select: none;
 }
 

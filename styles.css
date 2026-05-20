@@ -2659,6 +2659,7 @@ body {
   }
 
   /* REPERTÓRIO */
+  /* REPERTÓRIO */
   .rep-hero {
     padding: 40px var(--px) 24px;
   }
@@ -2676,29 +2677,37 @@ body {
   .rep-filtro::after {
     width: 40px;
   }
+  /* Desativa scroll horizontal — empilha cards verticalmente */
+  .rep-outer {
+    min-height: auto !important;
+  }
   .rep-section {
-    top: 64px;     /* mobile nav height = 64px */
-    padding: 24px 0 80px;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      black 20px,
-      black calc(100% - 20px),
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      black 20px,
-      black calc(100% - 20px),
-      transparent 100%
-    );
+    position: relative;
+    top: auto;
+    padding: 0 var(--px) 80px;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .rep-track {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+    transform: none !important;
+  }
+  .rep-card-link {
+    flex: none;
+    width: 100%;
   }
   .rep-card {
-    flex: 0 0 320px;
+    width: 100%;
     height: auto;
-    padding: 32px 24px;
-    gap: 40px;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+  .rep-card:hover {
+    padding: 28px 24px;
+    gap: 24px;
   }
   .rep-card__title {
     font-size: 18px;

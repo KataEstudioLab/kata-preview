@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
       ui_mode: 'embedded',
       line_items: [{ price: 'price_1TZGKRA192J4BKrXlP9EMmAi', quantity: 1 }],
       mode: 'payment',
+      allow_promotion_codes: true,
       return_url: `${req.headers.origin}/obrigado?session_id={CHECKOUT_SESSION_ID}`,
     });
 

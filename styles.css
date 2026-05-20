@@ -220,36 +220,23 @@ body {
 
 /* ─── VÍDEO ───────────────────────────────────────── */
 
-.video-section {
-  padding: 108px 100px;
+.video-scroll-wrap {
   position: relative;
-  z-index: 1;
-  transition: padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 200vh; /* 100vh de "travada" após o vídeo entrar na tela */
 }
 
-.video-section.is-expanded {
-  padding: 0;
-  width: 100vw;
-  margin-left: calc(-1 * (100vw - 100%) / 2);
-}
-
-.video-section.is-expanded .video-placeholder {
-  border-radius: 0;
+.video-section {
+  position: sticky;
+  top: 0;
   height: 100vh;
+  z-index: 1;
 }
 
 .video-placeholder {
   width: 100%;
-  height: 600px;
-  border-radius: 12px;
+  height: 100vh;
   overflow: hidden;
-  transition:
-    border-radius 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-    height        0.8s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #000;
-}
-
-.video-placeholder {
   position: relative;
 }
 
@@ -2173,18 +2160,15 @@ body {
   }
 
   /* VÍDEO */
+  .video-scroll-wrap {
+    height: auto;
+  }
   .video-section {
+    position: relative;
+    height: auto;
     padding: 32px 24px;
   }
   .video-placeholder {
-    height: 220px;
-  }
-
-  /* VÍDEO: disable full-screen expand on mobile */
-  .video-section.is-expanded {
-    padding: 0 24px;
-  }
-  .video-section.is-expanded .video-placeholder {
     height: 220px;
     border-radius: 12px;
   }

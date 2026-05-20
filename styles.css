@@ -2959,10 +2959,8 @@ body {
   }
   .curso-flutuante__sep { display: none; }
   .curso-flutuante__parcelas { display: none; }
-  .curso-flutuante__meta--short { display: none; }
   .curso-flutuante__meta--full { display: none; }
-  /* Mostra só a data */
-  .curso-flutuante__meta--full:first-of-type {
+  .curso-flutuante__meta--short {
     display: inline;
     font-size: 14px;
     line-height: 1.4;
@@ -2974,11 +2972,11 @@ body {
     font-weight: 700;
     line-height: 1.4;
   }
-  /* Separador via pseudo-elemento */
   .curso-flutuante__preco::after {
-    content: ' · ';
+    content: '·';
     color: rgba(255, 255, 255, 0.4);
     font-weight: 400;
+    padding: 0 5px;
   }
   .curso-flutuante__cta {
     flex-shrink: 0;

@@ -2632,50 +2632,6 @@ body {
     padding: 20px 24px;
   }
 
-  /* FLUTUANTE */
-  .curso-flutuante {
-    left: 16px;
-    right: 16px;
-    bottom: 24px;
-    border-radius: 14px;
-    padding: 12px 12px 12px 20px;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-  }
-  .curso-flutuante__info {
-    flex: 1;
-    min-width: 0;
-    white-space: nowrap;
-    gap: 6px;
-    overflow: hidden;
-  }
-  .curso-flutuante__sep { display: none; }
-  .curso-flutuante__parcelas { display: none; }
-  .curso-flutuante__meta--full { display: none; }
-  .curso-flutuante__meta--short { display: inline; }
-  .curso-flutuante__preco::after {
-    content: ' — ';
-    color: rgba(255, 255, 255, 0.4);
-  }
-  .curso-flutuante__preco {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  .curso-flutuante__meta--short {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  .curso-flutuante__cta {
-    flex-shrink: 0;
-    font-size: 14px;
-    padding: 12px 16px;
-    border-radius: 10px;
-  }
-  .curso-flutuante__cta img {
-    display: none;
-  }
-
   /* REPERTÓRIO */
   /* REPERTÓRIO */
   .rep-hero {
@@ -2980,4 +2936,55 @@ body {
 
 .curso-flutuante__cta:hover img {
   filter: brightness(0);
+}
+
+@media (max-width: 768px) {
+  .curso-flutuante {
+    left: 16px;
+    right: 16px;
+    bottom: 24px;
+    border-radius: 14px;
+    padding: 12px 12px 12px 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .curso-flutuante__info {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    gap: 0;
+    overflow: hidden;
+  }
+  .curso-flutuante__sep { display: none; }
+  .curso-flutuante__parcelas { display: none; }
+  .curso-flutuante__meta--full { display: none; }
+  .curso-flutuante__meta--short {
+    display: inline;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+  .curso-flutuante__preco {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .curso-flutuante__preco::after {
+    content: ' — ';
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 400;
+  }
+  .curso-flutuante__cta {
+    flex-shrink: 0;
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    gap: 0;
+  }
+  .curso-flutuante__cta img {
+    display: none !important;
+  }
 }

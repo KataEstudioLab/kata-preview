@@ -2433,8 +2433,8 @@ body {
   }
   .menu-overlay__close {
     font-size: 13px;
-    letter-spacing: 0.5px;
-    text-transform: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
   }
   .menu-overlay__body {
     flex-direction: column;

@@ -5,362 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inscrição — Oficina de Estratégia · Estúdio Kata</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://use.typekit.net">
-  <link rel="preconnect" href="https://p.typekit.net">
-  <link rel="stylesheet" href="https://use.typekit.net/akq5qpv.css">
-  <link rel="stylesheet" href="styles.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:     #FFFFFA;
-      --text:   #1a1a1a;
-      --orange: #FB4202;
-      --border: rgba(26,26,26,0.15);
-      --font:   redonda, sans-serif;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: var(--font);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Layout ── */
-    .co-page {
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* ── Painel esquerdo ── */
-    .co-left {
-      flex: 1;
-      padding: 64px 80px 80px;
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
-    }
-
-    .co-title {
-      font-size: clamp(24px, 3vw, 36px);
-      font-weight: 300;
-      letter-spacing: -0.5px;
-      line-height: 1.15;
-      color: var(--text);
-      margin-bottom: 8px;
-      white-space: nowrap;
-    }
-    .co-date {
+    body { background: #fff; padding: 48px 24px 80px; }
+    #checkout-container { width: 100%; max-width: 800px; margin: 0 auto; }
+    .co-error {
+      display: none;
+      max-width: 800px;
+      margin: 24px auto 0;
+      padding: 16px;
+      background: #fff0ee;
+      border-left: 3px solid #e25c2e;
       font-size: 15px;
-      font-weight: 300;
-      color: rgba(26,26,26,0.5);
-      margin-bottom: 40px;
-    }
-
-    /* Steps */
-    .co-steps {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      margin-bottom: 48px;
-    }
-    .co-step {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 400;
-      color: rgba(26,26,26,0.35);
-      letter-spacing: 0.3px;
-    }
-    .co-step.is-active { color: var(--text); }
-    .co-step__dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(26,26,26,0.2);
-      flex-shrink: 0;
-    }
-    .co-step.is-active .co-step__dot { background: var(--orange); }
-    .co-step__line {
-      width: 48px;
-      height: 1px;
-      background: var(--border);
-      margin: 0 8px;
-    }
-
-    /* Form */
-    .co-section-title {
-      font-size: 18px;
-      font-weight: 400;
-      letter-spacing: -0.3px;
-      margin-bottom: 24px;
-    }
-
-    .co-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      max-width: 560px;
-    }
-
-    .co-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .co-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .co-field label {
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      color: rgba(26,26,26,0.55);
-      text-transform: uppercase;
-    }
-    .co-field input,
-    .co-field select {
-      font-family: var(--font);
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--text);
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 13px 16px;
-      outline: none;
-      transition: border-color 0.2s;
-      appearance: none;
-      -webkit-appearance: none;
-      width: 100%;
-    }
-    .co-field input::placeholder { color: rgba(26,26,26,0.3); }
-    .co-field input:focus,
-    .co-field select:focus { border-color: var(--text); }
-
-
-    /* ── Painel direito ── */
-    .co-right {
-      flex: 0 0 380px;
-      background: #fafafa;
-      border-left: 1px solid var(--border);
-      padding: 64px 40px 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .co-secure {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: rgba(26,26,26,0.45);
-      letter-spacing: 0.3px;
-      margin-bottom: 32px;
-      justify-content: flex-end;
-    }
-
-    .co-product {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 24px;
-    }
-    .co-product__img {
-      width: 56px;
-      height: 56px;
-      border-radius: 6px;
-      background: #f0ede8;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .co-product__img img { height: 40px; width: auto; object-fit: contain; }
-    .co-product__info { flex: 1; }
-    .co-product__name {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .co-product__price {
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-    .co-product__installment {
-      font-size: 12px;
-      font-weight: 300;
-      color: rgba(26,26,26,0.5);
-    }
-
-    .co-coupon {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
-    .co-coupon span {
-      font-size: 14px;
-      font-weight: 300;
-      color: rgba(26,26,26,0.5);
-    }
-    .co-coupon svg { opacity: 0.4; }
-
-    .co-totals {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .co-total-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      font-weight: 300;
-      color: rgba(26,26,26,0.7);
-    }
-    .co-total-row.is-total {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--text);
-      padding-top: 8px;
-      border-top: 1px solid var(--border);
-      margin-top: 4px;
-    }
-    .co-total-row.is-total .co-total-sub {
-      font-size: 12px;
-      font-weight: 300;
-      color: rgba(26,26,26,0.45);
-      margin-top: 2px;
-    }
-    .co-total-right { text-align: right; }
-
-    /* Mobile */
-    @media (max-width: 860px) {
-      .co-page { flex-direction: column; }
-      .co-left { padding: 40px 24px; }
-      .co-right { flex: none; border-left: none; border-top: 1px solid var(--border); padding: 40px 24px 60px; }
+      line-height: 1.5;
+      font-family: sans-serif;
     }
   </style>
 </head>
 <body>
+  <div id="checkout-container"></div>
+  <div class="co-error" id="checkout-error" role="alert"></div>
 
-<div class="co-page">
-
-  <!-- Painel esquerdo -->
-  <div class="co-left">
-
-    <h1 class="co-title">Oficina de Estratégia</h1>
-    <p class="co-date">01 de Agosto de 2026</p>
-
-    <div class="co-steps" aria-label="Etapas">
-      <div class="co-step is-active">
-        <span class="co-step__dot"></span>
-        Contato
-      </div>
-      <div class="co-step__line"></div>
-      <div class="co-step">
-        <span class="co-step__dot"></span>
-        Pagamento
-      </div>
-    </div>
-
-    <p class="co-section-title">Informações do participante</p>
-
-    <form class="co-form" id="contact-form" novalidate>
-      <div class="co-row">
-        <div class="co-field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="given-name" required>
-        </div>
-        <div class="co-field">
-          <label for="sobrenome">Sobrenome</label>
-          <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome" autocomplete="family-name" required>
-        </div>
-      </div>
-      <div class="co-field">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
-      </div>
-      <div class="co-field">
-        <label for="telefone">Telefone</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel">
-      </div>
-      <button type="submit" class="btn btn--primary">Continuar para pagamento</button>
-    </form>
-
-  </div>
-
-  <!-- Painel direito -->
-  <div class="co-right">
-
-    <div class="co-secure" aria-label="Compra segura">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <path d="M7 1L2 3v4c0 2.76 2.13 5.33 5 5.95C9.87 12.33 12 9.76 12 7V3L7 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-      </svg>
-      Compra Segura
-    </div>
-
-    <div class="co-product">
-      <div class="co-product__img">
-        <img src="assets/logo.svg" alt="Oficina de Estratégia">
-      </div>
-      <div class="co-product__info">
-        <p class="co-product__name">Oficina de Estratégia</p>
-        <p class="co-product__price">R$ 450,00</p>
-        <p class="co-product__installment">ou 3× de R$ 153,72</p>
-      </div>
-    </div>
-
-    <div class="co-coupon" role="button" tabindex="0" aria-label="Inserir cupom de desconto">
-      <span>Insira seu cupom</span>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M7.5 10h5M10 7.5v5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
-    </div>
-
-    <div class="co-totals">
-      <div class="co-total-row">
-        <span>Subtotal</span>
-        <span>R$ 450,00</span>
-      </div>
-      <div class="co-total-row is-total">
-        <span>Total</span>
-        <div class="co-total-right">
-          <div>R$ 450,00</div>
-          <div class="co-total-sub">ou 3× de R$ 153,72</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    /* próximo passo: avança para etapa de pagamento */
-  });
-</script>
-
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    (async () => {
+      const errorEl = document.getElementById('checkout-error');
+      try {
+        const stripe = Stripe('pk_test_51TZGChA192J4BKrXXrWAkByWiomJtjU1AHgVSNOv9QNXL53k2ayWD70EVgMgUdLTCIzKxQJLT3Kbqh7vSx1fhvWX0022NYqPoF');
+        const checkout = await stripe.initEmbeddedCheckout({
+          fetchClientSecret: async () => {
+            const res = await fetch('/api/checkout', { method: 'POST' });
+            if (!res.ok) throw new Error();
+            const { clientSecret, error } = await res.json();
+            if (error) throw new Error(error);
+            return clientSecret;
+          }
+        });
+        checkout.mount('#checkout-container');
+      } catch (err) {
+        errorEl.textContent = 'Não foi possível carregar o checkout. Entre em contato: contato@estudiokata.com';
+        errorEl.style.display = 'block';
+      }
+    })();
+  </script>
 </body>
 </html>

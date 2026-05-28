@@ -1523,12 +1523,12 @@ body {
 }
 
 .curso-cta-contato__titulo {
-  font-size: 56px;
+  font-size: 40px;
   font-weight: 900;
   letter-spacing: 0.8px;
   color: #fefefe;
-  line-height: 1.1;
-  max-width: 900px;
+  line-height: 1.2;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {

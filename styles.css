@@ -1523,34 +1523,12 @@ body {
 }
 
 .curso-cta-contato__titulo {
-  font-size: 40px;
+  font-size: 56px;
   font-weight: 900;
   letter-spacing: 0.8px;
   color: #fefefe;
-  line-height: 1.2;
-  max-width: 760px;
-}
-
-.curso-cta-contato__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 20px 24px;
-  background: #fff;
-  border: 1px solid var(--orange);
-  border-radius: 12px;
-  color: var(--orange);
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: -0.72px;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-.curso-cta-contato__btn:hover {
-  background: var(--orange);
-  color: #fff;
+  line-height: 1.1;
+  max-width: 900px;
 }
 
 @media (max-width: 768px) {
@@ -1559,7 +1537,7 @@ body {
     gap: 32px;
   }
   .curso-cta-contato__titulo {
-    font-size: 28px;
+    font-size: 32px;
   }
   .curso-cta-contato__label {
     font-size: 16px;

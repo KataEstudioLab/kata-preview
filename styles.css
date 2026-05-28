@@ -1503,6 +1503,69 @@ body {
   font-weight: 400;
 }
 
+/* ─── CTA CONTATO ─────────────────────────────────── */
+.curso-cta-contato {
+  background: var(--card-bg);
+  padding: 200px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  text-align: center;
+}
+
+.curso-cta-contato__label {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #fefefe;
+  line-height: 1;
+}
+
+.curso-cta-contato__titulo {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  color: #fefefe;
+  line-height: 1.2;
+  max-width: 760px;
+}
+
+.curso-cta-contato__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid var(--orange);
+  border-radius: 12px;
+  color: var(--orange);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.72px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.curso-cta-contato__btn:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .curso-cta-contato {
+    padding: 100px 24px;
+    gap: 32px;
+  }
+  .curso-cta-contato__titulo {
+    font-size: 28px;
+  }
+  .curso-cta-contato__label {
+    font-size: 16px;
+  }
+}
+
 /* Inscricao button (kept for compatibility) */
 .btn--inscricao {
   display: inline-flex;

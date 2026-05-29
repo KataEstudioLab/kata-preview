@@ -1546,10 +1546,10 @@ body {
     margin-bottom: -12px;
   }
   .curso-cta-contato .curso-flutuante__cta {
-    font-size: 16px;
-    padding: 16px 24px;
+    font-size: 14px;
+    padding: 13px 18px;
     border-radius: 12px;
-    gap: 12px;
+    gap: 10px;
   }
   .curso-cta-contato .curso-flutuante__cta img {
     display: block !important;

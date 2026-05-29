@@ -440,13 +440,13 @@
     /* ─── FLUTUANTE ─────────────────────────────────── */
     const flutuante    = document.getElementById('curso-flutuante');
     const heroInscricao = document.getElementById('hero-inscricao');
-    const footerEl     = document.querySelector('.footer--curso');
+    const ctaContato   = document.querySelector('.curso-cta-contato');
 
-    let heroPassed  = false;
-    let footerVisible = false;
+    let heroPassed   = false;
+    let ctaVisible   = false;
 
     function updateFlutuante() {
-      const show = heroPassed && !footerVisible;
+      const show = heroPassed && !ctaVisible;
       flutuante.classList.toggle('is-visible', show);
       flutuante.setAttribute('aria-hidden', show ? 'false' : 'true');
     }
@@ -457,11 +457,11 @@
       updateFlutuante();
     }, { threshold: 0 }).observe(heroInscricao);
 
-    // Some quando o footer verde entra em vista
+    // Some quando a seção CTA de contato entra em vista
     new IntersectionObserver((entries) => {
-      footerVisible = entries[0].isIntersecting;
+      ctaVisible = entries[0].isIntersecting;
       updateFlutuante();
-    }, { threshold: 0 }).observe(footerEl);
+    }, { threshold: 0 }).observe(ctaContato);
 
 
     /* ─── KATA: efeito magnético no footer ─────────── */

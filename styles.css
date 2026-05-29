@@ -1534,14 +1534,25 @@ body {
 
 @media (max-width: 768px) {
   .curso-cta-contato {
-    padding: 100px 24px;
-    gap: 32px;
+    padding: 80px 24px;
+    gap: 24px;
   }
   .curso-cta-contato__titulo {
-    font-size: 32px;
+    font-size: 26px;
+    letter-spacing: 0.4px;
   }
   .curso-cta-contato__label {
+    font-size: 14px;
+    margin-bottom: -12px;
+  }
+  .curso-cta-contato .curso-flutuante__cta {
     font-size: 16px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+  .curso-cta-contato .curso-flutuante__cta img {
+    display: block !important;
   }
 }
 
